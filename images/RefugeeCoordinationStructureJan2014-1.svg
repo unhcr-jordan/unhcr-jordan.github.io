@@ -1,46 +1,5 @@
-<!DOCTYPE html>
-<!-- Landing page for UNHCR IM Jordan -->
-<html><head profile="http://www.w3.org/2005/10/profile"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>
-      Jordan Intersector Coordination
-    </title>  
-    <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="description" content="">
-    <meta name="author" content="legoupil@unhcr.org">
-
-    <link href="http://www.unhcr.org/favicon.ico" rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="stylesheets/main.css">
-
-  </head>
-  <body style="zoom: 1;">
-
-    <header class="with-border">
-      <div class="viewport">
-        <a id="logo" href="http://data.unhcr.org/jordan"></a>
-        <div id="dot"></div>
-        <div id="nav">
-          <a  class="link" href="index.html" > Tools & Products</a>
-          <a  class="link" href="coordination.html" > Coordination structure</a>
-          <a  class="link" href="team.html" > Support Team</a>
-        </div>
-
-        <div id="mininav">
-          <button></button>
-          <ul>
-            <li><a class="link" href="https://github.com/unhcr-jordan">On github</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
-
-    
-          <div id="team">
-      <div class="viewport">
-        <h1>Refugee Response Coordination structure</h1>
-        <p> The organigram below describes the various coordination bodies involved in the response.</p>
-        
-
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -1346,47 +1305,3 @@
          id="tspan6309-9-9-1"
          style="font-size:10px;font-variant:normal;font-weight:normal;line-height:122.00000286%;letter-spacing:-0.43504781px;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Liberation Sans;-inkscape-font-specification:LiberationSans"> (with MOPIC &amp; NRP)</tspan></text>
 </g></svg>
-        
-        
-        
-        <div class="clearfix"></div>
-      </div>
-    </div>
-
-    
-      <footer>
-          <div class="top">
-            <div class="viewport">
-              <div id="footer-products">
-              </div>
-              <div id="footer-about">
-              </div>
-              <div id="contact-about">
-              </div>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-          <div class="bottom">
-            <div class="viewport">
-              Powered by UNHCR Jordan <img src="images/logo-unhcr-arabic-horizontal-white-transparent.png">
-            </div>
-          </div>
-      </footer>
-    
-
-    
-      <script src="javascripts/main.js"></script>
-      <!-- Piwik -->
-<script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://data.unhcr.org/piwik/" : "http://data.unhcr.org/piwik/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 14);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://data.unhcr.org/piwik/piwik.php?idsite=14" style="border:0" alt="" /></p></noscript>
-<!-- End Piwik Tracking Code -->
-    
-</body></html>
