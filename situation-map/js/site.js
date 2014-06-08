@@ -19,6 +19,10 @@ $(function() {
                 map: 'unhcr.jordanratio_sub,unhcr.jordanratio_dis,unhcr.jordanratio_gov'
             },
             {
+                title: 'Poverty Pocket',
+                map: 'unhcr.jordanpocket,unhcr.jordanrefugee_sub,unhcr.jordanrefugee_dis,unhcr.jordanrefugee_gov'
+            },
+            {
                 title: 'Schools',
                 map: 'unhcr.infrajordaneduc,unhcr.jordanrefugee_sub,unhcr.jordanrefugee_dis,unhcr.jordanrefugee_gov'
             },
