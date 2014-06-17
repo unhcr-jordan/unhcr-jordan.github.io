@@ -75,7 +75,8 @@ addLayer(L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
 }), 'Alternate Rendering', 3);
 addLayer(L.mapbox.tileLayer('unhcr.azraq'), 'Imagery', 4);
 addLayer(L.mapbox.tileLayer('unhcr.azraq_infrastructure'), 'Infrastructure', 5);
-addLayer(L.mapbox.tileLayer('unhcr.zaatari-admin'), 'Administrative Division', 6);
+addLayer(L.mapbox.tileLayer('unhcr.azraq_admin'), 'Administrative Division', 6);
+addLayer(L.mapbox.tileLayer('unhcr.azraq_neighbourhood'), 'Demography', 7);
 
 function addLayer(layer, name, zIndex) {
     layer
