@@ -76,8 +76,8 @@ addLayer(L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
 addLayer(L.mapbox.tileLayer('unhcr.Zaatari_sat'), 'Imagery', 4);
 addLayer(L.mapbox.tileLayer('unhcr.zaatari-infrastructure'), 'Infrastructure', 5);
 addLayer(L.mapbox.tileLayer('unhcr.zaatari-admin'), 'Administrative Boundaries', 6);
-addLayer(L.mapbox.tileLayer('unhcr.zaatari_district'), 'Demography per district', 7);
-addLayer(L.mapbox.tileLayer('unhcr.zaatari_neighbourhood'), 'Demography per neighbourhood', 8);
+addLayer(L.mapbox.tileLayer('unhcr.zaatari_neighbourhood'), 'Demography per district', 7);
+addLayer(L.mapbox.tileLayer('unhcr.zaatari-operator'), 'Operators', 8);
 
 function addLayer(layer, name, zIndex) {
     layer
