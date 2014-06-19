@@ -1,95 +1,147 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset=utf-8 />
 <title>Situation Map - Azraq Refugee Camp </title>
-<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
-<link href="http://www.unhcr.org/favicon.ico" rel="icon" type="image/x-icon">
-
-<style>
-  body { margin:0; padding:0; }
-  #map { position:absolute; top:0; bottom:0; width:100%; }
-</style>
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.js'></script>
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.6.3/mapbox.css' rel='stylesheet' />
+  <!--[if lte IE 8]>
+    <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.ie.css' rel='stylesheet'>
+  <![endif]-->
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
 </head>
 <body>
-
 <style>
-.menu-ui {
-  background:#fff;
-  position:absolute;
-  top:10px;right:10px;
-  z-index:1;
-  border-radius:3px;
-  width:120px;
-  border:1px solid rgba(0,0,0,0.4);
+#map-ui {
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+}
+
+#map-ui a {
+    font: normal 13px/18px 'Helvetica Neue', Helvetica, sans-serif;
+    background: #FFF;
+    color: #3C4E5A;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #BBB;
+    border-bottom-width: 0;
+    min-width: 138px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#map-ui a:hover {
+    background: #ECF5FA;
+}
+
+#map-ui li:last-child a {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
+
+#map-ui li:first-child a {
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+#map-ui a.active {
+    background: #3887BE;
+    border-color: #3887BE;
+    border-top-color: #FFF;
+    color: #FFF;
+}
+
+#map-ui a:first-child {
+  border-radius:3px 3px 0 0;
   }
-  .menu-ui a {
-    font-size:13px;
-    color:#404040;
-    display:block;
-    margin:0;padding:0;
-    padding:10px;
-    text-decoration:none;
-    border-bottom:1px solid rgba(0,0,0,0.25);
-    text-align:center;
-    }
-    .menu-ui a:first-child {
-      border-radius:3px 3px 0 0;
-      }
-    .menu-ui a:last-child {
-      border:none;
-      border-radius:0 0 3px 3px;
-      }
-    .menu-ui a:hover {
-      background:#f8f8f8;
-      color:#404040;
-      }
-    .menu-ui a.active {
-      background:#3887BE;
-      color:#FFF;
-      }
-      .menu-ui a.active:hover {
-        background:#3074a4;
-        }
+#map-ui a:last-child {
+  border:none;
+  border-radius:0 0 3px 3px;
+  }
+#map-ui a:hover {
+  background:#f8f8f8;
+  color:#404040;
+  }
+
+#map-ui a.active:hover {
+  background:#3074a4;
+  }
+
 </style>
-<nav id='menu-ui' class='menu-ui'></nav>
+
+<ul id='map-ui'></ul>
 <div id='map'></div>
+<script type='text/javascript'>
 
-<script>
-var map = L.map('map').setView([31.9077,36.5870], 14);
-var layers = document.getElementById('menu-ui');
+var
+    southWest = L.latLng(31.8773,36.5211),
+    northEast = L.latLng(31.933,36.6422),
+ /*
+    southWest = L.latLng(32.2651,36.2883),
+    northEast = L.latLng(32.3206,36.4093),
+*/
+    bounds = L.latLngBounds(southWest, northEast);
+
+var map = L.mapbox.map('map', 'unhcr.if4iljnf', {
+    zoomControl: false,
+    minZoom: 14,
+    maxZoom: 19,
+    maxBounds: bounds
+})
+
+    .setView([31.9077,36.5870], 14)
+
+var ui = document.getElementById('map-ui');
+//I put this here
+var thelayer = null;
+
+L.control.layers({
+    'Base Map' : L.mapbox.tileLayer('unhcr.if4iljnf'),
+    'Streets' : L.mapbox.tileLayer('unhcr.map-zdgpcmtu'),
+    
+    /* trying to add other base map -- but this freeze the map
+    'OMS-int' : L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'}),
+    'OMS-eng' : L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'}),
+    'OMS-hot' : L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'}),
+*/
+}).addTo(map);
 
 
-addLayer(L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
-}), 'Base Map (ar)', 1);
-addLayer(L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
-	attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
-}), 'Base Map (en)', 2);
-addLayer(L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-	attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
-}), 'Alternate Rendering', 3);
-addLayer(L.mapbox.tileLayer('unhcr.azraq'), 'Imagery', 4);
-addLayer(L.mapbox.tileLayer('unhcr.azraq_infrastructure'), 'Infrastructure', 5);
-addLayer(L.mapbox.tileLayer('unhcr.azraq_admin'), 'Administrative Division', 6);
-addLayer(L.mapbox.tileLayer('unhcr.azraq_neighbourhood'), 'Demography', 7);
-addLayer(L.mapbox.tileLayer('unhcr.azraq_operator'), 'Operator', 7);
+var image = L.mapbox.tileLayer('unhcr.azraq');
+var infra = L.mapbox.tileLayer('unhcr.azraq_infrastructure');
+var admin = L.mapbox.tileLayer('unhcr.azraq_admin');
+var demo = L.mapbox.tileLayer('unhcr.azraq_neighbourhood');
+var operator = L.mapbox.tileLayer('unhcr.azraq_operator');
 
-function addLayer(layer, name, zIndex) {
-    layer
-        .setZIndex(zIndex)
-        .addTo(map);
+addLayer(image, L.mapbox.tileLayer('unhcr.azraq'), 'Imagery', 1);
+addLayer(infra, L.mapbox.tileLayer('unhcr.azraq_infrastructure'), 'Infrastructure', 2);
+addLayer(operator, L.mapbox.tileLayer('unhcr.azraq_operator'), 'Operator', 3);
+addLayer(admin, L.mapbox.tileLayer('unhcr.azraq_admin'), 'Administrative Division', 4);
+addLayer(demo, L.mapbox.tileLayer('unhcr.azraq_neighbourhood'), 'Demography', 5);
 
-    // Create a simple layer switcher that
-    // toggles layers on and off.
+function addLayer(layer, gridlayer, name, zIndex) {
+    layer.setZIndex(zIndex)
+    gridlayer
+    // add the gridControl to the active gridlayer
+    var gridControl = L.mapbox.gridControl(gridlayer, {follow: true}).addTo(map);
+
+    // Create a simple layer switcher that toggles layers on and off.
+    var item = document.createElement('li');
     var link = document.createElement('a');
-        link.href = '#';
-        link.className = 'active';
-        link.innerHTML = name;
+
+    link.href = '#';
+    //link.className = 'active';
+    link.innerHTML = name;
 
     link.onclick = function(e) {
         e.preventDefault();
@@ -97,17 +149,26 @@ function addLayer(layer, name, zIndex) {
 
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
+            map.removeLayer(gridlayer);
+            map.legendControl.removeLegend(layer.getTileJSON().legend);
+
+           // thelayer.link.className = '';
             this.className = '';
         } else {
             map.addLayer(layer);
+            map.addLayer(gridlayer);
+            map.legendControl.addLegend(layer.getTileJSON().legend);
             this.className = 'active';
         }
+          // thelayer = layer;
+         //  layers.appendChild(link);
     };
-
-    layers.appendChild(link);
+    item.appendChild(link);
+    ui.appendChild(item);
 }
-</script>
 
+new L.Control.Zoom({ position: 'topleft' }).addTo(map);
+
+</script>
 </body>
 </html>
-
