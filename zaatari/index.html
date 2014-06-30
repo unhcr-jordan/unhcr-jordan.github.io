@@ -118,13 +118,14 @@ var infra = L.mapbox.tileLayer('unhcr.zaatari-infrastructure');
 var admin = L.mapbox.tileLayer('unhcr.zaatari-admin');
 var demo = L.mapbox.tileLayer('unhcr.zaatari_neighbourhood');
 var operator = L.mapbox.tileLayer('unhcr.zaatari-operator');
+var wash = L.mapbox.tileLayer('unhcr.zaatari_wash');
 
 addLayer(image, L.mapbox.tileLayer('unhcr.Zaatari_sat'), 'Imagery', 1);
 addLayer(infra, L.mapbox.tileLayer('unhcr.zaatari-infrastructure'), 'Infrastructure', 2);
 addLayer(operator, L.mapbox.tileLayer('unhcr.zaatari-operator'), 'Operator', 3);
 addLayer(admin, L.mapbox.tileLayer('unhcr.azraq_admin'), 'Administrative Division', 4);
 addLayer(demo, L.mapbox.tileLayer('unhcr.zaatari_neighbourhood'), 'Demography', 5);
-addLayer(demo, L.mapbox.tileLayer('unhcr.zaatari_wash'), 'Water Access', 6);
+addLayer(wash, L.mapbox.tileLayer('unhcr.zaatari_wash'), 'Water Access', 6);
 
 function addLayer(layer, gridlayer, name, zIndex) {
     layer.setZIndex(zIndex)
