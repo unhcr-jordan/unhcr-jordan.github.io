@@ -128,6 +128,7 @@ addLayer(infra, L.mapbox.tileLayer('unhcr.azraq_infrastructure'), 'Infrastructur
 addLayer(operator, L.mapbox.tileLayer('unhcr.azraq_operator'), 'Operator', 3);
 addLayer(admin, L.mapbox.tileLayer('unhcr.azraq_admin'), 'Administrative Division', 4);
 addLayer(demo, L.mapbox.tileLayer('unhcr.azraq_neighbourhood'), 'Demography', 5);
+addLayer(demo, L.mapbox.tileLayer('unhcr.azraq_wash'), 'Water Access', 6);
 
 function addLayer(layer, gridlayer, name, zIndex) {
     layer.setZIndex(zIndex)
