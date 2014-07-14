@@ -1,0 +1,718 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html, button, input, select, textarea {
+  color: #222; }
+
+html {
+  font-size: 1em;
+  line-height: 1.4; }
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+audio, canvas, img, video {
+  vertical-align: middle; }
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical; }
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Image replacement
+ */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px; }
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%; }
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+  visibility: hidden; }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+.clearfix:after {
+  clear: both; }
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+  *zoom: 1; }
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) { }
+
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) { }
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+@media print {
+  /*
+     * Don't show links for images, or javascript/internal links
+     */
+  @page {
+    margin: 0.5cm; }
+
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a, a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: ""; }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */ }
+  tr, img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+  h2, h3 {
+    page-break-after: avoid; } }
+
+/* ==========================================================================
+   UNHCR-specific
+   ========================================================================== */
+html, body, main {
+  height: 100%; }
+
+body {
+  font: 12px/1.5 Helvetica, arial, freesans, clean, sans-serif; }
+
+/* Variables */
+/* Utilities */
+.hide {
+  display: none; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* Header */
+.map-actions {
+  background: #333333;
+  color: #fff;
+  position: relative; }
+  .map-actions a {
+    color: #fff;
+    text-decoration: none; }
+    .map-actions a:hover, .map-actions a:focus {
+      color: #e6c68b; }
+  .map-actions h4 {
+    margin: 0; }
+
+#search-map a {
+  border-bottom: 2px solid #d64a2b;
+  display: block;
+  font-size: 14px;
+  padding: 10px; }
+
+/* Map styles */
+#map {
+  height: 90%;
+  float: none;
+  clear: both; }
+
+/* Toggle styles */
+#map-list-toggler {
+  border: 1px solid #822b19;
+  font-size: 14px;
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  cursor: pointer; }
+  #map-list-toggler span {
+    display: inline-block;
+    padding: 1px 8px;
+    margin: 0;
+    background-color: #fff;
+    color: #d64a2b; }
+    #map-list-toggler span.active {
+      background-color: #d64a2b;
+      color: #fff; }
+      #map-list-toggler span.active:hover {
+        cursor: default; }
+
+.advancedToggler {
+  cursor: pointer;
+  position: absolute;
+  top: 130px;
+  right: 20px; }
+
+/* List styles */
+#list {
+  display: none; }
+
+.serviceText {
+  border-bottom: 1px solid #c0c0c0; }
+  .serviceText.expand .content {
+    display: block; }
+  .serviceText header {
+    padding: 10px; }
+    .serviceText header:hover {
+      cursor: pointer; }
+    .serviceText header * {
+      margin: 0; }
+    .serviceText header > img {
+      float: right;
+      margin: 0 10px 0 10px; }
+  .serviceText .content {
+    display: none;
+    padding: 0 10px 10px 10px; }
+    .serviceText .content > p {
+      margin: 2px 0; }
+  .serviceText .comments {
+    margin-top: 10px; }
+
+/* Marker styles */
+.awesome-marker i {
+  font-size: 24px !important;
+  margin: 2px 0 0 8px !important; }
+
+/* Popup styles */
+.leaflet-popup-content {
+  font-size: 12px; }
+  .leaflet-popup-content p {
+    font-size: 12px;
+    margin: 0; }
+  .leaflet-popup-content h3 {
+    font-size: 14px;
+    margin: 0; }
+  .leaflet-popup-content h4 {
+    font-size: 12px;
+    margin: 0; }
+  .leaflet-popup-content > .serviceText {
+    margin: 0;
+    border-bottom: none; }
+
+.leaflet-popup-content .serviceText header {
+  padding: 0 !important; }
+
+.leaflet-popup-content .serviceText p {
+  margin: 2px 0 !important; }
+
+.leaflet-popup-content .serviceText img {
+  width: 100px; }
+
+/* Filter Togglers */
+ul.filter-togglers {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0 100px 0 0;
+  padding: 0 5px; }
+  ul.filter-togglers li {
+    float: left;
+    list-style: none outside none; }
+  ul.filter-togglers a {
+    color: #57595a;
+    display: block;
+    padding: 5px;
+    text-decoration: none; }
+    ul.filter-togglers a:hover, ul.filter-togglers a.active {
+      color: #333333; }
+
+/* Filter contents */
+.filter-contents {
+  display: none; }
+
+.filter, .advanced-search {
+  border-bottom: 1px solid #232323;
+  border-top: 1px solid #444444;
+  padding: 10px; }
+
+/* Activity Category */
+#activityName label {
+  display: inline-block;
+  margin: 5px 0;
+  position: relative;
+  width: 290px; }
+#activityName .filter-label-value {
+  margin-left: 20px; }
+#activityName .glyph {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.5em;
+  left: 15px;
+  position: absolute;
+  top: -0.3em; }
+
+#activityname-filter-value-basic-needs span.glyph:before {
+  content: "\f412";
+  color: #f96a1b; }
+
+#activityname-filter-value-child-protection span.glyph:before {
+  content: "\f368";
+  color: #1f497d; }
+
+#activityname-filter-value-maintain-food-security span.glyph:before {
+  content: "\f366";
+  color: #006600; }
+
+#activityname-filter-value-need-coverage span.glyph:before {
+  content: "\f32a";
+  color: #a48658; }
+
+#activityname-filter-value-shelter-rehabilitation-jordanians---syrians span.glyph:before {
+  content: "\f363";
+  color: #989aac; }
+
+#activityname-filter-value-education span.glyph:before {
+  content: "\f362";
+  color: #c00000; }
+
+#activityname-filter-value-health span.glyph:before {
+  content: "\f364";
+  color: #08a1d9; }
+
+#activityname-filter-value-wash span.glyph:before {
+  content: "\f369";
+  color: #7030a0; }
+
+/* Referral Required */
+#referralRequired label {
+  display: inline-block;
+  margin: 5px 10px 5px 0; }
+
+#referral-required-filter-value-yes {
+  display: none !important; }
+
+/* Advanced Search */
+.advanced-search.active > h4 i:before {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+.advanced-search > h4:hover, .advanced-search > h4:focus {
+  color: #e6c68b;
+  cursor: pointer; }
+.advanced-search .filter {
+  border-bottom: 0 none;
+  display: none;
+  margin-top: 10px; }
+
+/* Organization */
+#partnerName {
+  max-height: 300px;
+  overflow: auto; }
+  #partnerName label {
+    float: left;
+    height: 40px;
+    position: relative;
+    width: 25%; }
+    @media only screen and (max-width: 600px) {
+      #partnerName label {
+        width: 100%; } }
+    @media only screen and (min-width: 601px) and (max-width: 800px) {
+      #partnerName label {
+        width: 50%; } }
+    @media only screen and (min-width: 801px) and (max-width: 1024px) {
+      #partnerName label {
+        width: 33%; } }
+    @media only screen and (min-width: 1025px) {
+      #partnerName label {
+        width: 25%; } }
+  #partnerName .filter-label-value {
+    display: inline-block;
+    width: 82px; }
+  #partnerName .glyph {
+    background-position: right top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    left: 6px;
+    height: 30px;
+    position: relative;
+    top: 8px;
+    width: 120px;
+    z-index: 2; }
+
+i.glyphicon {
+  font-size: 24px;
+  margin-right: -13px; }
+
+i.glyphicon.icon-ocha-item-reliefgood {
+  color: #f96a1b; }
+
+i.glyphicon.icon-ocha-sector-cash {
+  color: #a48658; }
+
+i.glyphicon.icon-ocha-sector-protection {
+  color: #1f497d; }
+
+i.glyphicon.icon-ocha-sector-health {
+  color: #08a1d9; }
+
+i.glyphicon.icon-ocha-sector-wash {
+  color: #7030a0; }
+
+i.glyphicon.icon-ocha-sector-foodsecurity {
+  color: #006600; }
+
+i.glyphicon.icon-ocha-sector-education {
+  color: #c00000; }
+
+i.glyphicon.icon-ocha-sector-shelter {
+  color: #989aac; }
+
+#partnername-filter-value-acf span.glyph {
+  background-image: url("../src/images/partner/acf.jpg"); }
+
+#partnername-filter-value-acted span.glyph {
+  background-image: url("../src/images/partner/acted.jpg"); }
+
+#partnername-filter-value-actionaid span.glyph {
+  background-image: url("../src/images/partner/actionaid.jpg"); }
+
+#partnername-filter-value-adra span.glyph {
+  background-image: url("../src/images/partner/adra.jpg"); }
+
+#partnername-filter-value-avsi span.glyph {
+  background-image: url("../src/images/partner/avsi.jpg"); }
+
+#partnername-filter-value-care span.glyph {
+  background-image: url("../src/images/partner/care.jpg"); }
+
+#partnername-filter-value-chf span.glyph {
+  background-image: url("../src/images/partner/chf.jpg"); }
+
+#partnername-filter-value-cvt span.glyph {
+  background-image: url("../src/images/partner/cvt.jpg"); }
+
+#partnername-filter-value-drc span.glyph {
+  background-image: url("../src/images/partner/drc.jpg"); }
+
+#partnername-filter-value-fao span.glyph {
+  background-image: url("../src/images/partner/fao.jpg"); }
+
+#partnername-filter-value-fca span.glyph {
+  background-image: url("../src/images/partner/fca.jpg"); }
+
+#partnername-filter-value-fpsc span.glyph {
+  background-image: url("../src/images/partner/fpsci.jpg"); }
+
+#partnername-filter-value-hi span.glyph {
+  background-image: url("../src/images/partner/hi.jpg"); }
+
+#partnername-filter-value-icmc span.glyph {
+  background-image: url("../src/images/partner/icmc.jpg"); }
+
+#partnername-filter-value-ifh span.glyph {
+  background-image: url("../src/images/partner/ifh.jpg"); }
+
+#partnername-filter-value-ilo span.glyph {
+  background-image: url("../src/images/partner/ilo.jpg"); }
+
+#partnername-filter-value-imc span.glyph {
+  background-image: url("../src/images/partner/imc.jpg"); }
+
+#partnername-filter-value-intersos span.glyph {
+  background-image: url("../src/images/partner/intersos.jpg"); }
+
+#partnername-filter-value-iocc span.glyph {
+  background-image: url("../src/images/partner/iocc.jpg"); }
+
+#partnername-filter-value-iom span.glyph {
+  background-image: url("../src/images/partner/iom.jpg"); }
+
+#partnername-filter-value-irc span.glyph {
+  background-image: url("../src/images/partner/irc.jpg"); }
+
+#partnername-filter-value-ird span.glyph {
+  background-image: url("../src/images/partner/ird.jpg"); }
+
+#partnername-filter-value-irw span.glyph {
+  background-image: url("../src/images/partner/irw.jpg"); }
+
+#partnername-filter-value-jen span.glyph {
+  background-image: url("../src/images/partner/jen.jpg"); }
+
+#partnername-filter-value-jhas span.glyph {
+  background-image: url("../src/images/partner/jhas.jpg"); }
+
+#partnername-filter-value-jhco span.glyph {
+  background-image: url("../src/images/partner/jhco.jpg"); }
+
+#partnername-filter-value-jrs span.glyph {
+  background-image: url("../src/images/partner/jrs.jpg"); }
+
+#partnername-filter-value-knk span.glyph {
+  background-image: url("../src/images/partner/knk.jpg"); }
+
+#partnername-filter-value-la span.glyph {
+  background-image: url("../src/images/partner/la.jpg"); }
+
+#partnername-filter-value-lwf span.glyph {
+  background-image: url("../src/images/partner/lwf.jpg"); }
+
+#partnername-filter-value-mc span.glyph {
+  background-image: url("../src/images/partner/mc.jpg"); }
+
+#partnername-filter-value-mdm span.glyph {
+  background-image: url("../src/images/partner/mdm.jpg"); }
+
+#partnername-filter-value-medair span.glyph {
+  background-image: url("../src/images/partner/medair.jpg"); }
+
+#partnername-filter-value-po-la-paz span.glyph {
+  background-image: url("../src/images/partner/movimiento-po-la-paz.jpg"); }
+
+#partnername-filter-value-msf span.glyph {
+  background-image: url("../src/images/partner/msf.jpg"); }
+
+#partnername-filter-value-niccod span.glyph {
+  background-image: url("../src/images/partner/niccod.jpg"); }
+
+#partnername-filter-value-nrc span.glyph {
+  background-image: url("../src/images/partner/nrc.jpg"); }
+
+#partnername-filter-value-opm span.glyph {
+  background-image: url("../src/images/partner/operation-mercy.jpg"); }
+
+#partnername-filter-value-oxfam span.glyph {
+  background-image: url("../src/images/partner/oxfam.jpg"); }
+
+#partnername-filter-value-pu-ami span.glyph {
+  background-image: url("../src/images/partner/pu-ami.jpg"); }
+
+#partnername-filter-value-qrc span.glyph {
+  background-image: url("../src/images/partner/qrc.jpg"); }
+
+#partnername-filter-value-questcope span.glyph {
+  background-image: url("../src/images/partner/quetscope.jpg"); }
+
+#partnername-filter-value-ri span.glyph {
+  background-image: url("../src/images/partner/ri.jpg"); }
+
+#partnername-filter-value-sc-jordan span.glyph {
+  background-image: url("../src/images/partner/scjordan.jpg"); }
+
+#partnername-filter-value-sci span.glyph {
+  background-image: url("../src/images/partner/sci.jpg"); }
+
+#partnername-filter-value-taghyeer span.glyph {
+  background-image: url("../src/images/partner/taghyeer.jpg"); }
+
+#partnername-filter-value-tdh span.glyph {
+  background-image: url("../src/images/partner/tdh.jpg"); }
+
+#partnername-filter-value-tdhi span.glyph {
+  background-image: url("../src/images/partner/tdh-it.jpg"); }
+
+#partnername-filter-value-thw span.glyph {
+  background-image: url("../src/images/partner/thw.jpg"); }
+
+#partnername-filter-value-tgh span.glyph {
+  background-image: url("../src/images/partner/triangle.jpg"); }
+
+#partnername-filter-value-undp span.glyph {
+  background-image: url("../src/images/partner/undp.jpg"); }
+
+#partnername-filter-value-unesco span.glyph {
+  background-image: url("../src/images/partner/unesco.jpg"); }
+
+#partnername-filter-value-unfpa span.glyph {
+  background-image: url("../src/images/partner/unfpa.jpg"); }
+
+#partnername-filter-value-unhabitat span.glyph {
+  background-image: url("../src/images/partner/unhabitat.jpg"); }
+
+#partnername-filter-value-unhcr span.glyph {
+  background-image: url("../src/images/partner/unhcr.jpg"); }
+
+#partnername-filter-value-unicef span.glyph {
+  background-image: url("../src/images/partner/unicef.jpg"); }
+
+#partnername-filter-value-unops span.glyph {
+  background-image: url("../src/images/partner/unops.jpg"); }
+
+#partnername-filter-value-upp span.glyph {
+  background-image: url("../src/images/partner/upp.jpg"); }
+
+#partnername-filter-value-warchild span.glyph {
+  background-image: url("../src/images/partner/warchild.jpg"); }
+
+#partnername-filter-value-wfp span.glyph {
+  background-image: url("../src/images/partner/wfp.jpg"); }
+
+#partnername-filter-value-who span.glyph {
+  background-image: url("../src/images/partner/who.jpg"); }
+
+#partnername-filter-value-wvi span.glyph {
+  background-image: url("../src/images/partner/wvi.jpg"); }
+
+#proximity .leaflet-control-filter-fieldset {
+  width: 50%;
+  display: inline-block; }
+  #proximity .leaflet-control-filter-fieldset .filter-option {
+    width: 200px;
+    display: inline-block; }
+
+.pfc-custom-pointer {
+  cursor: crosshair; }
+
+#region .filter-option {
+  display: inline-block;
+  width: 170px; }
+
+[class^="sulc-icon-"]:before, [class*=" sulc-icon-"]:before {
+  font-family: "SelectUserLocationControl";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1.5em;
+  margin-left: 0.2em;
+  font-size: 150%; }
+
+.sulc-custom-pointer {
+  cursor: crosshair !important; }
+
+.sulc-icon-toggled, .sulc-icon-toggled:hover {
+  color: #ffffff !important;
+  background-color: #666666 !important; }
+
+.sulc-icon-location:before {
+  content: "A"; }
