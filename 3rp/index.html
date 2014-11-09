@@ -2,13 +2,13 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
-<meta name="author" content="Aung Thu Win based on original work by Edouard Legoupil">
-<meta property="og:title" content="2014 Refugee Response in Lebanon">
+<meta name="author" content="Edouard Legoupil -- with good ideas from Aung Thau :)">
+<meta property="og:title" content="2015 Refugee & Resilience Response in Lebanon">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://data.unhcr.org/jordan/3rp">
 <meta property="og:image" content="http://data.unhcr.org/jordan/3rp/thumbnail.jpg">
-<meta property="og:site_name" content="2014 Refugee Response in Jordan">
-<meta property="og:description" content="2014 Refugee Response in Jordan">
+<meta property="og:site_name" content="2015 Refugee & Resilience Response in Jordan">
+<meta property="og:description" content="2015 Refugee & Resilience Response in Jordan">
     <title>2015 Refugee & Resilience Response Plan in Jordan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -29,7 +29,7 @@
     <div class="container" id="dashboard"><h1><a  href="http://data.unhcr.org/jordan"><img src="images/coordination.png" style="height: 48px; width: 48px"></a>
         <strong>2015 Refugee & Resilience Response Plan in Jordan</strong></h1>
         <div class="col-xs-12">Explore <a href="XXX" target="_blank">2015 Interagency Response</a> financial requirement (in USD)
-            for Refugee Crisis in Jordan. <strong>Click on any of the graphs below to filter and slice the data.</strong> <br>
+            for Refugee Crisis in Jordan. <strong>All charts are based on USD values appealed. Click on any of the graphs below to filter and slice the data.</strong> <br>
             More info on Jordan <a href="http://data.unhcr.org/syrianrefugees/country.php?id=107" target="_blank">here</a>.</div>
         <div class="socialmedia" data-step="8" data-intro="Feel Free to share if you like it!" data-position="left">
             <table>
@@ -43,7 +43,8 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <div class="dc-chart" id="count-info"><strong></strong> selected out of <span class="total-count ">1,618</span> records</div>
+                <div class="dc-chart" id="count-info">
+                    <h4><strong><span class="filter-count"></span></strong> Activities for a budget of <span id="totalusd" class="number-display"></span> US$ selected out of <strong><span class="total-count"></span></strong> records.</div></h4>
                 <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All</a>
             </div>
             <br>
@@ -51,11 +52,6 @@
                 <a class="btn btn btn-success" href="javascript:void(0);" onclick="javascript:introJs().start();">Tutorial</a>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-10">
-                <h4><center><u><strong>All charts are based on USD values appealed.<strong></strong></strong></u></center></h4><strong><strong>
-            </strong></strong></div><strong><strong>
-        </strong></strong></div><strong><strong>
         <div class="row">
             <div class="col-md-4">
                 <div class="row">
@@ -76,13 +72,13 @@
             </div>
             <div class="col-md-4">
                 <div class="row">
-                    <div id="category" class="col-xs-12 col-md-8 dc-chart" data-step="4" data-intro="Click on this row chart to filter by prioritisation level." data-position="right">
-                        <h5><strong>Prioritisation</strong></h5>
+                    <div id="category" class="col-xs-12 col-md-8 dc-chart" data-step="4" data-intro="Click on this row chart to filter by category." data-position="right">
+                        <h5><strong>Category</strong></h5>
                     </div>
                </div>
                 <div class="row">
                     <div id="area" class="col-xs-12 col-md-8 dc-chart" data-step="5" data-intro="Click on this row chart to filter by area of operation." data-position="right">
-                        <h5><strong>By Area</strong> (by Appeal)</h5>
+                        <h5><strong>By location</strong> (camps are distinct locations than Governorate)</h5>
                     </div>
                 </div>
                 <div class="row">
@@ -100,10 +96,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">
-                Produced by Information Management Unit, UNHCR, Jordan. For more information please contact <a href="http://data.unhcr.org/jordan/team.html">our team</a>.
-                <br>
+            <div class="col-md-12">
+                
                 The Government of Jordan, UNDP & UNHCR thanks all partners for their data and cooperation.
+                <br>
+                Produced by Information Management Unit, UNHCR, Jordan. For more information please contact <a href="http://data.unhcr.org/jordan/team.html" target="_blank" >our team</a>.
             </div>
         </div>
     </strong></strong></div><strong><strong>
@@ -114,17 +111,10 @@
     <script type="text/javascript" src="js/d3.js"></script>
 
  <script>
-        //function regionsMapShow(){
-            //$('#map2').hide();
-            //$('#map').show();
-            //$('#map2').show();
-            //map2_chart.filterAll();
-            //dc.redrawAll();
-        //}
+
 
         var sector_chart = dc.pieChart("#sector");
         var category_chart = dc.rowChart("#category");
-        //var map_chart = dc.geoChoroplethChart("#map");
         var org_chart = dc.rowChart("#orgs");
         var objective_chart = dc.rowChart("#objective");
         var output_chart = dc.rowChart("#output");
@@ -142,7 +132,7 @@
             cf.category = cf.dimension(function(d) { return d.Category; });
             cf.objective = cf.dimension(function(d) { return d.Objective; });
             cf.output = cf.dimension(function(d) { return d.Output; });
-            cf.area = cf.dimension(function(d) { return d.Area; });
+            cf.area = cf.dimension(function(d) { return d.Area2; });
             cf.rcode = cf.dimension(function(d) { return d.RegionCODE; });
             cf.total = cf.dimension(function(d) { return d.Total; });
 
@@ -154,6 +144,9 @@
             var area = cf.area.group();
             var rcode = cf.rcode.group();
             var all = cf.groupAll();
+            
+            
+            var bytotalGroup = cf.total.groupAll().reduceSum(function (d) { return d.Total; });
 
             var sectorByTotal = cf.sector.group().reduceSum(function (d) { return d.Total; });
             var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.Total; });
@@ -225,8 +218,21 @@
                   .html(function (d) { return "<span style='color: #f0027f'>" + d.data.key + "</span> : " + numberFormat(d.y) + " USD";});
 
 
+
+            dc.dataCount("#count-info")
+                .dimension(cf)
+                .group(all);
+
+
+
+           dc.numberDisplay("#totalusd")
+               .valueAccessor(function(d){return +d})
+                .group(bytotalGroup);
+
+
+
              /* 3W data are sorted per sector and color are allocated to sectors as per standard code in rrp6 */
-            sector_chart.width(300).height(300)
+            sector_chart.width(280).height(280)
                 .dimension(cf.sector)
                 .group(sectorByTotal)
                 .innerRadius(10)
@@ -270,14 +276,14 @@
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-            category_chart.width(400).height(130)
+            category_chart.width(400).height(100)
                 .dimension(cf.category)
                 .group(categoryByTotal)
                 .elasticX(true)
                 .on("filtered", getFiltersValues)
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-            area_chart.width(400).height(230)
+            area_chart.width(400).height(200)
                 .dimension(cf.area)
                 .group(areaByTotal)
                 .elasticX(true)
@@ -303,14 +309,11 @@
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-            dc.dataCount("#count-info")
-            .dimension(cf)
-            .group(all);
 
          /* Region map with ID rid */
-            d3.json("data/admin1.geojson", function (regionsJSON) {
+            d3.json("data/admin1.geojson", function (governJSON) {
 
-                 map2_chart.width(400).height(200)
+                 map2_chart.width(400).height(250)
                     .dimension(cf.rcode)
                     .group(rcodeByTotal)
                     .colors(['#AAAAAA', "rgb(49,163,84)"]) //'#CB181D'
@@ -322,21 +325,28 @@
                             return 0;
                         }
                     })
-                    .overlayGeoJson(regionsJSON.features, "adm1_name", function (d) { // there is no Region header in geojson file
-                        return d.properties.rid;//
-                        //return d.properties.rid_str; // I changed rid to string in the geojson file as id in rocde2reg are retireved as text
-
+                    
+                    .on("filtered", getFiltersValues)
+                    .colorAccessor(function (d) {
+                        if(d>0){
+                            return 1;
+                        } else {
+                            return 0;
+                        }
                     })
-                    .projection(d3.geo.mercator().center([42,29.9]).scale(3500))
-                   /*
-                   .title(function (d) {
-                        return "Geo-Filter: " + d.key;
-                    });
-                    */
+                    .overlayGeoJson(governJSON.features, "Governorates", function (d) {
+                        return d.properties.adm1_code;
+                    })
+                    .projection(d3.geo.mercator().center([44,29]).scale(2600)) /* Center on Jordan */
                     .title(function (d) {
-                                return "Geo-Filter: " + gcode2gov[d.key];
-                            });
-                            
+                        return "Geo-Filter: " + gcode2gov[d.key];
+                    });
+                    
+                    $('#reset').on('click', function (){
+                      dc.filterAll();
+                      dc.redrawAll();
+                      return false;
+                    })
                     //dc.redrawAll();
                     dc.renderAll();
 
@@ -353,21 +363,7 @@
 
             $('#loading').hide();
             $('#dashboard').show();
-            //map2_chart.filterAll();
-            //dc.redrawAll();
 
-            //dc.renderAll();
-
-            /* Customised infobox */
-            /*
-            d3.selectAll("g.row").call(rowTip);
-            d3.selectAll("g.row").on('mouseover', rowTip.show)
-                .on('mouseout', rowTip.hide);
-
-            d3.selectAll(".pie-slice").call(pieTip);
-            d3.selectAll(".pie-slice").on('mouseover', pieTip.show)
-                .on('mouseout', pieTip.hide);
-            */
         });
     </script>
     <script src="js/bootstrap.js"></script>
