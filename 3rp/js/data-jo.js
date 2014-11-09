@@ -20,5 +20,5 @@ var gcode2gov = {
     '1707':'IRBID',
     '1711':'MAFRAQ',
     '1708':'JARASH',
-    '1':'No Breakdown per Governorate',
+    '1':'Country Wide Intervention',
     '2':'ALL CAMPS IN JORDAN'}

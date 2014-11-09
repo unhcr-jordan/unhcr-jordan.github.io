@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="dc-chart" id="count-info">
-                    <h4><strong><span class="filter-count"></span></strong> Activities for a budget of <span id="totalusd" class="number-display"></span> US$ selected out of <strong><span class="total-count"></span></strong> records.</div></h4>
+                    <h4><strong><span class="filter-count"></span></strong> Activities for a budget of <strong> <span id="totalusd" class="number-display"></span></strong>  USD$ selected out of <strong><span class="total-count"></span></strong> records.</div></h4>
                 <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All</a>
             </div>
             <br>
@@ -56,41 +56,43 @@
             <div class="col-md-4">
                 <div class="row">
                     <div id="sector" class="col-xs-12 col-md-8 dc-chart" data-step="1" data-intro="Click on this pie chart to filter by sector." data-position="right">
-                        <h5><strong>By Sectors/Working Groups</strong></h5>   
+                        <h5><strong>By Sectors / Working Groups</strong></h5>   
                     </div>
                  </div>
                 <div class="row">
                     <div id="objective" class="col-xs-12 col-md-8 dc-chart" data-step="2" data-intro="Click on this row chart to filter by objective." data-position="right">
-                        <h5><strong>Top Three Objectives</strong> (by Appeal)</h5>
+                        <h5><strong>Top 5 Objectives </strong><small>by Appeal</small></h5>
                     </div>
                    </div>
                 <div class="row">
                     <div id="output" class="col-xs-12 col-md-8 dc-chart" data-step="3" data-intro="Click on this row chart to filter by output." data-position="right">
-                        <h5><strong>Top Three Outputs</strong> (by Appeal)</h5>
+                        <h5><strong>Top 5 Outputs </strong><small>by Appeal</small></h5>
                     </div>
                </div>
             </div>
             <div class="col-md-4">
                 <div class="row">
                     <div id="category" class="col-xs-12 col-md-8 dc-chart" data-step="4" data-intro="Click on this row chart to filter by category." data-position="right">
-                        <h5><strong>Category</strong></h5>
+                        <h5><strong>Response Category</strong></h5>
                     </div>
                </div>
                 <div class="row">
-                    <div id="area" class="col-xs-12 col-md-8 dc-chart" data-step="5" data-intro="Click on this row chart to filter by area of operation." data-position="right">
-                        <h5><strong>By location</strong> (camps are distinct locations than Governorate)</h5>
+                    <div id="map2" class="col-xs-12 col-md-8 dc-chart" data-step="6" data-intro="Or click on this map to filter by area of operation." data-position="right">
+                        <h5><strong>Filter on the Map </strong><small>by Governorate, Country wide or all Camps</small></h5>
+                        
                     </div>
                 </div>
                 <div class="row">
-                    <div id="map2" class="col-xs-12 col-md-8 dc-chart" data-step="6" data-intro="Or click on this map to filter by area of operation." data-position="right">
-                        <h5><strong>Or Select on the Map</strong></h5>
+                    <div id="area" class="col-xs-12 col-md-8 dc-chart" data-step="5" data-intro="Click on this row chart to filter by area of operation." data-position="right">
+                        <h5><strong>Top Locations </strong><small>Locations may refers to different aggregation levels. Camps locations are not aggregated within Governorate</small></h5>
+                        
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="row">
                     <div id="orgs" class="col-xs-12 col-md-8 dc-chart" data-step="7" data-intro="Click on this row chart to filter by partner." data-position="right">
-                        <h5><strong>Top 30 Partners</strong> (by Appeal)</h5>
+                        <h5><strong>Top 30 Partners </strong><small>by Appeal</small></h5>
                     </div>
               </div>
             </div>
@@ -124,6 +126,8 @@
         d3.csv("data/3rp.csv", function(csv_data){
 
             var numberFormat = d3.format(",f");
+            si = d3.format('s');
+            siMod = function(val) { return si(val).replace(/G/, 'B') };
 
             var cf = crossfilter(csv_data);
 
@@ -132,7 +136,7 @@
             cf.category = cf.dimension(function(d) { return d.Category; });
             cf.objective = cf.dimension(function(d) { return d.Objective; });
             cf.output = cf.dimension(function(d) { return d.Output; });
-            cf.area = cf.dimension(function(d) { return d.Area2; });
+            cf.area = cf.dimension(function(d) { return d.Area; });
             cf.rcode = cf.dimension(function(d) { return d.RegionCODE; });
             cf.total = cf.dimension(function(d) { return d.Total; });
 
@@ -250,26 +254,26 @@
                 .colorAccessor(function(d, i){return i%8;})
                 .on("filtered", getFiltersValues);
 
-            objective_chart.width(400).height(130)
+            objective_chart.width(400).height(150)
                 .dimension(cf.objective)
                 .group(objectiveByTotal)
                 .elasticX(true)
                 .on("filtered", getFiltersValues)
                 .data(function(group) {
-                    return group.top(3);
+                    return group.top(5);
                 })
                 .colors(['#3182bd'])
                 .colorDomain([0,0])
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-            output_chart.width(400).height(130)
+            output_chart.width(400).height(150)
                 .dimension(cf.output)
                 .group(outputByTotal)
                 .elasticX(true)
                 .on("filtered", getFiltersValues)
                 .data(function(group) {
-                    return group.top(3);
+                    return group.top(5);
                 })
                 .colors(['#3182bd'])
                 .colorDomain([0,0])
@@ -291,7 +295,7 @@
                 .data(function(group) {
                     return group.top(6);
                 })
-                .colors(['#3182bd'])
+                .colors(['#A9DDA9'])
                 .colorDomain([0,0])
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
@@ -304,7 +308,7 @@
                 .data(function(group) {
                     return group.top(30);
                 })
-                .colors(['#3182bd'])
+                .colors(['#99A5B7'])
                 .colorDomain([0,0])
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
@@ -313,7 +317,7 @@
          /* Region map with ID rid */
             d3.json("data/admin1.geojson", function (governJSON) {
 
-                 map2_chart.width(400).height(250)
+                 map2_chart.width(400).height(240)
                     .dimension(cf.rcode)
                     .group(rcodeByTotal)
                     .colors(['#AAAAAA', "rgb(49,163,84)"]) //'#CB181D'
@@ -337,7 +341,7 @@
                     .overlayGeoJson(governJSON.features, "Governorates", function (d) {
                         return d.properties.adm1_code;
                     })
-                    .projection(d3.geo.mercator().center([44,29]).scale(2600)) /* Center on Jordan */
+                    .projection(d3.geo.mercator().center([44,28.8]).scale(2500)) /* Center on Jordan */
                     .title(function (d) {
                         return "Geo-Filter: " + gcode2gov[d.key];
                     });
