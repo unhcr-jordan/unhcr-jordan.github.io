@@ -310,12 +310,12 @@
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
                 
-            costunit_chart.width(400).height(350)
+            costunit_chart.width(400).height(220)
                 .dimension(cf.costunit)
                 .group(costunitcount)
                 .elasticX(true)
                 .on("filtered", getFiltersValues)
-                .colors(['#3182bd'])
+                .colors(['#FFDDAA'])
                 .colorDomain([0,0])
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
@@ -325,17 +325,17 @@
                 .group(gendercount)
                 .elasticX(true)
                 .on("filtered", getFiltersValues)
-                .colors(['#3182bd'])
+                .colors(['#FFDDAA'])
                 .colorDomain([0,0])
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
                 
-            target_chart.width(400).height(350)
+            target_chart.width(400).height(220)
                 .dimension(cf.target)
                 .group(targetcount)
                 .elasticX(true)
                 .on("filtered", getFiltersValues)
-                .colors(['#3182bd'])
+                .colors(['#FFDDAA'])
                 .colorDomain([0,0])
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
