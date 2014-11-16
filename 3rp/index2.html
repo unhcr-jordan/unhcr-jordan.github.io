@@ -70,7 +70,14 @@
                         <h5><strong>Top 5 Outputs </strong><small>by Appeal</small></h5>
                     </div>
                </div>
+                <div class="row">
+                    <div id="cost" class="col-xs-12 col-md-8 dc-chart" data-step="8" data-intro="Click on this row chart to filter by cost per beneficiary." data-position="right">
+                        <h5><strong>Cost per targeted beneficiary </strong><small>by Appeal</small></h5>
+                    </div>
+                </div>
             </div>
+            
+            
             <div class="col-md-4">
                 <div class="row">
                     <div id="map2" class="col-xs-12 col-md-8 dc-chart" data-step="6" data-intro="Or click on this map to filter by area of operation." data-position="right">
@@ -84,13 +91,27 @@
                         
                     </div>
                 </div>
+                
+                <div class="row">
+                    <div id="gend" class="col-xs-12 col-md-8 dc-chart" data-step="9" data-intro="Click on this row chart to filter by cost per beneficiary." data-position="right">
+                        <h5><strong>Targeted beneficiary </strong><small>by Appeal</small></h5>
+                    </div>
+                </div>
             </div>
+            
+            
             <div class="col-md-4">
                 <div class="row">
                     <div id="orgs" class="col-xs-12 col-md-8 dc-chart" data-step="7" data-intro="Click on this row chart to filter by partner." data-position="right">
                         <h5><strong>Top 30 Partners </strong><small>by Appeal</small></h5>
                     </div>
-              </div>
+                </div>                 
+                <div class="row">
+                    <div id="targ" class="col-xs-12 col-md-8 dc-chart" data-step="10" data-intro="Click on this row chart to filter by cost per beneficiary." data-position="right">
+                        <h5><strong>Targeted beneficiary </strong><small>by Appeal</small></h5>
+                    </div>
+                </div>
+                
             </div>
         </div>
         <div class="row">
@@ -117,6 +138,9 @@
         var objective_chart = dc.rowChart("#objective");
         var output_chart = dc.rowChart("#output");
         var area_chart = dc.rowChart("#area");
+        var costunit_chart = dc.rowChart("#cost");
+        var gender_chart = dc.rowChart("#gend");
+        var target_chart = dc.rowChart("#targ");
         var map2_chart = dc.geoChoroplethChart("#map2");
 
         d3.csv("data/3rp2.csv", function(csv_data){
@@ -135,6 +159,9 @@
             cf.area = cf.dimension(function(d) { return d.Area; });
             cf.rcode = cf.dimension(function(d) { return d.RegionCODE; });
             cf.total = cf.dimension(function(d) { return d.Total; });
+            cf.costunit = cf.dimension(function(d) { return d.costunit; });
+            cf.gender = cf.dimension(function(d) { return d.gender; });
+            cf.target = cf.dimension(function(d) { return d.target; });
 
             var partner = cf.partner.group();
             var sector = cf.sector.group();
@@ -143,6 +170,9 @@
             var output = cf.output.group();
             var area = cf.area.group();
             var rcode = cf.rcode.group();
+            var costunit = cf.costunit.group();
+            var gender = cf.gender.group();
+            var target = cf.target.group();
             var all = cf.groupAll();
             
             
@@ -155,6 +185,10 @@
             var outputByTotal = cf.output.group().reduceSum(function (d) { return d.Total; });
             var areaByTotal = cf.area.group().reduceSum(function (d) { return d.Total; });
             var rcodeByTotal = cf.rcode.group().reduceSum(function (d) { return d.Total; });
+            
+            var costunitcount = cf.costunit.group().reduceSum(function (d) { return d.Total; });
+            var gendercount = cf.gender.group().reduceSum(function (d) { return d.Total; });
+            var targetcount = cf.target.group().reduceSum(function (d) { return d.Total; });
 
             // Implement bookmarking chart filters category --> Thanks to https://github.com/franckalbinet
             // Serializing filters values in URL
@@ -271,6 +305,36 @@
                 .data(function(group) {
                     return group.top(5);
                 })
+                .colors(['#3182bd'])
+                .colorDomain([0,0])
+                .colorAccessor(function(d, i){return 1;})
+                .xAxis().ticks(4).tickFormat(d3.format("s"));
+                
+            costunit_chart.width(400).height(350)
+                .dimension(cf.costunit)
+                .group(costunitcount)
+                .elasticX(true)
+                .on("filtered", getFiltersValues)
+                .colors(['#3182bd'])
+                .colorDomain([0,0])
+                .colorAccessor(function(d, i){return 1;})
+                .xAxis().ticks(4).tickFormat(d3.format("s"));
+                
+            gender_chart.width(400).height(350)
+                .dimension(cf.gender)
+                .group(gendercount)
+                .elasticX(true)
+                .on("filtered", getFiltersValues)
+                .colors(['#3182bd'])
+                .colorDomain([0,0])
+                .colorAccessor(function(d, i){return 1;})
+                .xAxis().ticks(4).tickFormat(d3.format("s"));
+                
+            target_chart.width(400).height(350)
+                .dimension(cf.target)
+                .group(targetcount)
+                .elasticX(true)
+                .on("filtered", getFiltersValues)
                 .colors(['#3182bd'])
                 .colorDomain([0,0])
                 .colorAccessor(function(d, i){return 1;})
