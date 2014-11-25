@@ -146,8 +146,8 @@
         d3.csv("data/3rp2.csv", function(csv_data){
 
             var numberFormat = d3.format(",f");
-            si = d3.format('s');
-            siMod = function(val) { return si(val).replace(/G/, 'B') };
+           // si = d3.format('s');
+           // siMod = function(val) { return si(val).replace(/G/, 'B') };
 
             var cf = crossfilter(csv_data);
 
@@ -260,6 +260,7 @@
 
 
            dc.numberDisplay("#totalusd")
+               .formatNumber(d3.format(".3s"))
                .valueAccessor(function(d){return +d})
                 .group(bytotalGroup);
 
