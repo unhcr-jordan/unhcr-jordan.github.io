@@ -11,6 +11,10 @@ $(function() {
                 map: 'unhcr.jordanrefugee_sub,unhcr.jordanrefugee_dis,unhcr.jordanrefugee_gov'
             },
             {
+                title: '3RP Budget',
+                map: 'unhcr.budget'
+            },
+            {
                 title: 'Jordanian Population',
                 map: 'uunhcr.jordanpopulation_sub,unhcr.jordanpopulation_dis,unhcr.jordanpopulation_gov'
             },
