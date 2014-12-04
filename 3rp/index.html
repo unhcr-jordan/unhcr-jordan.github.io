@@ -280,16 +280,10 @@
                     { name: 'area', value: area_chart.filters()},
                     { name: 'map2', value: map2_chart.filters()},
                     { name: 'org', value: org_chart.filters()},
-                    { name: 'output', value: output_chart.filters()},
                     { name: 'cost', value: costunit_chart.filters()},
                     { name: 'gend', value: gender_chart.filters()},
                     { name: 'targ', value: target_chart.filters()}                    
                     ];
-
-
-
-
-
                 var recursiveEncoded = $.param( filters );
                 location.hash = recursiveEncoded;
             }
@@ -318,6 +312,9 @@
                     filter(area_chart, 5);
                     filter(map2_chart, 6);
                     filter(org_chart, 7);
+                    filter(costunit_chart, 8);
+                    filter(gender_chart, 9);
+                    filter(target_chart, 10);
                 }
             }
 
