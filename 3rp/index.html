@@ -8,7 +8,7 @@
 <meta property="og:url" content="http://data.unhcr.org/jordan/3rp">
 <meta property="og:image" content="http://data.unhcr.org/jordan/3rp/thumbnail.jpg">
 <meta property="og:site_name" content="2015 Refugee Response in Jordan">
-<meta property="og:description" content="2015 3RP Jordan (Refugee Pillar)">
+<meta property="og:description" content="2015 3RP Jordan ">
     <title>2015 3RP Jordan (Refugee Pillar)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -28,11 +28,11 @@
   <body>
     <div class="container" id="dashboard">
                 <h1><a  href="http://data.unhcr.org/jordan"><img src="images/coordination.png" style="height: 48px; width: 48px"></a>
-        <strong>2015 3RP Jordan (Refugee Pillar)</strong></h1>
+        <strong>2015 3RP Plan in Jordan </strong></h1>
         <div class="col-xs-12">Explore <a href="XXX" target="_blank">2015 Interagency Response</a> financial requirement (in USD)
             for Refugee Crisis in Jordan. <strong>All charts are based on USD values appealed. Click on any of the graphs below to filter and slice the data.</strong> <br>
             More info on Jordan <a href="http://data.unhcr.org/syrianrefugees/country.php?id=107" target="_blank">here</a>.</div>
-        <div class="socialmedia" data-step="8" data-intro="Feel Free to share if you like it!" data-position="left">
+        <div class="socialmedia" data-step="13" data-intro="Share!!" data-position="left">
             <table>
               <tbody><tr>
                 <td valign="middle"><a href="http://www.facebook.com/sharer.php?u=http://data.unhcr.org/jordan/3rp" target="_blank"><img src="images/Facebook.png" style="height: 25px; width: 25px"></a></td>
@@ -44,7 +44,7 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <div class="dc-chart" id="count-info">
+                <div class="dc-chart" id="count-info" data-step="12" data-intro="Click on reset to cancel the filters." data-position="right">
                     <h4><strong><span class="filter-count"></span></strong> Activities for a budget of <strong> <span id="totalusd" class="number-display"></span></strong>  USD$ selected out of <strong><span class="total-count"></span></strong> records.</div></h4>
                 <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All</a>
             </div>
@@ -55,24 +55,31 @@
         </div>
         <div class="row">
             <div class="col-md-4">
+                
                 <div class="row">
-                    <div id="sector" class="col-xs-12 col-md-8 dc-chart" data-step="1" data-intro="Click on this pie chart to filter by sector." data-position="right">
+                    <div id="category" class="col-xs-12 col-md-8 dc-chart" data-step="1" data-intro="Click on this row chart to filter by category." data-position="right">
+                        <h5><strong>Response Category</strong></h5>
+                    </div>
+               </div>
+                <div class="row">
+                    <div id="sector" class="col-xs-12 col-md-8 dc-chart" data-step="2" data-intro="Click on this pie chart to filter by sector." data-position="right">
                         <h5><strong>By Sectors / Working Groups</strong></h5>   
                     </div>
-                 </div>
+                </div>
+                
                 <div class="row">
-                    <div id="objective" class="col-xs-12 col-md-8 dc-chart" data-step="2" data-intro="Click on this row chart to filter by objective." data-position="right">
-                        <h5><strong>Top 5 Objectives </strong><small>by Appeal</small></h5>
+                    <div id="objective" class="col-xs-12 col-md-8 dc-chart" data-step="3" data-intro="Click on this row chart to filter by objective." data-position="right">
+                        <h5><strong>Top 5 Objectives </strong><small>  </small></h5>
                     </div>
                    </div>
                 <div class="row">
-                    <div id="output" class="col-xs-12 col-md-8 dc-chart" data-step="3" data-intro="Click on this row chart to filter by output." data-position="right">
-                        <h5><strong>Top 5 Outputs </strong><small>by Appeal</small></h5>
+                    <div id="output" class="col-xs-12 col-md-8 dc-chart" data-step="7" data-intro="Click on this row chart to filter by output." data-position="right">
+                        <h5><strong>Top 5 Outputs </strong><small> </small></h5>
                     </div>
                </div>
                 <div class="row">
                     <div id="cost" class="col-xs-12 col-md-8 dc-chart" data-step="8" data-intro="Click on this row chart to filter by cost per beneficiary." data-position="right">
-                        <h5><strong>Cost per targeted beneficiary </strong><small>by Appeal</small></h5>
+                        <h5><strong>Cost per targeted beneficiary </strong><small> </small></h5>
                     </div>
                 </div>
             </div>
@@ -80,7 +87,7 @@
             
             <div class="col-md-4">
                 <div class="row">
-                    <div id="map2" class="col-xs-12 col-md-8 dc-chart" data-step="6" data-intro="Or click on this map to filter by area of operation." data-position="right">
+                    <div id="map2" class="col-xs-12 col-md-8 dc-chart" data-step="4" data-intro="Or click on this map to filter by area of operation." data-position="right">
                         <h5><strong>Filter on the Map </strong><small>by Governorate, Country wide or all Camps</small></h5>
                         
                     </div>
@@ -94,7 +101,7 @@
                 
                 <div class="row">
                     <div id="gend" class="col-xs-12 col-md-8 dc-chart" data-step="9" data-intro="Click on this row chart to filter by cost per beneficiary." data-position="right">
-                        <h5><strong>Targeted beneficiary </strong><small> Age & Gender by Appeal</small></h5>
+                        <h5><strong>Targeted Age & Gender </strong><small>  </small></h5>
                     </div>
                 </div>
             </div>
@@ -102,13 +109,13 @@
             
             <div class="col-md-4">
                 <div class="row">
-                    <div id="orgs" class="col-xs-12 col-md-8 dc-chart" data-step="7" data-intro="Click on this row chart to filter by partner." data-position="right">
-                        <h5><strong>Top 30 Partners </strong><small>by Appeal</small></h5>
+                    <div id="orgs" class="col-xs-12 col-md-8 dc-chart" data-step="6" data-intro="Click on this row chart to filter by partner." data-position="left">
+                        <h5><strong>Top 25 Partners </strong><small>by Appeal. Scroll down for Partners filter.</small></h5>
                     </div>
                 </div>                 
                 <div class="row">
-                    <div id="targ" class="col-xs-12 col-md-8 dc-chart" data-step="10" data-intro="Click on this row chart to filter by cost per beneficiary." data-position="right">
-                        <h5><strong>Targeted beneficiary </strong><small>Beneficiary Group by Appeal</small></h5>
+                    <div id="targ" class="col-xs-12 col-md-8 dc-chart" data-step="10" data-intro="Click on this row chart to filter by cost per beneficiary." data-position="left">
+                        <h5><strong>Targeted Beneficiary Group</strong><small>  </small></h5>
                     </div>
                 </div>
                 
@@ -122,6 +129,78 @@
                 Produced by Information Management Unit, UNHCR, Jordan. For more information please contact <a href="http://data.unhcr.org/jordan/team.html" target="_blank" >our team</a>.
             </div>
         </div>
+        
+                <div class="row">
+
+            <div class="col-md-12" data-step="11" data-intro="Click on this row chart to filter by partner." data-position="right">
+                <h5><strong>Filter by Partners</strong><small> </small></h5>
+                <a href='javascript:dc.filterAll(); org_chart.filter("ACF"); dc.renderAll();' ><img src="images/partner/acf.jpg" alt="Filter on ACF" /></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("ACTED"); dc.renderAll();' ><img src="images/partner/acted.jpg" alt="ACTED" /></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("ActionAid"); dc.renderAll();'><img src="images/partner/actionaid.jpg" alt="Filter on Agency for Technical Cooperation and Development"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("ADRA"); dc.renderAll();'><img src="images/partner/adra.jpg" alt="Filter on Adventist Development and Relief Agency"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("AVSI"); dc.renderAll();'><img src="images/partner/avsi.jpg" alt="Filter on Association of Volunteers in International Service"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("CARE"); dc.renderAll();'><img src="images/partner/care.jpg" alt="Filter on CARE"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("CARITAS"); dc.renderAll();'><img src="images/partner/caritas.jpg" alt="Filter on CARITAS"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("CHF"); dc.renderAll();'><img src="images/partner/chf.jpg" alt="Filter on Common Humanitarian aid"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("CVT"); dc.renderAll();'><img src="images/partner/cvt.jpg" alt="Filter on Center for Victims of Torture"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("FPSC"); dc.renderAll();'><img src="images/partner/fpsci.jpg" alt="Filter on Foundation Promotion Social de la Cultura"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("HI"); dc.renderAll();'><img src="images/partner/hi.jpg" alt="Filter on Handicap International"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("ILO"); dc.renderAll();'><img src="images/partner/ilo.jpg" alt="Filter on International Labor Organisation"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("IMC"); dc.renderAll();'><img src="images/partner/imc.jpg" alt="Filter on International Medical Corps"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("ICMC"); dc.renderAll();'><img src="images/partner/icmc.jpg" alt="Filter on International Catholic Migration Commission"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("INTERSOS"); dc.renderAll();'><img src="images/partner/intersos.jpg" alt="Filter on Intersos"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("IOCC"); dc.renderAll();'><img src="images/partner/iocc.jpg" alt="Filter on International Orthodox Christian Charities"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("IOM"); dc.renderAll();'><img src="images/partner/iom.jpg" alt="Filter on International Organisation of Migration"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("IRW"); dc.renderAll();'><img src="images/partner/irw.jpg" alt="Filter on Islamic Relief Worldwide"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("IRC"); dc.renderAll();'><img src="images/partner/irc.jpg" alt="Filter on International Rescue Committee"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("IRD"); dc.renderAll();'><img src="images/partner/ird.jpg" alt="Filter on International Relief Development"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("JEN"); dc.renderAll();'><img src="images/partner/jen.jpg" alt="Filter on Japan Emergency NGOs"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("JHAS"); dc.renderAll();'><img src="images/partner/jhas.jpg" alt="Filter on Jordan Health Aid Society"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("JHCO"); dc.renderAll();'><img src="images/partner/jhco.jpg" alt="Filter on Jordan Hashemite charity organization"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("KNK"); dc.renderAll();'><img src="images/partner/knk.jpg" alt="Filter on ACTED"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("LWF"); dc.renderAll();'><img src="images/partner/lwf.jpg" alt="Filter on ACTED"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("FAO"); dc.renderAll();'><img src="images/partner/fao.jpg" alt="Filter on FAO"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("LA"); dc.renderAll();'><img src="images/partner/la.jpg" alt="Filter on Legal Aid"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("MSF-F"); dc.renderAll();'><img src="images/partner/msf.jpg" alt="Filter on Médecins Sans Frontiere"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("MercyCorps"); dc.renderAll();'><img src="images/partner/mc.jpg" alt="Filter on MercyCorps"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("MDM"); dc.renderAll();'><img src="images/partner/mdm.jpg" alt="Filter on Médecins du Monde"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("MEDAIR"); dc.renderAll();'><img src="images/partner/medair.jpg" alt="Filter on MEDAIR International Humanitarian Aid Organisation"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("POLA"); dc.renderAll();'><img src="images/partner/movimiento-po-la-paz.jpg" alt="Filter on ACTED"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("NICCOD"); dc.renderAll();'><img src="images/partner/niccod.jpg" alt="Filter on Nippon International Cooperation for Community Development"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("NRC"); dc.renderAll();'><img src="images/partner/nrc.jpg" alt="Filter on Norweigan Refugee Council"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("OPM"); dc.renderAll();'><img src="images/partner/operation-mercy.jpg" alt="Filter on Operation Mercy"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("OXFAM"); dc.renderAll();'><img src="images/partner/oxfam.jpg" alt="Filter on OXFAM"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("PU-AMI"); dc.renderAll();'><img src="images/partner/pu-ami.jpg" alt="Filter on Première Urgence - Aide Médicale Internationale"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("Questscope"); dc.renderAll();'><img src="images/partner/quetscope.jpg" alt="Filter on Questcope"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("SCI"); dc.renderAll();'><img src="images/partner/sci.jpg" alt="Filter on Save the 
+                Children International"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("SCJordan"); dc.renderAll();'><img 
+                src="images/partner/scjordan.jpg" alt="Filter on Save the 
+                Children Jordan"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("RI"); dc.renderAll();'><img src="images/partner/ri.jpg" alt="Filter on Relief International"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("Taghyeer"); dc.renderAll();'><img src="images/partner/taghyeer.jpg" alt="Filter on Taghyeer - welovereading"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("TDH"); dc.renderAll();'><img src="images/partner/tdh.jpg" alt="Filter on Terre Des Hommes"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("TDHI"); dc.renderAll();'><img src="images/partner/tdh-it.jpg" alt="Filter on Terre des Hommes Italia"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("THW"); dc.renderAll();'><img src="images/partner/thw.jpg" alt="Filter on Federal Agency for Technical Relief"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("TGH"); dc.renderAll();'><img src="images/partner/triangle.jpg" alt="Filter on Triangle Génération Humanitaire"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("UNDP"); dc.renderAll();'><img src="images/partner/undp.jpg" alt="Filter on UNDP"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("UNESCO"); dc.renderAll();'><img src="images/partner/unesco.jpg" alt="Filter on United Nations Educational, Scientific and Cultural Organisation"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("UNHABITAT"); dc.renderAll();'><img src="images/partner/unhabitat.jpg" alt="Filter on United Nations HABITAT"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("UNHCR"); dc.renderAll();'><img src="images/partner/unhcr.jpg" alt="Filter on UN High Commissioner for Refugees"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("UNICEF"); dc.renderAll();'><img src="images/partner/unicef.jpg" alt="Filter on United Nations Children's Funds"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("UNOPS"); dc.renderAll();'><img src="images/partner/unops.jpg" alt="Filter on United Nations Office for Project Services"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("UPP"); dc.renderAll();'><img 
+                src="images/partner/upp.jpg" alt="Filter on Un Ponte 
+                per"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("WARCHILD"); dc.renderAll();'><img src="images/partner/warchild.jpg" alt="Filter on WarChild UK"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("WFP"); dc.renderAll();'><img src="images/partner/wfp.jpg" alt="Filter on World Food Programme"/></a>
+                <a href='javascript:dc.filterAll(); org_chart.filter("WVI"); dc.renderAll();'><img src="images/partner/wvi.jpg" alt="Filter on World Vision International"/></a>
+                
+            </div>
+        </div>
+
+
+        
     </strong></strong></div><strong><strong>
 
     <script type="text/javascript" src="js/d3_002.js"></script>
@@ -143,7 +222,7 @@
         var target_chart = dc.rowChart("#targ");
         var map2_chart = dc.geoChoroplethChart("#map2");
 
-        d3.csv("data/3rp2.csv", function(csv_data){
+        d3.csv("data/3rp.csv", function(csv_data){
 
             var numberFormat = d3.format(",f");
            // si = d3.format('s');
@@ -200,7 +279,16 @@
                     { name: 'category', value: category_chart.filters()},
                     { name: 'area', value: area_chart.filters()},
                     { name: 'map2', value: map2_chart.filters()},
-                    { name: 'org', value: org_chart.filters()}];
+                    { name: 'org', value: org_chart.filters()},
+                    { name: 'output', value: output_chart.filters()},
+                    { name: 'cost', value: costunit_chart.filters()},
+                    { name: 'gend', value: gender_chart.filters()},
+                    { name: 'targ', value: target_chart.filters()}                    
+                    ];
+
+
+
+
 
                 var recursiveEncoded = $.param( filters );
                 location.hash = recursiveEncoded;
@@ -260,14 +348,21 @@
 
 
            dc.numberDisplay("#totalusd")
-               .formatNumber(d3.format(".3s"))
+               .formatNumber(d3.format(",f"))
                .valueAccessor(function(d){return +d})
-                .group(bytotalGroup);
+            .group(bytotalGroup);
 
 
+
+            category_chart.width(400).height(100)
+                .dimension(cf.category)
+                .group(categoryByTotal)
+                .elasticX(true)
+                .on("filtered", getFiltersValues)
+                .xAxis().ticks(4).tickFormat(d3.format("s"));
 
              /* 3W data are sorted per sector and color are allocated to sectors as per standard code in rrp6 */
-            sector_chart.width(280).height(280)
+            sector_chart.width(260).height(260)
                 .dimension(cf.sector)
                 .group(sectorByTotal)
                 .innerRadius(10)
@@ -285,7 +380,7 @@
                 .colorAccessor(function(d, i){return i%8;})
                 .on("filtered", getFiltersValues);
 
-            objective_chart.width(400).height(150)
+            objective_chart.width(400).height(160)
                 .dimension(cf.objective)
                 .group(objectiveByTotal)
                 .elasticX(true)
@@ -321,7 +416,7 @@
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
                 
-            gender_chart.width(400).height(350)
+            gender_chart.width(400).height(330)
                 .dimension(cf.gender)
                 .group(gendercount)
                 .elasticX(true)
@@ -331,7 +426,7 @@
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
                 
-            target_chart.width(400).height(220)
+            target_chart.width(400).height(330)
                 .dimension(cf.target)
                 .group(targetcount)
                 .elasticX(true)
@@ -341,14 +436,7 @@
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-            category_chart.width(400).height(100)
-                .dimension(cf.category)
-                .group(categoryByTotal)
-                .elasticX(true)
-                .on("filtered", getFiltersValues)
-                .xAxis().ticks(4).tickFormat(d3.format("s"));
-
-            area_chart.width(400).height(200)
+            area_chart.width(400).height(220)
                 .dimension(cf.area)
                 .group(areaByTotal)
                 .elasticX(true)
@@ -361,13 +449,13 @@
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-            org_chart.width(450).height(650)
+            org_chart.width(450).height(580)
                 .dimension(cf.partner)
                 .group(partnerByTotal)
                 .elasticX(true)
                 .on("filtered", getFiltersValues)
                 .data(function(group) {
-                    return group.top(30);
+                    return group.top(25);
                 })
                 .colors(['#99A5B7'])
                 .colorDomain([0,0])
@@ -378,7 +466,7 @@
          /* Region map with ID rid */
             d3.json("data/admin1.geojson", function (governJSON) {
 
-                 map2_chart.width(400).height(240)
+                 map2_chart.width(400).height(300)
                     .dimension(cf.rcode)
                     .group(rcodeByTotal)
                     .colors(['#AAAAAA', "rgb(49,163,84)"]) //'#CB181D'
