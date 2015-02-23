@@ -1,0 +1,110 @@
+<!--
+                    .oO8  O8o.                    
+                  .o888O  o888O:                  
+                .O8888o    o8888O:                
+              :O8888o.      .o8888O:              
+            :O888Oo.           :O888Oo.           
+         .oO88Oo:     .oOOo.     .oO888o.         
+       .o888O:..::   .888888.   .o..:O888O:       
+     :O888O:  :88O   .888888.   O88o  .O888O:     
+   .O8888O.  :888o    :O88O:    o888:   O8888O:   
+  :88888O.   O888.     O88o      O888.   O88888o  
+ .888888O   o888:   .oO8888Oo.   :888O   o888888: 
+ :888888O. o888o   o8888888888o   o888o. O888888o 
+ :8888888OO8888.  .888888888888.   O8888O8888888o 
+ :888888888888o   .888888888888.   :888888888888: 
+ .888888888888.   .888888888888.    O88888888888: 
+ .88888888888o    .888888888888.    :88888888888: 
+ .8888888888O.    .888888888888.     O8888888888. 
+  O888888888:     .888888888888.     .8888888888. 
+  O88888888:      .888888888888.      .88888888O  
+  O8888888O       .888888888888.       o8888888O  
+  o8888888o       .888888888888.       :8888888o  
+  :8888888:       .O8888888888O        :8888888:  
+  .8888888o        ..:888888:..        :8888888.  
+   O888888o          .888888.          :8888888   
+   O888888o          .888888.          :888888O   
+   :OOOOOO:          .OOOOOO.          .OOOOOOo   
+  	 -->
+     
+         <!--
+                          .oOO o8o.              
+                        .oO8O. .O88o.            
+                      .o88Oo     :O88o.          
+                    .O88O:         :O88O:        
+                  :O8Oo:.   o88Oo   .::O8O:      
+                :O88: .O8.  O888O   8O: :O8Oo    
+              :O88O.  O8O    O8O    O8O. .O88O:  
+             :8888o  o88:  .:O8O:   .88O  :8888o 
+             O8888o o88o  o8888888o  o88o.o8888O 
+             O88888888O   88888888O   O88888888O 
+             o88888888o   O8888888O   :88888888O 
+             o88888888.   O8888888O    O8888888O 
+             o8888888:    O8888888O    :8888888o 
+             :888888o     O8888888O     :888888o 
+             :88888O      O8888888O      O88888: 
+             .88888O      88888888O      o88888. 
+              O8888O      ::8888O::      o8888O  
+              o8888O        O888O        o8888O  
+              o8888o        O888O        o8888o  
+
+  	 -->
+     
+     
+                                .,$ZZ$...ZZZ$8..                                
+                             ...$ZZZZZ...$ZZZZZO...                             
+                          ....ZZZZZZ$Z...$ZZZZZZZ~...                           
+                           .OZZZZZZZZ,....ZZZZZZZZ$..                           
+                         .+Z$ZZZZZZZ..    .ZZZZZZZZZZ..                         
+                       ..ZZZZZZZZZ$...    ..OZZZZZZZZZ....                      
+                     ...ZZZZZZZZZ$,...    ...IZZZZZZZZ$Z....                    
+                   ...Z$ZZZZZZZZ,... .      ...ZZZZZZZZ$Z7..                    
+                 ...ZZZZZZZZZZ,...            ...$ZZZZZZZZZI,.                  
+              ....7ZZZZZZ$ZZ:.... ........... .....ZZZZZZZZZ$... .              
+            ....$ZZZZZZZZZ....  ....:ZZ$$$:...     .,$ZZZZZZZZZ... .            
+            ..OZZZZZZZ$Z...     ...ZZZZZZZZ$..      ...OZZZZZ$ZZZ..             
+          ..,ZZZZZZZZZ.......   ..ZZZZZZZZZZ7.    ......,$ZZZZZZZ$.,..          
+         ..8ZZZZZZZZ....$ZZZ.. ...ZZZZZZZZZZ$.    .O$$Z....$ZZZZZZZZ..          
+        .?ZZZZZZZ$,....$ZZZZ~.....ZZZZZZZZZZZ.    .ZZZZZ.....ZZZZZZZZZ..        
+      ..$ZZZZZZZZ... .ZZZZZZ=.. ..OZZZZZZZZZ8.     $ZZZZZ.....ZZZZZZZZZ=.       
+   ...ZZZZZZZZZZ.....?$ZZZZZ...  ..$ZZZZZZ$Z..    .ZZZZZZ$.. ..ZZ$ZZZZZZZ..     
+  ...ZZZZZZZZZZ..  ..ZZZZZZZ.     ..ZZZZZZZ.      .IZZZZZZ,.....OZZZZZZZZ$...   
+ ...ZZZZZZZZZZ$..  .=ZZZZZZZ.      ..ZZZZZ..      ..$ZZZZZZ. ....ZZZZZZZZZZ...  
+ ..ZZZZZZZZZZ$.... .$ZZZZZ$..    ....ZZZZZ....    ..OZZZZZ$..   .ZZZZZZZZZZZ..  
+..O$ZZZZZZZZZZ...  ,ZZZZZZ~.  .....:ZZZZZZZZ... .  ..ZZZZZZ$..  .+ZZZZZZZZZZ$.  
+ .Z$ZZZZZZZZZ$.. ..OZZZZZ$... ..:ZZZZZZZZZZZZZ,..    8$ZZZZZ......ZZZZZZZZZZZ.  
+..ZZZZZZZZZZZZ.. .ZZZZZZZ......$ZZZZZZZZZZZZZZZZ...  .ZZZZZZZ....,ZZZZZZZZZZZ.  
+..ZZZZZZZZZZZZ...ZZZZZZ$Z.....ZZZZZZZZZZZZZZZZZZ$..  .7ZZZZZZZ...ZZZZZZZZZZZZ.  
+ .Z$ZZZZZZZZZZO8$ZZZZZZZ......ZZZZZZZZZZZZZZZZZZZ..  ..$ZZZZZZ$$OZZZZZZZZZZZZ.  
+ .ZZZZZZZZZZZZZZZZZZZZZZ.....?ZZZZZZZZZZZZZZZZZZZ=.  . ~ZZZZZZZ$ZZZZZZZZZZZZZ.  
+..ZZZZZZZZZZZZZZZZZZZZZZ.....?ZZZZZZZZZZZZZZZZZZZ=.    .ZZZZZZZZZZZZZZZZZZZZZ.  
+..ZZZZZZZZZZZZZZZZZZZZ$..  ..?ZZZZZZZZZZZZZZZZZZZ=.    .$ZZZZZZZZZZZZZZZZZZZZ.  
+ .Z$ZZZZZZZZZZZZZZZZZZZ..  ..?ZZZZZZZZZZZZZZZZZZZ=.    ..ZZZZZZZZZZZZZZZZZZZZ.  
+ .Z$ZZZZZZZZZZZZZZZZZZ...  ..?ZZZZZZZZZZZZZZZZZZZ=.    ..ZZZZZZZZZZZZZZZZZZZZ.  
+..ZZZZZZZZZZZZZZZZZZZZ..   ..?ZZZZZZZZZZZZZZZZZZZ=.    ..$ZZZZZZZZZZZZZZZZZZZ.  
+ .ZZZZZZZZZZZZZZZZZZZZ...  ..?ZZZZZZZZZZZZZZZZZZZ=.      .ZZZZZZZZZZZZZZZZZZZ.  
+ .$ZZZZZZZZZZZZZZZZZZ..    ..?ZZZZZZZZZZZZZZZZZZZ=.      .$ZZZZZZZZZZZZZZZZZZ.  
+ .ZZZZZZZZZZZZZZZZZZ$..    ..?ZZZZZZZZZZZZZZZZZZZ=.      .7ZZZZZZZZZZZZZZZZZZ.  
+ .8ZZZZZZZZZZZZZZZZZ..     ..?ZZZZZZZZZZZZZZZZZZZ=.      ..ZZZZZZZZZZZZZZZZZ$.  
+ .IZZZZZZZZZZZZZZZZZ..     ..?ZZZZZZZZZZZZZZZZZZZ=.       ..$ZZZZZZZZZZZZZZZZ.  
+ .~ZZZZZZZZZZZZZZ$$...     ..?ZZZZZZZZZZZZZZZZZZZ=.        .ZZZZZZZZZZZZZZZZZ.  
+ ..ZZZZZZZZZZZZZZZ,..      ..?ZZZZZZZZZZZZZZZZZZZ=.        ..$ZZZZZZZZZZZZZZ8.  
+ ..ZZZZZZZZZZZZZZ,.        ..?ZZZZZZZZZZZZZZZZZZZ=.        ...$ZZZZZZZZZZZZZ+.  
+ ..$ZZZZZZZZZZZZZ..        ..?ZZZZZZZZZZZZZZZZZZZ=.          .ZZZZZZZZZZZZZ$,.  
+ ..$ZZZZZZZZZZZZZ..        ..?ZZZZZZZZZZZZZZZZZZZ=.          .$ZZZZZZZZZZZZZ..  
+ ..ZZZZZZZZZZZZZZ..        ..?ZZZZZZZZZZZZZZZZZZZ=.          ..ZZZZZZZZZZZZZ..  
+ ..OZZZZZZZZZZZZ$          ..?ZZZZZZZZZZZZZZZZZZZ=.          ..ZZZZZZZZZZZZZ..  
+  .,ZZZZZZZZZZZZ?          ..IZZZZZZZZZZZZZZZZZZZ=.          ..ZZZZZZZZZZZZ$..  
+  ..$ZZZZZZZZZZZ?           .=ZZZZZZZZZZZZZZZZZZZ:.          ..ZZZZZZZZZZZZZ..  
+  ..$ZZZZZZZZZZZI           ..ZZ$ZZZZZZZZZZZ$Z$$Z..          ..ZZZZZZZZZZZZZ..  
+  ..ZZZZZZZZZZZZ$             ....ZZZZZZZZZZZ......          ..ZZZZZZZZZZZZ..   
+  ..$ZZZZZZZZZZ$Z .             ..$ZZZZZZZZZZ.               ..ZZZZZZZZZZ$Z.    
+  ..Z$ZZZZZZZZZ$Z .             ..$ZZZZZZZZZZ.               ..ZZZZZZZZZZZ$.    
+  ..IZZZZZZZZZZZZ               ..$ZZZZZZZZZZ.               .,ZZZZZZZZZZZZ.    
+   .:ZZZZZZZZZZZZ               ..$ZZZZZZZZZZ.               .,ZZZZZZZZZZZZ.    
+   ..ZZZZZZZZZZZZ               ..$ZZZZZZZZZZ.               .,ZZZZZZZZZZZZ.    
+   ..ZZZZZZZZZZ$?.              ..ZZZZZZZZZZZ.               ..ZZZZZZZZZZZ$. .  
+.. ......,=II~... .             ...+++++++++,.               ....~I7=,......... 
+                                                                           ...  
+                                                                           ...  
+                                                                 GlassGiant.com
