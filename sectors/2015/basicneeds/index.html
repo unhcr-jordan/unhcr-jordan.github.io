@@ -595,7 +595,7 @@
 				cf.obj = cf.dimension(function(d) { return d.activity; });
                 var obj = cf.obj.group();
                 var objByTotal = cf.obj.group().reduceSum(function (d) { return d.Value;} );
-                   obj_chart.width(100).height(100)
+                   obj_chart.width(10).height(10)
                        .dimension(cf.obj)
                        .group(objByTotal)
                        .elasticX(false)
