@@ -283,10 +283,6 @@
                             <div class="dc-chart" data-intro="Click on this row chart to filter by Indicator." data-position="right" data-step="1" id="indicator">
                                 <center>
                                     <h5><strong>Indicator</strong><br ><small># of assistance instance</small></h5>
-									<a class="btn btn btn-info" onclick='javascript:dc.filterAll();obj_chart.filter("REF11");dc.renderAll();'>Camps - New arrivals </a>
-									<a class="btn btn btn-info" onclick='javascript:dc.filterAll();obj_chart.filter("REF13");dc.renderAll();'>Urban – C&V </a> <br><br>
-									<a class="btn btn btn-info" onclick='javascript:dc.filterAll();obj_chart.filter("REF12");dc.renderAll();'>Camps – Replenishment</a> 
-									<a class="btn btn btn-info" onclick='javascript:dc.filterAll();obj_chart.filter("REF14");dc.renderAll();'>Seasonal</a>
                                 </center>
                             </div>
                         </center>
@@ -315,7 +311,7 @@
                         <center>
                             <div class="dc-chart" data-intro="Click on this row chart to filter by RRP6 status of the report." data-position="right" data-step="4" id="appeal">
                                 <center>
-                                    <h5><strong>Inter Agency Appeal</strong><br ><small># of assistance instance</small></h5>
+                                    <h5><strong>RRP6 Appeal</strong><br ><small># of assistance instance</small></h5>
                                 </center>
                             </div>
                         </center>
@@ -354,8 +350,6 @@
                                     <center>
 										<h5><strong>Top Locations </strong> <br> <small>Camps locations are not aggregated within Governorate</small></h5>
                                     </center>
-                                </div>
-								<div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="11" id="obj">
                                 </div>
                             </center>
                         </div>
@@ -451,7 +445,6 @@
                 var funded_chart = dc.rowChart("#funded");
                 var appeal_chart = dc.rowChart("#appeal");
                 var allocation_chart = dc.rowChart("#allocation");
-				var obj_chart = dc.rowChart("#obj");
                 var partner_chart = dc.rowChart("#partner");
                 var month_chart = dc.lineChart("#month");
                 var monthrange_chart = dc.barChart("#monthrange");
@@ -468,7 +461,6 @@
                                        { name: 'partner', value: partner_chart.filters()},
                                        { name: 'allocation', value: allocation_chart.filters()},
                                        { name: 'monthrange', value: monthrange_chart.filters()},
-									   { name: 'obj', value: obj_chart.filters()},
 									   { name: 'location', value: location_chart.filters()},
                                        { name: 'region', value: region_chart.filters()}
                                     ];
@@ -496,7 +488,6 @@
                            filter(allocation_chart, 7);
                            filter(poptype_chart, 8);
                            filter(region_chart, 9);
-						   filter(obj_chart, 10);
                        }
                    }
 
@@ -592,21 +583,7 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 					   
-				cf.obj = cf.dimension(function(d) { return d.activity; });
-                var obj = cf.obj.group();
-                var objByTotal = cf.obj.group().reduceSum(function (d) { return d.Value;} );
-                   obj_chart.width(10).height(10)
-                       .dimension(cf.obj)
-                       .group(objByTotal)
-                       .elasticX(false)
-                       .on("filtered", getFiltersValues)
-                       .data(function(group) { return group.top(4); })
-                       .colors(['#99A5B7'])
-                       .colorDomain([0,0])
-                       .colorAccessor(function(d, i){return 1;})
-                       .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-					   
                 cf.appeal = cf.dimension(function(d) { return d.appeal; });
                 var appeal = cf.appeal.group();
                 var appealByTotal = cf.appeal.group().reduceSum(function (d) { return d.Value;} );
@@ -710,8 +687,7 @@
                         .point("BALQA", 94, 96)
                         .point("JARASH", 104, 82)
                         .point("AJLOUN", 74, 96)
-						.point("Zaatari Camp", 270, 150)
-                        .point("Azraq Camp", 270, 180)
+                        .point("Camps", 270, 175)
 						.point("Countrywide", 255, 260)
                         .on("filtered", getFiltersValues)
                       //  .debug(true)
