@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-        <title>Shelter Dashbaord | Syrian Refugee Response in Jordan</title>
+        <title>Shelter Dashboard | Syrian Refugee Response in Jordan</title>
         <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
         <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport" />
         <meta content="UNHCR Information management" name="author" />
@@ -19,6 +19,7 @@
         <!-- Add IntroJs styles and JS -->
         <link href="../../css/introjs.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../../js/intro.js"></script>
+		<script type="text/javascript" src="../../js/monthlyReport.js"> </script>			
         <script src="../../js/jquery.js"></script>
         <!-- map the data to the GeoJSON object -->
         <script src="../../js/data-jo.js"></script>
@@ -309,7 +310,7 @@
                         <center>
                             <div class="dc-chart" data-intro="Click on this row chart to filter by RRP6 status of the report." data-position="right" data-step="4" id="appeal">
                                 <center>
-                                    <h5><strong>RRP6 Appeal</strong><br ><small># of assistance instance</small></h5>
+                                    <h5><strong>Inter Agency Appeal</strong><br ><small># of assistance instance</small></h5>
                                 </center>
                             </div>
                         </center>
@@ -364,6 +365,15 @@
                             <center>
                                 <h5><strong>Monthly Progress</strong><br ><small># of assistance instance</small></h5>
                             </center>
+					<script type="text/javascript">
+							var d = new Date();
+							var n = d.getMonth();
+								for(count = 0; count < n; count++){
+								document.write('<a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2015,' + count + ', 1), new Date(2015, ' + count + ', 30)]); dc.redrawAll();">');
+								document.write(monthNames[count] + "</a> &nbsp;");
+								}
+					</script>	
+<br>					
                         </div>
                     </div>
                     <div class="row">
@@ -627,24 +637,32 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                cf.month = cf.dimension(function (d) {return d.month;});
+                cf.month = cf.dimension(function (d) {return d.dd;});
                 var month = cf.month.group();
                 var monthByTotal = cf.month.group().reduceSum(function (d) { return d.Value;} );
+				var boys=cf.month.group().reduceSum(function(d) {if (d.Gender=="Boys") {return d.Value;}else{return 0;}});
+				var girls=cf.month.group().reduceSum(function(d) {if (d.Gender=="Girls") {return d.Value;}else{return 0;}});
+				var men=cf.month.group().reduceSum(function(d) {if (d.Gender=="Men") {return d.Value;}else{return 0;}});
+				var women=cf.month.group().reduceSum(function(d) {if (d.Gender=="Women") {return d.Value;}else{return 0;}});
+				
                    month_chart.width(900).height(230)
                        .transitionDuration(1000)
                        .margins({top: 30, right: 50, bottom: 25, left: 40})
                        .dimension(cf.month)
                        .mouseZoomable(true)
                        .rangeChart(monthrange_chart)
-                       .x(d3.time.scale().domain([new Date(2014, 0, 1), new Date(2014, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
                        .xUnits(d3.time.months)
         //.elasticY(true)
                        .renderHorizontalGridLines(true)
                        .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
                        .brushOn(false)
-                       .group(monthByTotal, "Monthly Progress")
-                       .valueAccessor(function (d) { return d.value; })
-                       .colors(['#99A5B7']);
+						.group(boys, 'Boys')
+						.stack(girls, 'Girls')
+						.stack(men, 'Men')
+						.stack(women, 'Women')
+					   .renderArea(false);
+					   
                    monthrange_chart.width(900)
                        .height(40)
                        .margins({top: 0, right: 50, bottom: 20, left: 40})
@@ -652,7 +670,7 @@
                        .group(monthByTotal)
                        .colors(['#99A5B7'])
                        .gap(1)
-                       .x(d3.time.scale().domain([new Date(2014, 0, 1), new Date(2014, 12, 31)]))
+                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
                        .xUnits(d3.time.months)
                        .yAxis().ticks(0);
 
@@ -686,7 +704,8 @@
                         .point("BALQA", 94, 96)
                         .point("JARASH", 104, 82)
                         .point("AJLOUN", 74, 96)
-                        .point("Camps", 270, 175)
+                        .point("ZaatariCamp", 270, 150)
+                        .point("AzraqCamp", 270, 180)
                         .point("Countrywide", 255, 260)
                         .on("filtered", getFiltersValues)
                       //  .debug(true)
@@ -728,6 +747,18 @@
             </script>
             
             <script src="../../js/bootstrap.js"></script>
+						            <script>
+                $(window).bind("load", function() {
+				if (GetUrlValue('Camp')=="ZaatariCamp")
+				{
+				dc.filterAll(); location_chart.filter("ZaatariCamp");  dc.renderAll();
+				}
+				var d = new Date();
+				var n = d.getMonth();
+				dc.filterAll(); monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]); dc.redrawAll();
+                });
+                
+            </script>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
