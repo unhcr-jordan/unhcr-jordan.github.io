@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<!-- Sector Dashboard -->
 <html lang="en">
     <head>
         <title>Shelter Dashboard | Syrian Refugee Response in Jordan</title>
@@ -19,11 +21,11 @@
         <!-- Add IntroJs styles and JS -->
         <link href="../../css/introjs.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../../js/intro.js"></script>
-		<script type="text/javascript" src="../../js/monthlyReport.js"> </script>			
+        <script type="text/javascript" src="../../js/monthlyReport.js"> </script>
         <script src="../../js/jquery.js"></script>
         <!-- map the data to the GeoJSON object -->
         <script src="../../js/data-jo.js"></script>
-        <link href="http://www.unhcr.org/favicon.ico" rel="icon" type="image/x-icon" />
+        <link href="img/coordination.ico" rel="icon" type="image/x-icon">
 
         <!-- HTML5 shim, for IE6-8 support of HTML elements--><!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -264,20 +266,29 @@
                         </div>
                     </div>
                     <div class="row" >
-                        <p><b>Leading Agencies:</b> <i>UNHCR</i> <a href="mailto:abdelal@unhcr.org">Mohamed Abdel-Al</a> & 
+                        <p><b>Leading Agencies:</b> <i>UNHCR</i> <a href="mailto:abdelal@unhcr.org">Mohamed Abdel-Al</a> &
                         <i>NRC<i> <a href="mailto:annika.hampson@nrc.no">Annika Hampson</a></b></p>
                         <br>
                         <div class="dc-chart" id="count-info" data-step="12" data-intro="Click on this button to clear all the filters." data-position="right">
                         <strong><span class="filter-count " ></span></strong> selected out of <span class="total-count "></span> records</div>&nbsp;&nbsp;
-                        <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All Filters</a>&nbsp;&nbsp;  
+                        <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All Filters</a>&nbsp;&nbsp;
                         <a class="btn btn btn-info" href="#timelineid" >Highlight</a>&nbsp;&nbsp;
-                        <a class="reset btn btn-primary btn-sm" href="monthSel.html" onclick="javascript:void window.open('monthSel.html','1418129557768','width=190,height=120,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=800,top=300');return false;"> Report </a>&nbsp;&nbsp; 
+                        <a class="reset btn btn-primary btn-sm" href="monthSel.html" onclick="javascript:void window.open('monthSel.html','1418129557768','width=190,height=120,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=800,top=300');return false;"> Report </a>&nbsp;&nbsp;
                         <a class="btn btn btn-success" href="javascript:void(0);" onclick="javascript:introJs().start();">Tutorial</a> <br >
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3">
+                    <div class="row">
+                        <center>
+                            <div class="dc-chart" data-intro="Click on this row chart to filter by Activity." data-position="right" data-step="1" id="obj">
+                                <center>
+                                    <h5><strong>Output</strong><br ><small># of reports</small></h5>
+                                </center>
+                            </div>
+                        </center>
+                    </div>
                     <div class="row">
                         <center>
                             <div class="dc-chart" data-intro="Click on this row chart to filter by Indicator." data-position="right" data-step="1" id="indicator">
@@ -346,9 +357,9 @@
                                         <h5><strong>Funding Agency</strong><br ><small># of assistance instance</small></h5>
                                     </center>
                                 </div>
-								<div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="10" id="location">
+                                <div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="10" id="location">
                                     <center>
-										<h5><strong>Top Locations </strong> <br> <small>Camps locations are not aggregated within Governorate</small></h5>
+                                        <h5><strong>Top Locations </strong> <br> <small>Camps locations are not aggregated within Governorate</small></h5>
                                     </center>
                                 </div>
                             </center>
@@ -362,19 +373,21 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 dc-chart" data-intro="Click on this line chart to zoom in to specific Month." data-position="left" data-step="9" id="month">
-                            <center>
+					        <center>
                                 <h5><strong>Monthly Progress</strong><br ><small># of assistance instance</small></h5>
                             </center>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<script type="text/javascript">
-							var d = new Date();
-							var n = d.getMonth();
-								for(count = 0; count < n; count++){
-								document.write('<a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2015,' + count + ', 1), new Date(2015, ' + count + ', 30)]); dc.redrawAll();">');
-								document.write(monthNames[count] + "</a> &nbsp;");
-								}
-					</script>	
-<br>					
+                            var d = new Date();
+                            var n = d.getMonth();
+                                for(count = 0; count < n; count++){
+                                document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2015,' + count + ', 1), new Date(2015, ' + count + ', 31)]); dc.redrawAll();">');
+                                document.write(monthNames[count] + "</a> &nbsp;");
+                                }
+                    </script>
+                    <br>					
+                        <div class="col-md-12 dc-chart" data-intro="Click on this line chart to zoom in to specific Month." data-position="left" data-step="9" id="month">
+
                         </div>
                     </div>
                     <div class="row">
@@ -457,7 +470,8 @@
                 var partner_chart = dc.rowChart("#partner");
                 var month_chart = dc.lineChart("#month");
                 var monthrange_chart = dc.barChart("#monthrange");
-				var location_chart = dc.rowChart("#location");
+                var location_chart = dc.rowChart("#location");
+                var obj_chart = dc.rowChart("#obj");
                 var region_chart = dc.bubbleOverlay("#region").svg(d3.select("#region svg"));
 
                 function getFiltersValues() {
@@ -470,7 +484,8 @@
                                        { name: 'partner', value: partner_chart.filters()},
                                        { name: 'allocation', value: allocation_chart.filters()},
                                        { name: 'monthrange', value: monthrange_chart.filters()},
-									   { name: 'location', value: location_chart.filters()},
+                                       { name: 'location', value: location_chart.filters()},
+                                       { name: 'obj', value: obj_chart.filters()},
                                        { name: 'region', value: region_chart.filters()}
                                     ];
                        var recursiveEncoded = $.param( filters );
@@ -478,7 +493,7 @@
                    }
                 function initFilters() {
         // Get hash values
-                       var parseHash = /^#indicator=([A-Za-z0-9,_\-\/\s]*)&gender=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&rrp6=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&AllocationRRP6=([A-Za-z0-9,_\-\/\s]*)&Governorate=([A-Za-z0-9,_\-\/\s]*)&caza=([A-Za-z0-9,_\-\/\s]*)$/;
+                       var parseHash = /^#indicator=([A-Za-z0-9,_\-\/\s]*)&gender=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&appeal=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&allocation=([A-Za-z0-9,_\-\/\s]*)&location=([A-Za-z0-9,_\-\/\s]*)$/;
                        var parsed = parseHash.exec(decodeURIComponent(location.hash));
                        function filter(chart, rank) {
                            if (parsed[rank] == "") { chart.filter(null); }
@@ -497,6 +512,7 @@
                            filter(allocation_chart, 7);
                            filter(poptype_chart, 8);
                            filter(region_chart, 9);
+                           filter(obj_chart, 10);
                        }
                    }
 
@@ -580,7 +596,7 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-				cf.location = cf.dimension(function(d) { return d.Governorate; });
+                cf.location = cf.dimension(function(d) { return d.Governorate; });
                 var location = cf.location.group();
                 var locationByTotal = cf.location.group().reduceSum(function (d) { return d.Value;} );
                    location_chart.width(400).height(175)
@@ -593,7 +609,21 @@
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
-					   
+
+                cf.obj = cf.dimension(function(d) { return d.activity; });
+                var obj = cf.obj.group();
+                var objByTotal = cf.obj.group().reduceCount();
+                   obj_chart.width(400).height(140)
+                       .dimension(cf.obj)
+                       .group(objByTotal)
+                       .elasticX(false)
+                       .on("filtered", getFiltersValues)
+                       .data(function(group) { return group.top(4); })
+                       .colors(['#99A5B7'])
+                       .colorDomain([0,0])
+                       .colorAccessor(function(d, i){return 1;})
+                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+
                 cf.appeal = cf.dimension(function(d) { return d.appeal; });
                 var appeal = cf.appeal.group();
                 var appealByTotal = cf.appeal.group().reduceSum(function (d) { return d.Value;} );
@@ -641,11 +671,11 @@
                 cf.month = cf.dimension(function (d) {return d.dd;});
                 var month = cf.month.group();
                 var monthByTotal = cf.month.group().reduceSum(function (d) { return d.Value;} );
-				var boys=cf.month.group().reduceSum(function(d) {if (d.Gender=="Boys") {return d.Value;}else{return 0;}});
-				var girls=cf.month.group().reduceSum(function(d) {if (d.Gender=="Girls") {return d.Value;}else{return 0;}});
-				var men=cf.month.group().reduceSum(function(d) {if (d.Gender=="Men") {return d.Value;}else{return 0;}});
-				var women=cf.month.group().reduceSum(function(d) {if (d.Gender=="Women") {return d.Value;}else{return 0;}});
-				
+                var boys=cf.month.group().reduceSum(function(d) {if (d.Gender=="Boys") {return d.Value;}else{return 0;}});
+                var girls=cf.month.group().reduceSum(function(d) {if (d.Gender=="Girls") {return d.Value;}else{return 0;}});
+                var men=cf.month.group().reduceSum(function(d) {if (d.Gender=="Men") {return d.Value;}else{return 0;}});
+                var women=cf.month.group().reduceSum(function(d) {if (d.Gender=="Women") {return d.Value;}else{return 0;}});
+
                    month_chart.width(900).height(230)
                        .transitionDuration(1000)
                        .margins({top: 30, right: 50, bottom: 25, left: 40})
@@ -658,12 +688,12 @@
                        .renderHorizontalGridLines(true)
                        .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
                        .brushOn(false)
-						.group(boys, 'Boys')
-						.stack(girls, 'Girls')
-						.stack(men, 'Men')
-						.stack(women, 'Women')
-					   .renderArea(false);
-					   
+                        .group(boys, 'Boys')
+                        .stack(girls, 'Girls')
+                        .stack(men, 'Men')
+                        .stack(women, 'Women')
+                       .renderArea(false);
+
                    monthrange_chart.width(900)
                        .height(40)
                        .margins({top: 0, right: 50, bottom: 20, left: 40})
@@ -688,10 +718,10 @@
                         .colorDomain([0, 0])
                         .colorAccessor(function(d, i){return 1;})
                         .title(function(d) { return "region: " + d.key + "\nTotal:" + d.value;})
-                        
+
                   //      .radiusValueAccessor(function (p) { return p.value;  })
                    //     .maxBubbleRelativeSize(0.03)
-                        
+
                         .r(d3.scale.linear().domain([0, 100000]))
                         .point("IRBID", 98, 58)
                         .point("MAFRAQ", 193, 70)
@@ -746,19 +776,24 @@
                 }
                 });
             </script>
-            
+
             <script src="../../js/bootstrap.js"></script>
-						            <script>
+
+
+            <script>
+            // Script to initiate filtering on page at the right place
                 $(window).bind("load", function() {
-				if (GetUrlValue('Camp')=="ZaatariCamp")
-				{
-				dc.filterAll(); location_chart.filter("ZaatariCamp");  dc.renderAll();
-				}
-				var d = new Date();
-				var n = d.getMonth();
-				dc.filterAll(); monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]); dc.redrawAll();
+                if (GetUrlValue('Camp')=="ZaatariCamp")
+                {
+                dc.filterAll(); location_chart.filter("ZaatariCamp");  dc.renderAll();
+                }
+                var d = new Date();
+                var n = d.getMonth();
+                dc.filterAll(); 
+                monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]); 
+                dc.redrawAll();
                 });
-                
+
             </script>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>

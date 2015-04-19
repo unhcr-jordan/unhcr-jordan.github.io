@@ -22,7 +22,7 @@
     a:active { color:#FF0000; }
     -->
     </style>
-        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../../css/bootstrap.css">
     <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -32,8 +32,10 @@
 Browsers: All
 Additional Information: Replace alink.html with the script you would like to use to process your form data. Replace Click Me. with whatever text you would like to appear on the button. -->
 <br>
+
 <form action="monthly.html">
-&nbsp; <select name=Month>
+<center>
+<select name=Month>
 <option value=1> January </option>
 <option value=2> February </option>
 <option value=3> March </option>
@@ -48,11 +50,14 @@ Additional Information: Replace alink.html with the script you would like to use
 <option value=12> December </option>
 </select>
 <select name=Year>
-<option value=2014> 2014 </option>
+<option value=2015> 2015 </option>
 </select>
-<br> <br>
-&nbsp;<input type=submit name="cmdGenReport" value="Monthly Report" class="reset btn btn-primary btn-sm" onClick="window.resizeTo(1800,1240);window.moveTo(0,0)"></input>
+</center>
+<br>
+<center>
+<input type=submit name="cmdGenReport" value="Monthly Report" class="reset btn btn-primary btn-sm" onClick="window.resizeTo(1800,1240);window.moveTo(0,0)"></input>
 <input type=reset name="cmdGenCancel" value="Cancel" class="reset btn btn-primary btn-sm"></input>
+</center>
 </form>
   </body>
 </html>
