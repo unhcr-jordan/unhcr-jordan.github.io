@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<!-- Sector Dashboard -->
 <html lang="en">
     <head>
         <title>Basic Needs Dashboard | Syrian Refugee Response in Jordan</title>
@@ -20,10 +22,10 @@
         <link href="../../css/introjs.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../../js/intro.js"></script>
         <script src="../../js/jquery.js"></script>
-        <script type="text/javascript" src="../../js/monthlyReport.js"> </script>   
+        <script type="text/javascript" src="../../js/monthlyReport.js"> </script>
         <!-- map the data to the GeoJSON object -->
         <script src="../../js/data-jo.js"></script>
-        <link href="http://www.unhcr.org/favicon.ico" rel="icon" type="image/x-icon" />
+        <link href="img/coordination.ico" rel="icon" type="image/x-icon">
 
         <!-- HTML5 shim, for IE6-8 support of HTML elements--><!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -282,13 +284,18 @@
                 <div class="col-md-3">
                     <div class="row">
                         <center>
+                            <div class="dc-chart" data-intro="Click on this row chart to filter by Activity." data-position="right" data-step="1" id="obj">
+                                <center>
+                                    <h5><strong>Output</strong><br ><small># of reports</small></h5>
+                                </center>
+                            </div>
+                        </center>
+                    </div>
+                    <div class="row">
+                        <center>
                             <div class="dc-chart" data-intro="Click on this row chart to filter by Indicator." data-position="right" data-step="1" id="indicator">
                                 <center>
                                     <h5><strong>Indicator</strong><br ><small># of assistance instance</small></h5>
-                                    <a class="btn btn-primary btn-sm" href='javascript:dc.filterAll();obj_chart.filter("REF11");dc.renderAll();'>Camps - New arrivals </a>
-                                    <a class="btn btn-primary btn-sm" href='javascript:dc.filterAll();obj_chart.filter("REF13");dc.renderAll();'>Urban – C&V </a> <br><br>
-                                    <a class="btn btn-primary btn-sm" href='javascript:dc.filterAll();obj_chart.filter("REF12");dc.renderAll();'>Camps – Replenishment</a> 
-                                    <a class="btn btn-primary btn-sm" href='javascript:dc.filterAll();obj_chart.filter("REF14");dc.renderAll();'>Seasonal</a>
                                 </center>
                             </div>
                         </center>
@@ -328,7 +335,7 @@
                         <center>
                             <div class="dc-chart" data-intro="Click on this row chart to filter by Partner." data-position="right" data-step="5" id="partner">
                                 <center>
-                                    <h5><strong>Partner</strong><br ><small># of assistance instance</small></h5>
+                                    <h5><strong>Partner</strong><br ><small># of HHs assisted</small></h5>
                                 </center>
                             </div>
                         </center>
@@ -370,19 +377,23 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 dc-chart" data-intro="Click on this line chart to zoom in to specific Month." data-position="left" data-step="9" id="month">
-                            <center>
+					        <center>
                                 <h5><strong>Monthly Progress</strong><br ><small># of assistance instance</small></h5>
                             </center>
-                    <script type="text/javascript">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<script type="text/javascript">
                             var d = new Date();
                             var n = d.getMonth();
                                 for(count = 0; count < n; count++){
-                                document.write('<a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2015,' + count + ', 1), new Date(2015, ' + count + ', 31)]); dc.redrawAll();">');
+                                document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2015,' + count + ', 1), new Date(2015, ' + count + ', 31)]); dc.redrawAll();">');
                                 document.write(monthNames[count] + "</a> &nbsp;");
                                 }
-                    </script>   
-<br>                            
+                    </script>
+                    <br>						
+                        <div class="col-md-12 dc-chart" data-intro="Click on this line chart to zoom in to specific Month." data-position="left" data-step="9" id="month">
+
+
+
                         </div>
                     </div>
                     <div class="row">
@@ -462,11 +473,11 @@
                 var funded_chart = dc.rowChart("#funded");
                 var appeal_chart = dc.rowChart("#appeal");
                 var allocation_chart = dc.rowChart("#allocation");
-                var obj_chart = dc.rowChart("#obj");
                 var partner_chart = dc.rowChart("#partner");
                 var month_chart = dc.lineChart("#month");
                 var monthrange_chart = dc.barChart("#monthrange");
                 var location_chart = dc.rowChart("#location");
+                var obj_chart = dc.rowChart("#obj");
                 var region_chart = dc.bubbleOverlay("#region").svg(d3.select("#region svg"));
 
                 function getFiltersValues() {
@@ -479,8 +490,8 @@
                                        { name: 'partner', value: partner_chart.filters()},
                                        { name: 'allocation', value: allocation_chart.filters()},
                                        { name: 'monthrange', value: monthrange_chart.filters()},
-                                       { name: 'obj', value: obj_chart.filters()},
                                        { name: 'location', value: location_chart.filters()},
+                                       { name: 'obj', value: obj_chart.filters()},
                                        { name: 'region', value: region_chart.filters()}
                                     ];
                        var recursiveEncoded = $.param( filters );
@@ -488,7 +499,7 @@
                    }
                 function initFilters() {
         // Get hash values
-                       var parseHash = /^#indicator=([A-Za-z0-9,_\-\/\s]*)&gender=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&rrp6=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&AllocationRRP6=([A-Za-z0-9,_\-\/\s]*)&Governorate=([A-Za-z0-9,_\-\/\s]*)&caza=([A-Za-z0-9,_\-\/\s]*)$/;
+                       var parseHash = /^#indicator=([A-Za-z0-9,_\-\/\s]*)&gender=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&rrp6=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&AllocationRRP6=([A-Za-z0-9,_\-\/\s]*)&Governorate=([A-Za-z0-9,_\-\/\s]*)$/;
                        var parsed = parseHash.exec(decodeURIComponent(location.hash));
                        function filter(chart, rank) {
                            if (parsed[rank] == "") { chart.filter(null); }
@@ -532,7 +543,8 @@
 
                 cf.indicator = cf.dimension(function(d) { return d.Indicator; });
                 var indicator = cf.indicator.group();
-                var indicatorByTotal = cf.indicator.group().reduceSum(function (d) { return d.Value;} );
+				var indicatorByTotal = cf.indicator.group().reduceSum(function(d) {if (d.Units=="# of benef") {return d.Value;}else{return 0;}} );
+                //var indicatorByTotal = cf.indicator.group().reduceSum(function (d) { return d.Value;} );
                    indicator_chart.width(400).height(250)
                        .dimension(cf.indicator)
                        .group(indicatorByTotal)
@@ -546,7 +558,8 @@
 
                 cf.gender = cf.dimension(function(d) { return d.Gender; });
                 var gender = cf.gender.group();
-                var genderByTotal = cf.gender.group().reduceSum(function (d) { return d.Value;} );
+				var genderByTotal = cf.gender.group().reduceSum(function(d) {if (d.Units=="# of benef") {return d.Value;}else{return 0;}} );
+                //var genderByTotal = cf.gender.group().reduceSum(function (d) { return d.Value;} );
                    gender_chart.width(100).height(100)
                        .dimension(cf.gender)
                        .group(genderByTotal)
@@ -563,7 +576,8 @@
 
                 cf.poptype = cf.dimension(function(d) { return d.poptype; });
                 var poptype = cf.poptype.group();
-                var poptypeByTotal = cf.poptype.group().reduceSum(function (d) { return d.Value;} );
+				var poptypeByTotal = cf.poptype.group().reduceSum(function(d) {if (d.Units=="# of benef") {return d.Value;}else{return 0;}} );				
+                //var poptypeByTotal = cf.poptype.group().reduceSum(function (d) { return d.Value;} );
                    poptype_chart.width(100).height(100)
                        .dimension(cf.poptype)
                        .group(poptypeByTotal)
@@ -575,7 +589,8 @@
 
                 cf.funded = cf.dimension(function(d) { return d.Fundedby; });
                 var funded = cf.funded.group();
-                var fundedByTotal = cf.funded.group().reduceSum(function (d) { return d.Value;} );
+				var fundedByTotal = cf.funded.group().reduceSum(function(d) {if (d.Units=="# of benef") {return d.Value;}else{return 0;}} );								
+                //var fundedByTotal = cf.funded.group().reduceSum(function (d) { return d.Value;} );
                    funded_chart.width(400).height(175)
                        .dimension(cf.funded)
                        .group(fundedByTotal)
@@ -586,12 +601,11 @@
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
-                       
-                       
-                       
+
                 cf.location = cf.dimension(function(d) { return d.Governorate; });
                 var location = cf.location.group();
-                var locationByTotal = cf.location.group().reduceSum(function (d) { return d.Value;} );
+				var locationByTotal = cf.location.group().reduceSum(function(d) {if (d.Units=="# of benef") {return d.Value;}else{return 0;}} );												
+                //var locationByTotal = cf.location.group().reduceSum(function (d) { return d.Value;} );
                    location_chart.width(400).height(175)
                        .dimension(cf.location)
                        .group(locationByTotal)
@@ -602,11 +616,11 @@
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
-                       
+
                 cf.obj = cf.dimension(function(d) { return d.activity; });
                 var obj = cf.obj.group();
-                var objByTotal = cf.obj.group().reduceSum(function (d) { return d.Value;} );
-                   obj_chart.width(10).height(10)
+                var objByTotal = cf.obj.group().reduceCount();
+                   obj_chart.width(400).height(140)
                        .dimension(cf.obj)
                        .group(objByTotal)
                        .elasticX(false)
@@ -617,10 +631,11 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                       
+
                 cf.appeal = cf.dimension(function(d) { return d.appeal; });
                 var appeal = cf.appeal.group();
-                var appealByTotal = cf.appeal.group().reduceSum(function (d) { return d.Value;} );
+				var appealByTotal = cf.appeal.group().reduceSum(function(d) {if (d.Units=="# of benef") {return d.Value;}else{return 0;}} );												
+                //var appealByTotal = cf.appeal.group().reduceSum(function (d) { return d.Value;} );
                    appeal_chart.width(400).height(130)
                        .dimension(cf.appeal)
                        .group(appealByTotal)
@@ -634,7 +649,8 @@
 
                 cf.allocation = cf.dimension(function(d) { return d.allocation; });
                 var allocation = cf.allocation.group();
-                var allocationByTotal = cf.allocation.group().reduceSum(function (d) { return d.Value;} );
+				var allocationByTotal = cf.allocation.group().reduceSum(function(d) {if (d.Units=="# of benef") {return d.Value;}else{return 0;}} );												
+                //var allocationByTotal = cf.allocation.group().reduceSum(function (d) { return d.Value;} );
                    allocation_chart.width(400).height(90)
                        .dimension(cf.allocation)
                        .group(allocationByTotal)
@@ -650,7 +666,8 @@
 
                 cf.partner = cf.dimension(function(d) { return d.Partner; });
                 var partner = cf.partner.group();
-                var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.Value;} );
+				var partnerByTotal = cf.partner.group().reduceSum(function(d) {if (d.Units=="# of case") {return d.Value;}else{return 0;}} );												
+                //var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.Value;} );
                    partner_chart.width(400).height(570)
                        .dimension(cf.partner)
                        .group(partnerByTotal)
@@ -664,12 +681,13 @@
 
                 cf.month = cf.dimension(function (d) {return d.dd;});
                 var month = cf.month.group();
-                var monthByTotal = cf.month.group().reduceSum(function (d) { return d.Value;} );
-                var boys=cf.month.group().reduceSum(function(d) {if (d.Gender=="Boys") {return d.Value;}else{return 0;}});
-                var girls=cf.month.group().reduceSum(function(d) {if (d.Gender=="Girls") {return d.Value;}else{return 0;}});
-                var men=cf.month.group().reduceSum(function(d) {if (d.Gender=="Men") {return d.Value;}else{return 0;}});
-                var women=cf.month.group().reduceSum(function(d) {if (d.Gender=="Women") {return d.Value;}else{return 0;}});
-                
+				var monthByTotal = cf.month.group().reduceSum(function(d) {if (d.Units=="# of benef") {return d.Value;}else{return 0;}} );												
+                //var monthByTotal = cf.month.group().reduceSum(function (d) { return d.Value;} );
+                var boys=cf.month.group().reduceSum(function(d) {if ((d.Gender=="Boys") && (d.Units=="# of benef")) {return d.Value;}else{return 0;}});
+                var girls=cf.month.group().reduceSum(function(d) {if ((d.Gender=="Girls") && (d.Units=="# of benef")) {return d.Value;}else{return 0;}});
+                var men=cf.month.group().reduceSum(function(d) {if ((d.Gender=="Men") && (d.Units=="# of benef")) {return d.Value;}else{return 0;}});
+                var women=cf.month.group().reduceSum(function(d) {if ((d.Gender=="Women") && (d.Units=="# of benef")) {return d.Value;}else{return 0;}});
+
                    month_chart.width(900).height(230)
                        .transitionDuration(1000)
                        .margins({top: 30, right: 50, bottom: 25, left: 40})
@@ -687,9 +705,9 @@
                         .stack(men, 'Men')
                         .stack(women, 'Women')
                        .renderArea(false);
-                       
-                       
-                       
+
+
+
                    monthrange_chart.width(900)
                        .height(40)
                        .margins({top: 0, right: 50, bottom: 20, left: 40})
@@ -714,10 +732,10 @@
                         .colorDomain([0, 0])
                         .colorAccessor(function(d, i){return 1;})
                         .title(function(d) { return "region: " + d.key + "\nTotal:" + d.value;})
-                        
+
                   //      .radiusValueAccessor(function (p) { return p.value;  })
                    //     .maxBubbleRelativeSize(0.03)
-                        
+
                         .r(d3.scale.linear().domain([0, 1000000]))
                         .point("IRBID", 98, 58)
                         .point("MAFRAQ", 193, 70)
@@ -733,6 +751,7 @@
                         .point("AJLOUN", 74, 96)
                         .point("ZaatariCamp", 270, 150)
                         .point("AzraqCamp", 270, 180)
+						.point("EJ Camp", 270, 210)
                         .point("Countrywide", 255, 260)
                         .on("filtered", getFiltersValues)
                       //  .debug(true)
@@ -772,9 +791,12 @@
                 }
                 });
             </script>
-            
+
             <script src="../../js/bootstrap.js"></script>
-                                    <script>
+
+
+            <script>
+            // Script to initiate filtering on page at the right place
                 $(window).bind("load", function() {
                 if (GetUrlValue('Camp')=="ZaatariCamp")
                 {
@@ -782,9 +804,11 @@
                 }
                 var d = new Date();
                 var n = d.getMonth();
-                dc.filterAll(); monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]); dc.redrawAll();
+                dc.filterAll(); 
+                 monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]); 
+                dc.redrawAll();
                 });
-                
+
             </script>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
