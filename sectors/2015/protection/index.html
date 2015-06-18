@@ -243,7 +243,7 @@
                         <h3><strong>Protection Working Group | 2015 Syrian Refugee Response in Jordan
                          | <a href="../../index.html"  target="_blank"><i class="icon-im-coord" style="color:white; font-size:20px;" ></i></a></strong></h3>
                         The data presented here are collected through the <a href="https://www.syrianrefugeeresponse.org/" target="_blank">Syrian Refugee Response</a> platform and then cleared by Sector focal points.
-                        You can donwload the <a href="data.csv" target="_blank">data here</a>. More info on jordan <a href="http://data.unhcr.org/jordan" target="_blank">here</a>.<br />
+                        You can download the <a href="data.csv" target="_blank">data here</a>. More info on Jordan <a href="http://data.unhcr.org/jordan" target="_blank">here</a>.<br />
                         <strong>The following charts shows the achievement of the Protection sector. Click on any of the graphs below to filter and slice the data.</strong>
                         <p>The units displayed here corresponds to "Assistance Instance". As such totals presented here should be analysed with caution. </p>
                 </div>
@@ -287,8 +287,13 @@
                     <div class="row">
                         <center>
                             <div class="dc-chart" data-intro="Click on this row chart to filter by Activity." data-position="right" data-step="1" id="obj">
+							</div>
+                            <div class="dc-chart" data-intro="Click on this row chart to filter by Activity." data-position="right">							
                                 <center>
-                                    <h5><strong>Output</strong><br ><small># of reports</small></h5>
+								<br>
+									<a id="reset" class="reset btn btn-primary btn-sm" href='javascript:dc.filterAll(); obj_chart.filter("REF3"); dc.redrawAll();'> SGBV </a>
+									<a id="reset" class="reset btn btn-primary btn-sm" href='javascript:dc.filterAll(); obj_chart.filter("REF4"); dc.redrawAll();'> CP </a>
+									<a id="reset" class="reset btn btn-primary btn-sm" href='javascript:dc.filterAll(); obj_chart.filter("REF2"); dc.redrawAll();'> MHPSS </a>									
                                 </center>
                             </div>
                         </center>
@@ -623,13 +628,13 @@
 
                 cf.obj = cf.dimension(function(d) { return d.activity; });
                 var obj = cf.obj.group();
-                var objByTotal = cf.obj.group().reduceCount();
-                   obj_chart.width(400).height(140)
+                var objByTotal = cf.obj.group().reduceSum(function (d) { return d.Value;} );
+                   obj_chart.width(1).height(1)
                        .dimension(cf.obj)
                        .group(objByTotal)
                        .elasticX(false)
                        .on("filtered", getFiltersValues)
-                       .data(function(group) { return group.top(4); })
+                       .data(function(group) { return group.top(10); })
                        .colors(['#99A5B7'])
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})

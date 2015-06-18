@@ -28,7 +28,8 @@
         <link href="img/coordination.ico" rel="icon" type="image/x-icon">
 
         <!-- HTML5 shim, for IE6-8 support of HTML elements--><!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
         <style type="text/css">
             @-webkit-keyframes popbwrxrenhumgzdpcbgaqswgncarlccaxy {
@@ -122,25 +123,21 @@
             }
 
             #bwrxrenhumgzdpcbgaqswgncarlccaxy div {
-                padding: 0;
-                margin: 0;
-                font: 13px Arial,Helvetica;
                 text-transform: none;
                 font-size: 100%;
                 vertical-align: baseline;
                 line-height: normal;
                 color: #fff;
                 position: static;
-                border: 0 !important;
+                border: 0px none !important;
                 margin: 0 !important;
                 padding: 0 !important;
                 width: auto !important;
                 letter-spacing: normal !important;
-                font: 13px Arial,Helvetica !important;
                 text-align: left !important;
                 text-shadow: none !important;
                 text-transform: none !important;
-                word-spacing: normal !important;
+                word-spacing: normal !important; font-style:normal !important; font-variant:normal !important; font-weight:normal !important; font-size:13px !important; font-family:Arial, Helvetica !important
             }
 
             #bwrxrenhumgzdpcbgaqswgncarlccaxy a {
@@ -162,7 +159,6 @@
             a#bwrxrenhumgzdpcbgaqswgncarlccaxy-gear {
                 padding: 0;
                 margin: 0;
-                font: 13px Arial,Helvetica;
                 text-transform: none;
                 font-size: 100%;
                 vertical-align: baseline;
@@ -178,11 +174,12 @@
                 line-height: 20px !important;
                 text-align: center !important;
                 background-color: rgba(255,255,255,.8) !important;
-                background-image: url(resource://firefox-at-ghostery-dot-com/ghostery/data/images/gear.svg) !important;
+                background-image: url('resource://firefox-at-ghostery-dot-com/ghostery/data/images/gear.svg') !important;
                 background-size: 16px 16px !important;
-                background-position: center center !important;
+                background-position:  
+               center !important;
                 background-repeat: no-repeat !important;
-                text-decoration: none !important;
+                text-decoration: none !important; font-style:normal; font-variant:normal; font-weight:normal; font-family:Arial, Helvetica
             }
 
             a#bwrxrenhumgzdpcbgaqswgncarlccaxy-gear:hover {
@@ -237,7 +234,9 @@
             <div class="row" style="background-color: #c00000; color: #ffffff">
                 <div class="col-md-1">
                     <center pbzloc="509">
+                        <p>
                         <i class="icon-ocha-sector-education" style="color:white; font-size:100px;" ></i>
+                        </p>
                     </center>
                 </div>
                 <div class="col-md-7">
@@ -245,7 +244,7 @@
                         <h3><strong>Education Working Group | 2015 Syrian Refugee Response in Jordan
                          | <a href="../../index.html"  target="_blank"><i class="icon-im-coord" style="color:white; font-size:20px;" ></i></a></strong></h3>
                         The data presented here are collected through the <a href="https://www.syrianrefugeeresponse.org/" target="_blank">Syrian Refugee Response</a> platform and then cleared by Sector focal points.
-                        You can donwload the <a href="data.csv" target="_blank">data here</a>. More info on jordan <a href="http://data.unhcr.org/jordan" target="_blank">here</a>.<br />
+                        You can download the <a href="data.csv" target="_blank">data here</a>. More info on Jordan <a href="http://data.unhcr.org/jordan" target="_blank">here</a>.<br />
                         <strong>The following charts shows the achievement of the Education sector. Click on any of the graphs below to filter and slice the data.</strong>
                         <p>The units displayed here corresponds to "Assistance Instance". As such totals presented here should be analysed with caution. </p>
                 </div>
@@ -383,7 +382,7 @@
                                 document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2015,' + count + ', 1), new Date(2015, ' + count + ', 31)]); dc.redrawAll();">');
                                 document.write(monthNames[count] + "</a> &nbsp;");
                                 }
-                    </script>
+                            </script>
                     <br>
 					
                         <div class="col-md-12 dc-chart" data-intro="Click on this line chart to zoom in to specific Month." data-position="left" data-step="9" id="month">
@@ -423,7 +422,7 @@
 
             </div>
             <script type="text/javascript" src="../../js/d3_002.js">
-            </script><!--script type="text/javascript" src="../../js/d3.v3.js"></script -->
+                </script><!--script type="text/javascript" src="../../js/d3.v3.js"></script -->
             <script type="text/javascript" src="../../js/crossfilter.js"></script>
             <script type="text/javascript" src="../../js/dc.js"></script>
             <script type="text/javascript" src="../../js/d3.js"></script>
@@ -779,7 +778,7 @@
                    $('#dashboard').show();
                 }
                 });
-            </script>
+                </script>
 
             <script src="../../js/bootstrap.js"></script>
 
@@ -798,7 +797,7 @@
                 dc.redrawAll();
                 });
 
-            </script>
+                </script>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
