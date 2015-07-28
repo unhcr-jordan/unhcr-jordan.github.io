@@ -59,6 +59,7 @@
 
             <h2>
             <a class="btn btn-default">Total Requested (USD) <a  class="btn btn-primary">$ <span id="totalrequired" class="number-display"></span></a></a>
+            <a class="btn btn-default">Percentage Received (Overall) <a  class="btn btn btn-success"><span id="totalPreceived" class="number-display"> </span> %</a></a>			
             <a class="btn btn-default">Funds Received (USD) <a  class="btn btn-info">$ <span id="totalreceived" class="number-display"></span></a></a>
             <a class="btn btn-default">Not yet funded (USD) <a  class="btn btn-warning">$ <span id="totalgap" class="number-display"></span></a></a>
            <!--
@@ -425,6 +426,12 @@
             dc.numberDisplay("#totalreceived")
                    .valueAccessor(function(d){return +d})
                     .group(byReceivedGroup);
+			
+            dc.numberDisplay("#totalPreceived")
+                   .valueAccessor(function(d){return +d / 8757315})
+                    .group(byReceivedGroup);
+
+			
 
             var byGap = cf.dimension(function(d) { return d.Gap; });
             var byGapGroup = byGap.groupAll().reduceSum(function (d) { return d.Required - d.NewReceived; });
