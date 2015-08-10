@@ -625,7 +625,7 @@
                        .group(objByTotal)
                        .elasticX(false)
                        .on("filtered", getFiltersValues)
-                       .data(function(group) { return group.top(4); })
+                       .data(function(group) { return group.top(3); })
                        .colors(['#99A5B7'])
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
