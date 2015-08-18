@@ -26,6 +26,18 @@
     <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+			<script>
+				function printpdf()
+				{
+				var month =  document.forms["pdf"]["Month"].value;
+				var year = document.forms["pdf"]["Year"].value;
+				var url = "http://FreeHTMLtoPDF.com/?convert=http%3A%2F%2Fmukeshkarn.github.io/sector_review/2015/basicneeds/indexRep.html%3FMonth=" + month + "%26Year=" + year + "&size=US_Letter&orientation=landscape&framesize=800&language=en"
+				//alert (url);
+				window.open(url);
+				
+				}
+
+			</script>	
   </head>
   <body>
 <!-- Description: Form submit button
@@ -33,7 +45,7 @@ Browsers: All
 Additional Information: Replace alink.html with the script you would like to use to process your form data. Replace Click Me. with whatever text you would like to appear on the button. -->
 <br>
 
-<form action="monthly.html">
+<form name="pdf">
 <center>
 <select name=Month>
 <option value=1> January </option>
@@ -55,7 +67,7 @@ Additional Information: Replace alink.html with the script you would like to use
 </center>
 <br>
 <center>
-<input type=submit name="cmdGenReport" value="Monthly Report" class="reset btn btn-primary btn-sm" onClick="window.resizeTo(1800,1240);window.moveTo(0,0)"></input>
+<input type=button name="cmdGenReport" onClick= "printpdf();" value="Monthly Report" class="reset btn btn-primary btn-sm"></input>
 <input type=reset name="cmdGenCancel" value="Cancel" class="reset btn btn-primary btn-sm"></input>
 </center>
 </form>

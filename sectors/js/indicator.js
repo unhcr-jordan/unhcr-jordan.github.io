@@ -11,7 +11,7 @@ function changeContent(){
 var val = 'All';
 $('#indicatordropdown').val(val);
 			}
-  d3.csv("data.csv", function(error, data) {
+  d3.csv("dataind.csv", function(error, data) {
   
 
 var dropDownInd = d3.select("#indicatordrop").append("select")

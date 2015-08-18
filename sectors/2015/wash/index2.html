@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<!-- Sector Dashboard -->
+<html lang="en">
+    <head>
+        <title>Wash Dashboard | Syrian Refugee Response in Jordan</title>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+        <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport" />
+        <meta content="UNHCR Information management" name="author" />
+        <meta content="Refugee Response in Jordan" property="og:title" />
+        <meta content="article" property="og:type" />
+        <meta content="http://data.unhcr.org/jordan/response/wash" property="og:url" />
+        <meta content="http://data.unhcr.org/jordan/images/washdashboard.jpg" property="og:image" />
+        <meta content="Syrian Refugee Response in Jordan" property="og:site_name" />
+        <meta content="Syrian Refugee Response in Jordan" property="og:description" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+        <!-- Bootstrap with Yeti them from bootswatch-->
+        <link rel="stylesheet" href="../../css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" href="../../css/bootswatch.min.css" type="text/css" >
+        <link rel="stylesheet" href="../../css/font-humanitarian.css" type="text/css" >
+        <link rel="stylesheet" href="../../css/dc.css" type="text/css" />
+        <link href="../../css/dashboard.css" rel="stylesheet" type="text/css" />
+
+
+        <!-- Add IntroJs styles and JS -->
+        <link href="../../css/introjs.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../../js/intro.js"></script>
+        <script type="text/javascript" src="../../js/monthlyReport.js"> </script>
+        <script src="../../js/jquery.js"></script>
+
+
+        <script src="../../js/Dropdown.src.js"></script>
+        <script src="../../js/runOnLoad.src.js"></script>
+
+
+        <!-- map the data to the GeoJSON object -->
+        <script src="../../js/data-jo.js"></script>
+        <link href="img/coordination.ico" rel="icon" type="image/x-icon">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML elements--><!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+
+    </head>
+    <body>
+     <!-- Loading screen -->
+        <div class="loader"></div>
+    <!-- <div class="container"></div>-->
+        <div class="container-fluid" id="dashboard">
+
+                <!--    Color code for dashboard
+                        '#c00000', /* Education */
+                        '#006600', /* Food Security */
+                        '#7f7f7f', /* NFI */ /* WASH */
+                        '#376092', /* Protection */
+                        '#92d050', /* Public Health */
+                        '#215968', /* SCL*/
+                        '#ffc000', /* Shelter */
+                        '#7030a0', /* WASH */
+
+                        Revised Color code for dashboard 2015
+                        '#d44e5b', /* Education */
+                        '#00b26b', /* Food Security */
+                        '#58595b', /* basic needs */
+                        '#33a3dc', /* Protection */
+                        '#9ecf7c', /* Health */
+                        '#febd3b', /* Shelter */
+                        '#766aab', /* WASH */
+                -->
+
+            <div class="row" style="background-color: #766aab; color: #ffffff">
+                <div class="col-md-1">
+                    <center >
+                        <i class="icon-new-sector-wash" style="color:white; font-size:100px;" ></i>
+                    </center>
+                </div>
+                <div class="col-md-7">
+                   <!-- <center> </center> -->
+                        <h3><strong>Wash Working Group | 2015 Syrian Refugee Response in Jordan
+                         | <a href="../../index.html"  target="_blank"><i class="icon-im-coord" style="color:white; font-size:20px;" ></i></a></strong></h3>
+                        The data presented here are collected through the <a href="https://www.syrianrefugeeresponse.org/" target="_blank">Syrian Refugee Response</a> platform and then cleared by Sector focal points.
+                        You can donwload the <a href="data.csv" target="_blank">data here</a>. More info on jordan <a href="http://data.unhcr.org/jordan" target="_blank">here</a>.<br />
+                        <strong>The following charts shows the achievement of the Wash sector. Click on any of the graphs below to filter and slice the data.</strong>
+                        <p>The units displayed here corresponds to "Assistance Instance". As such totals presented here should be analysed with caution. </p>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="row" >
+                        <div class="socialmedia" data-step="11" data-intro="Feel Free to share if you like it!" data-position="left">
+                            <table width = "100%">
+                              <tbody>
+                                  <tr>
+                                    <td valign="middle"><a href="http://www.facebook.com/sharer.php?u=http://data.unhcr.org/jordan/sectors/shelter" target="_blank">
+                                        <img src="../../img/Facebook.png" style="height: 25px; width: 25px"></a></td>
+                                    <td valign="middle"><a href="https://twitter.com/intent/tweet?url=http://data.unhcr.org/jordan/sectors/shelter&amp;text=%23jordan%20@Refugees" target="_blank">
+                                        <img src="../../img/Twitter.png" style="height: 25px; width: 25px"></a></td>
+                                    <td valign="middle"><a href="https://plus.google.com/share?&amp;hl=en&amp;url=http://data.unhcr.org/jordan/sectors/shelter" target="_blank">
+                                        <img src="../../img/Google.png" style="height: 25px; width: 25px"></a></td>
+                                  </tr>
+                            </tbody></table><br>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <p><b>Leading Agencies:</b> <i>UNICEF<i> <a href="mailto:eibrahim@unicef.org">Esmaeil Ibrahim </a></p>
+                        <br>                        
+                        <a class="btn btn btn-info" href="#timelineid" >Highlight</a>&nbsp;&nbsp;
+                        <a class="reset btn btn-primary btn-sm" href="monthSel.html" onclick="javascript:void window.open('monthSel.html','1418129557768','width=190,height=120,toolbar=0,menubar=0,location=0,status=0,scrollbars=0,resizable=1,left=800,top=300');return false;"> Report </a>&nbsp;&nbsp;
+                        <a class="btn btn btn-success" href="javascript:void(0);" onclick="javascript:introJs().start();">Tutorial</a> <br >
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row" >
+                <ul class="nav nav-tabs">
+                            <!-- Sector overview html  -->
+                          <li class="active"><a href="#Overview" data-toggle="tab" aria-expanded="false">Sector Overview</a></li>
+                            <!-- Indicator view html
+                          <li class=""><a href="#PerIndicator" data-toggle="tab" aria-expanded="true">View Per Indicator</a></li>
+                          -->
+                </ul>
+                <div id="myTabContent" class="tab-content">
+
+                <!-- Sector overview html -->
+                    <div class="tab-pane fade active in" id="Overview">
+                        <div class="row">
+                            <div class="col-md-12">
+                                        <div class="dc-chart" id="count-info" data-step="12" data-intro="Click on this button to clear all the filters." data-position="right">
+                                            <strong><span class="filter-count " ></span></strong> selected out of <span class="total-count "></span> records. 
+                                        <a class="reset btn btn-primary btn-sm" id="reset" href="javascript:dc.filterAll();dc.redrawAll();">Reset All Filters</a>
+                                        </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <center>
+                                        <div class="dc-chart" data-intro="Click on this row chart to filter by Activity." data-position="right" data-step="1" id="obj">
+                                            <center>
+                                                <h5><strong>Output</strong><br ><small># of reports</small></h5>
+                                            </center>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="row">
+                                    <center>
+                                        <div class="dc-chart" data-intro="Click on this row chart to filter by Indicator." data-position="right" data-step="1" id="indicator">
+                                            <center>
+                                                <h5><strong>Indicator</strong><br ><small># of assistance instance</small></h5>
+                                            </center>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <center>
+                                            <div class="dc-chart" data-intro="Click on this pie chart to filter by Population Cohort." data-position="right" data-step="2" id="gender">
+                                                <center>
+                                                    <h5><strong>Age Group & Gender</strong><br ><small># of assistance instance</small></h5>
+                                                </center>
+                                            </div>
+                                        </center>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <center>
+                                            <div class="dc-chart" data-intro="Click on this pie chart to filter by Population Cohort." data-position="right" data-step="2" id="poptype">
+                                                <center>
+                                                    <h5><strong>Population Type</strong><br ><small># of assistance instance</small></h5>
+                                                </center>
+                                            </div>
+                                        </center>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <center>
+                                        <div class="dc-chart" data-intro="Click on this row chart to filter by RRP6 status of the report." data-position="right" data-step="4" id="appeal">
+                                            <center>
+                                                <h5><strong>Inter Agency Appeal</strong><br ><small># of assistance instance</small></h5>
+                                            </center>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <center>
+                                        <div class="dc-chart" data-intro="Click on this row chart to filter by Partner." data-position="right" data-step="5" id="partner">
+                                            <center>
+                                                <h5><strong>Partner</strong><br ><small># of assistance instance</small></h5>
+                                            </center>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="row">
+                                    <center>
+                                        <div class="dc-chart" data-intro="Click on this row chart to filter by Site Type." data-position="right" data-step="6" id="allocation">
+                                            <center>
+                                                <h5><strong>Allocation according to Initial Plan</strong><br ><small># of assistance instance</small></h5>
+                                            </center>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6" >
+                                        <center>
+                                            <div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="3" id="funded">
+                                                <center>
+                                                    <h5><strong>Funding Agency</strong><br ><small># of assistance instance</small></h5>
+                                                </center>
+                                            </div>
+                                            <div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="10" id="location">
+                                                <center>
+                                                    <h5><strong>Top Locations </strong> <br> <small>Camps locations are not aggregated within Governorate</small></h5>
+                                                </center>
+                                            </div>
+                                        </center>
+                                    </div>
+                                    <div class="col-md-6"
+                                    data-intro="Click anywhere on the map to filter the results. The camp icon filters activities for camp only and the small jordan map filters country-wide activities" data-position="left" data-step="8" >
+                                        <div id="region">
+                                            <h5><strong>Governorates</strong><br >
+                                            <small>Some activities are country-wide or for camps only.</small></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <center>
+                                            <h5><strong>Monthly Progress</strong><br ><small># of assistance instance</small></h5>
+                                        </center>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <script type="text/javascript">
+                                        var d = new Date();
+                                        var n = d.getMonth();
+                                            for(count = 0; count < n; count++){
+                                            document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2015,' + count + ', 1), new Date(2015, ' + count + ', 31)]); dc.redrawAll();">');
+                                            document.write(monthNames[count] + "</a> &nbsp;");
+                                            }
+                                </script>
+                                <br>
+
+                                    <div class="col-md-12 dc-chart" data-intro="Click on this line chart to zoom in to specific Month." data-position="left" data-step="9" id="month">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 dc-chart" data-intro="Click on this bar chart to filter by Range of Month(s)." data-position="left" data-step="10" id="monthrange">
+                                        <center>
+                                            <h5><strong>Select Month Range Here</strong></h5>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-md-12">
+                                <p><h2> &nbsp; </h2></p>
+                            </div>
+                        </div>
+                    </div>
+
+                 <!-- Indicator view html 
+                    <div class="tab-pane fade" id="PerIndicator">
+                        <div class="row">
+                                <div class="row" style="background-color: #ffffff; color: #33A3DC">
+                                    <div class="col-md-4" data-step="1" data-intro="Select the indicator you want to analyse." data-position="right">
+                                        <b>Indicator</b> <br>
+                                        <select id="indicatordropdown" style="background-color: #ffffff; color: #33A3DC; width: 90%;">
+                                            <option value='# awareness sessions on available services'># awareness sessions on available services</option>
+                                            <option value='# beneficiaries (clearance and demarcation)'># beneficiaries (clearance and demarcation)</option>
+                                            <option value='# community-self management structures established (IS, CC, CS)'># community-self management structures established (IS, CC, CS)</option>
+                                            <option value='# community-self management structures established (outside of CS)'># community-self management structures established (outside of CS)</option>
+                                            <option value='# complaint and feedback mechanisms established'># complaint and feedback mechanisms established</option>
+                                            <option value='# detention visits conducted'># detention visits conducted</option>
+                                            <option value='# individual interventions at border crossings'># individual interventions at border crossings</option>
+                                            <option value='# individuals assisted in detention'># individuals assisted in detention</option>
+                                            <option value='# individuals benefitting from life-skills activities'># individuals benefitting from life-skills activities</option>
+                                            <option value='# individuals counselled on HLP matters'># individuals counselled on HLP matters</option>
+                                            <option value='# individuals counselled on legal matters other than HLP'># individuals counselled on legal matters other than HLP</option>
+                                            <option value='# individuals counselled on obtaining birth certificates'># individuals counselled on obtaining birth certificates</option>
+                                            <option value='# individuals counselled on obtaining legal stay'># individuals counselled on obtaining legal stay</option>
+                                            <option value='# individuals counselled on obtaining other documentation'># individuals counselled on obtaining other documentation</option>
+                                            <option value='# individuals from community self-management structures trained'># individuals from community self-management structures trained</option>
+                                            <option value='# individuals identified and referred through community structures'># individuals identified and referred through community structures</option>
+                                            <option value='# individuals participating in community center and community-based activities'># individuals participating in community center and community-based activities</option>
+                                            <option value='# individuals participating in SDC activities'># individuals participating in SDC activities</option>
+                                            <option value='# individuals receiving legal counselling in detention'># individuals receiving legal counselling in detention</option>
+                                            <option value='# individuals represented in in courts, administrative bodies or informal conflict resolution mechanisms'># individuals represented in in courts, administrative bodies or informal conflict resolution mechanisms</option>
+                                            <option value='# individuals trained on collective site managementand coordination'># individuals trained on collective site managementand coordination</option>
+                                            <option value='# individuals trained on community based protection'># individuals trained on community based protection</option>
+                                            <option value='# information campaigns on available services'># information campaigns on available services</option>
+                                            <option value='# legal awareness sessions'># legal awareness sessions</option>
+                                            <option value='# legal information campaigns'># legal information campaigns</option>
+                                            <option value='# mediation interventions - HLP (agreement)'># mediation interventions - HLP (agreement)</option>
+                                            <option value='# mediation interventions - HLP'># mediation interventions - HLP</option>
+                                            <option value='# mediation interventions - non-HLP (agreement)'># mediation interventions - non-HLP (agreement)</option>
+                                            <option value='# mediation interventions - non-HLP'># mediation interventions - non-HLP</option>
+                                            <option value='# monitoring visits, including to collective sites'># monitoring visits, including to collective sites</option>
+                                            <option value='# of assessments'># of assessments</option>
+                                            <option value='# of border officials trained'># of border officials trained</option>
+                                            <option value='# of border posts receiving technical / institutional support'># of border posts receiving technical / institutional support</option>
+                                            <option value='# of capacity building initiatives (Documentation)'># of capacity building initiatives (Documentation)</option>
+                                            <option value='# of capacity building initiatives(Technical / institutional support to law enforcement)'># of capacity building initiatives(Technical / institutional support to law enforcement)</option>
+                                            <option value='# of community members engaged in self-management structures'># of community members engaged in self-management structures</option>
+                                            <option value='# of days border monitoring staff are present at border crossings'># of days border monitoring staff are present at border crossings</option>
+                                            <option value='# of high-level advocacy events on access to territory issues'># of high-level advocacy events on access to territory issues</option>
+                                            <option value='# of high-level advocacy events on protection issues'># of high-level advocacy events on protection issues</option>
+                                            <option value='# of individuals departed (RST & Humanitarian Admission)'># of individuals departed (RST & Humanitarian Admission)</option>
+                                            <option value='# of individuals reached through Mine Risk Education'># of individuals reached through Mine Risk Education</option>
+                                            <option value='# of individuals registered (incl. through mobile)'># of individuals registered (incl. through mobile)</option>
+                                            <option value='# of individuals submitted (RST & Humanitarian Admission)'># of individuals submitted (RST & Humanitarian Admission)</option>
+                                            <option value='# of individuals supported through provision of emergency cash assistance'># of individuals supported through provision of emergency cash assistance</option>
+                                            <option value='# of individuals transported to registration centres'># of individuals transported to registration centres</option>
+                                            <option value='# of individuals verified/renewed'># of individuals verified/renewed</option>
+                                            <option value='# of Mine Risk Education sessions delivered'># of Mine Risk Education sessions delivered</option>
+                                            <option value='# of MOSA contracted NGOs receiving support'># of MOSA contracted NGOs receiving support</option>
+                                            <option value='# of MOSA SDCs receiving support'># of MOSA SDCs receiving support</option>
+                                            <option value='# of persons capacitated in provision of legal aid, including on mediation and other informal dispute resolution techniques'># of persons capacitated in provision of legal aid, including on mediation and other informal dispute resolution techniques</option>
+                                            <option value='# of persons from civil society trained on protection issues'># of persons from civil society trained on protection issues</option>
+                                            <option value='# of persons trained on identification / referral / case management'># of persons trained on identification / referral / case management</option>
+                                            <option value='# of persons with disabilities and impairment supported'># of persons with disabilities and impairment supported</option>
+                                            <option value='# of press releases and material on access to territory issues published'># of press releases and material on access to territory issues published</option>
+                                            <option value='# of protection referrals which were not identified by the community'># of protection referrals which were not identified by the community</option>
+                                            <option value='# of public officials trained on protection issues'># of public officials trained on protection issues</option>
+                                            <option value='# of PWSN (excl. children and SGBV) identified and supported'># of PWSN (excl. children and SGBV) identified and supported</option>
+                                            <option value='# of square meters cleared'># of square meters cleared</option>
+                                            <option value='# of square meters demarcated'># of square meters demarcated</option>
+                                            <option value='# of strategic litigation cases represented'># of strategic litigation cases represented</option>
+                                            <option value='# press releases and material on protection issues published'># press releases and material on protection issues published</option>
+                                            <option value='# protection interventions'># protection interventions</option>
+                                            <option value='# staff trained in resettlement procedures'># staff trained in resettlement procedures</option>
+                                            <option value='LebRet # of individuals profiled/registered'>LebRet # of individuals profiled/registered</option>
+                                            <option value='PRS # of individuals recorded'>PRS # of individuals recorded</option>
+                                            <option value='Total USD value of cash provided'>Total USD value of cash provided</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2" data-step="2" data-intro="Select the area of operation." data-position="right">
+                                        <b>Area of operation</b> <br>
+                                        <select id="areadropdown" style="background-color: #ffffff; color: #33A3DC">
+                                            <option value="All">All</option>
+                                            <option value="Akkar">Akkar</option>
+                                            <option value="Beirut & Mt.Lebanon">Beirut & Mt.Lebanon</option>
+                                            <option value="Bekaa">Bekaa</option>
+                                            <option value="North (Tripoli)">North (Tripoli)</option>
+                                            <option value="South">South</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2" data-step="3" data-intro="Select the funding agency." data-position="right">
+                                        <b>Funding agency</b> <br>
+                                        <select id="fundedbydropdown" style="background-color: #ffffff; color: #33A3DC">
+                                            <option value="All">All</option>
+                                            <option value="FAO">FAO</option>
+                                            <option value="UNDP">UNDP</option>
+                                            <option value="UNESCO">UNESCO</option>
+                                            <option value="UNFPA">UNFPA</option>
+                                            <option value="UNHABITAT">UNHABITAT</option>
+                                            <option value="UNHCR">UNHCR</option>
+                                            <option value="UNICEF">UNICEF</option>
+                                            <option value="UNIDO">UNIDO</option>
+                                            <option value="UNRWA">UNRWA</option>
+                                            <option value="WFP">WFP</option>
+                                            <option value="Independent">Independent</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-1" data-step="4" data-intro="Select the LCRP result status." data-position="right">
+                                        <b>LCRP Result</b> <br>
+                                        <select id="lcrpdropdown" style="background-color: #ffffff; color: #33A3DC">
+                                            <option value="All">All</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-1" data-step="5" data-intro="Select the reporting month." data-position="right">
+                                        <b>Month</b> <br>
+                                        <select id="monthdropdown" style="background-color: #ffffff; color: #33A3DC">
+                                            <option value="All">All</option>
+                                            <option value="Jan">Jan</option>
+                                            <option value="Feb">Feb</option>
+                                            <option value="Mar">Mar</option>
+                                            <option value="Apr">Apr</option>
+                                            <option value="May">May</option>
+                                            <option value="Jun">Jun</option>
+                                            <option value="Jul">Jul</option>
+                                            <option value="Aug">Aug</option>
+                                            <option value="Sep">Sep</option>
+                                            <option value="Oct">Oct</option>
+                                            <option value="Nov">Nov</option>
+                                            <option value="Dec">Dec</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="dc-chart" id="count-info" data-step="12" data-intro="Click on this button to clear all the filters." data-position="right">
+                                            <br>
+                                            <strong><span class="filter-count " ></span></strong> selected out of <span class="total-count "></span> records
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="container-fluid" id="dashboard_NA2">
+                                    <div class="col-md-3">
+                                        <center>
+                                            <div class="row" style="background-color: #33A3DC; color: #ffffff">
+                                                <h4>
+                                                TOTAL Reported
+                                                <div class="dc-chart" id="progresstotal_NA2" data-step="6" data-intro="This is the total value of the indicator according to the filters you have selected." data-position="right">
+                                                   
+                                                </div>
+                                                </h4>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="partner_NA2"  data-step="7" data-intro="Click on this row chart to filter by Partner." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Partner</strong></h5>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="fundedby_NA2" data-step="11" data-intro="Click on this row chart to filter by Funding Agency." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Funding agency</strong></h5>
+                                                </div>
+                                            </div>
+                                        </center>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <center>
+                                                <h5><strong>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="targetnum_NA2" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                </strong></h5>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="target_NA2" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="dc-chart"  id="popcohort_NA2" data-step="8" data-intro="This chart shows the indicator progress by Population Cohort." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Population Cohort</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="lcrp_NA2" data-step="12" data-intro="Click on this row chart to filter by LCRP Result status." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>LCRP result</strong></h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="gender_NA2" data-step="9" data-intro="This chart shows the indicator progress by Gender." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Gender</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="sectoroffunding_NA2" data-step="13" data-intro="Click on this row chart to filter by Sector of funding." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Sector of funding</strong></h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="age_NA2" data-step="10" data-intro="This chart shows the indicator progress by Age group." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Age group</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="dc-chart" id="month_NA2" data-step="14" data-intro="This chart shows the indicator progress by Reporting Month." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                <h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monthly</strong></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="row">
+                                            <div class="dc-chart" id="governorate_NA2" data-step="15" data-intro="Click on this map chart to filter by Governorate." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                <center><h5><strong>Governorate</strong></h5></center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid" id="dashboard_NB2">
+                                    <div class="col-md-3">
+                                        <center>
+                                            <div class="row" style="background-color: #33A3DC; color: #ffffff">
+                                                <h4>
+                                                TOTAL Reported
+                                                <div class="dc-chart" id="progresstotal_NB2" data-step="6" data-intro="This is the total value of the indicator according to the filters you have selected." data-position="right">
+                                                    
+                                                </div>
+                                                </h4>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="partner_NB2"  data-step="7" data-intro="Click on this row chart to filter by Partner." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Partner</strong></h5>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="fundedby_NB2" data-step="11" data-intro="Click on this row chart to filter by Funding Agency." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Funding agency</strong></h5>
+                                                </div>
+                                            </div>
+                                        </center>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <center>
+                                                <h5><strong>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="targetnum_NB2" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                </strong></h5>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="target_NB2" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="dc-chart"  id="popcohort_NB2" data-step="8" data-intro="This chart shows the indicator progress by Population Cohort." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Population Cohort</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="lcrp_NB2" data-step="12" data-intro="Click on this row chart to filter by LCRP Result status." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>LCRP result</strong></h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="gender_NB2" data-step="9" data-intro="This chart shows the indicator progress by Gender." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Gender</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="sectoroffunding_NB2" data-step="13" data-intro="Click on this row chart to filter by Sector of funding." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Sector of funding</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="dc-chart" id="month_NB2" data-step="14" data-intro="This chart shows the indicator progress by Reporting Month." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                <h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monthly</strong></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="row">
+                                            <div class="dc-chart" id="governorate_NB2" data-step="15" data-intro="Click on this map chart to filter by Governorate." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                <center><h5><strong>Governorate</strong></h5></center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid" id="dashboard_ND1">
+                                    <div class="col-md-3">
+                                        <center>
+                                            <div class="row" style="background-color: #33A3DC; color: #ffffff">
+                                                <h4>
+                                                TOTAL Reported
+                                                <div class="dc-chart" id="progresstotal_ND1" data-step="6" data-intro="This is the total value of the indicator according to the filters you have selected." data-position="right">
+                                                    
+                                                </div>
+                                                </h4>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="partner_ND1"  data-step="7" data-intro="Click on this row chart to filter by Partner." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Partner</strong></h5>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="fundedby_ND1" data-step="11" data-intro="Click on this row chart to filter by Funding Agency." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Funding agency</strong></h5>
+                                                </div>
+                                            </div>
+                                        </center>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <center>
+                                                <h5><strong>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="targetnum_ND1" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                </strong></h5>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="target_ND1" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="dc-chart"  id="popcohort_ND1" data-step="8" data-intro="This chart shows the indicator progress by Population Cohort." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Population Cohort</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="lcrp_ND1" data-step="12" data-intro="Click on this row chart to filter by LCRP Result status." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>LCRP result</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="sectoroffunding_ND1" data-step="13" data-intro="Click on this row chart to filter by Sector of funding." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Sector of funding</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="dc-chart" id="month_ND1" data-step="14" data-intro="This chart shows the indicator progress by Reporting Month." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                <h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monthly</strong></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid" id="dashboard_ND2">
+                                    <div class="col-md-3">
+                                        <center>
+                                            <div class="row" style="background-color: #33A3DC; color: #ffffff">
+                                                <h4>
+                                                TOTAL Reported
+                                                <div class="dc-chart" id="progresstotal_ND2" data-step="6" data-intro="This is the total value of the indicator according to the filters you have selected." data-position="right">
+                                                    
+                                                </div>
+                                                </h4>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="partner_ND2"  data-step="7" data-intro="Click on this row chart to filter by Partner." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Partner</strong></h5>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="fundedby_ND2" data-step="11" data-intro="Click on this row chart to filter by Funding Agency." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Funding agency</strong></h5>
+                                                </div>
+                                            </div>
+                                        </center>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <center>
+                                                <h5><strong>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="targetnum_ND2" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                </strong></h5>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="target_ND2" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="dc-chart"  id="popcohort_ND2" data-step="8" data-intro="This chart shows the indicator progress by Population Cohort." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Population Cohort</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="lcrp_ND2" data-step="12" data-intro="Click on this row chart to filter by LCRP Result status." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>LCRP result</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="sectoroffunding_ND2" data-step="13" data-intro="Click on this row chart to filter by Sector of funding." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Sector of funding</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="dc-chart" id="month_ND2" data-step="14" data-intro="This chart shows the indicator progress by Reporting Month." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                <h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monthly</strong></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="row">
+                                            <div class="dc-chart" id="governorate_ND2" data-step="15" data-intro="Click on this map chart to filter by Governorate." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                <center><h5><strong>Governorate</strong></h5></center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid" id="dashboard_NE1">
+                                    <div class="col-md-3">
+                                        <center>
+                                            <div class="row" style="background-color: #33A3DC; color: #ffffff">
+                                                <h4>
+                                                TOTAL Reported
+                                                <div class="dc-chart" id="progresstotal_NE1" data-step="6" data-intro="This is the total value of the indicator according to the filters you have selected." data-position="right">
+                                                    
+                                                </div>
+                                                </h4>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="partner_NE1"  data-step="7" data-intro="Click on this row chart to filter by Partner." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Partner</strong></h5>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="fundedby_NE1" data-step="11" data-intro="Click on this row chart to filter by Funding Agency." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Funding agency</strong></h5>
+                                                </div>
+                                            </div>
+                                        </center>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <center>
+                                                <h5><strong>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="targetnum_NE1" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                </strong></h5>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="target_NE1" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="lcrp_NE1" data-step="12" data-intro="Click on this row chart to filter by LCRP Result status." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>LCRP result</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="sectoroffunding_NE1" data-step="13" data-intro="Click on this row chart to filter by Sector of funding." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Sector of funding</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="dc-chart" id="month_NE1" data-step="14" data-intro="This chart shows the indicator progress by Reporting Month." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                <h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monthly</strong></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid" id="dashboard_NE2">
+                                    <div class="col-md-3">
+                                        <center>
+                                            <div class="row" style="background-color: #33A3DC; color: #ffffff">
+                                                <h4>
+                                                TOTAL Reported
+                                                <div class="dc-chart" id="progresstotal_NE2" data-step="6" data-intro="This is the total value of the indicator according to the filters you have selected." data-position="right">
+                                                    
+                                                </div>
+                                                </h4>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="partner_NE2"  data-step="7" data-intro="Click on this row chart to filter by Partner." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Partner</strong></h5>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="dc-chart" id="fundedby_NE2" data-step="11" data-intro="Click on this row chart to filter by Funding Agency." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                    <h5><strong>Funding agency</strong></h5>
+                                                </div>
+                                            </div>
+                                        </center>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <center>
+                                                <h5><strong>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="targetnum_NE2" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                </strong></h5>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="target_NE2" data-step="15" data-intro="This chart shows the indicator progress as % of Target." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="lcrp_NE2" data-step="12" data-intro="Click on this row chart to filter by LCRP Result status." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>LCRP result</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <center>
+                                                <div class="row">
+                                                    <div class="dc-chart" id="sectoroffunding_NE2" data-step="13" data-intro="Click on this row chart to filter by Sector of funding." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                        <h5><strong>Sector of funding</strong></h5>
+                                                    </div>
+                                                </div>
+                                                </center>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="dc-chart" id="month_NE2" data-step="14" data-intro="This chart shows the indicator progress by Reporting Month." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                <h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Monthly</strong></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="row">
+                                            <div class="dc-chart" id="governorate_NE2" data-step="15" data-intro="Click on this map chart to filter by Governorate." data-position="right" style="background-color: #ffffff; color: #33A3DC">
+                                                <center><h5><strong>Governorate</strong></h5></center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                     </div>
+                -->
+                
+                </div>
+            
+            
+            </div>
+
+
+            <div class="row" id="timelineid"style="background-color: #766aab; color: #ffffff">
+                <div class="col-md-12">
+                    <p><h2>Monthly Highlight</h2></p>
+                </div>
+            </div>
+
+
+            <div class="row" style="background-color: #D8D8D8;">
+                <iframe src="../../timeline/wash/timeline.html" width="100%" height="800" frameborder="0" scrolling="no" marginheight="10" marginwidth="10"></iframe>
+            </div>
+
+            <div class="row" style="background-color: #766aab; color: #00000">
+                <div class="col-md-12">
+                    <p><strong>Produced by Information Management Unit, UNHCR, Jordan. For more information please
+                    contact <a href="http://data.unhcr.org/jordan/team.html" target="_blank" >our team</a>.
+                    Post comments, issues or bug report <a href="https://github.com/unhcr-jordan/sectors/issues">here</a></strong></p>
+                </div>
+            </div>
+
+            </div>
+            <script type="text/javascript" src="../../js/d3_002.js"></script>
+            <!--script type="text/javascript" src="../../js/d3.v3.js"></script -->
+            <script type="text/javascript" src="../../js/crossfilter.js"></script>
+            <script type="text/javascript" src="../../js/dc.js"></script>
+            <script type="text/javascript" src="../../js/d3.js"></script>
+
+        <!-- Sector overview Javascript -->
+        <script>
+        // loading screen code
+        $(window).load(function() {
+        $(".loader").fadeOut("slow");
+        });
+
+        //GeoJSON data for background map
+                    var width = 360;
+                    var height = 360;
+                    var svg = d3.select("#region")
+                                .append("svg")
+                                .attr("width", width)
+                                .attr("height", height)
+                                .style("stroke-width", "0")
+                                .style("stroke", "grey");
+                    d3.json("../../data/admin1.geojson", function(json) {
+                        var center = d3.geo.centroid(json)
+                        var scale  = 150;
+                        var offset = [width/2, height/2];
+                        var projection = d3.geo.mercator().scale(scale).center(center).translate(offset);
+                        var path = d3.geo.path().projection(projection);
+                        var bounds  = path.bounds(json);
+                        var hscale  = scale*(width) / (bounds[1][0] - bounds[0][0]);
+                        var vscale  = scale*(height - 75)/ (bounds[1][1] - bounds[0][1]);
+                        var scale   = (hscale < vscale) ? hscale : vscale;
+                        var offset  = [width - (bounds[0][0] + bounds[1][0])/2, height - (bounds[0][1] + bounds[1][1])/2];
+                        path.projection(d3.geo.mercator().center([42,29.9]).scale(3500))
+                        svg.append("rect").attr('width', width).attr('height', height).style('stroke', 'black').style('fill', 'none');
+                        svg.selectAll("path").data(json.features).enter().append("path").attr("d", path).style("fill", "white").style("stroke-width", "1").style("stroke", "black")
+                    });
+
+           //Prepare to load data
+                var dataset;
+
+                var indicator_chart = dc.rowChart("#indicator");
+                var gender_chart = dc.pieChart("#gender");
+                var poptype_chart = dc.pieChart("#poptype");
+                var funded_chart = dc.rowChart("#funded");
+                var appeal_chart = dc.rowChart("#appeal");
+                var allocation_chart = dc.rowChart("#allocation");
+                var partner_chart = dc.rowChart("#partner");
+                var month_chart = dc.lineChart("#month");
+                var monthrange_chart = dc.barChart("#monthrange");
+                var location_chart = dc.rowChart("#location");
+                var obj_chart = dc.rowChart("#obj");
+                var region_chart = dc.bubbleOverlay("#region").svg(d3.select("#region svg"));
+
+                function getFiltersValues() {
+                       var filters = [
+                                       { name: 'indicator', value: indicator_chart.filters()},
+                                       { name: 'gender', value: gender_chart.filters()},
+                                       { name: 'poptype', value: poptype_chart.filters()},
+                                       { name: 'funded', value: funded_chart.filters()},
+                                       { name: 'appeal', value: appeal_chart.filters()},
+                                       { name: 'partner', value: partner_chart.filters()},
+                                       { name: 'allocation', value: allocation_chart.filters()},
+                                       { name: 'monthrange', value: monthrange_chart.filters()},
+                                       { name: 'location', value: location_chart.filters()},
+                                       { name: 'obj', value: obj_chart.filters()},
+                                       { name: 'region', value: region_chart.filters()}
+                                    ];
+                       var recursiveEncoded = $.param( filters );
+                       location.hash = recursiveEncoded;
+                   }
+                function initFilters() {
+        // Get hash values
+                       var parseHash = /^#indicator=([A-Za-z0-9,_\-\/\s]*)&gender=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&appeal=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&allocation=([A-Za-z0-9,_\-\/\s]*)&location=([A-Za-z0-9,_\-\/\s]*)$/;
+                       var parsed = parseHash.exec(decodeURIComponent(location.hash));
+                       function filter(chart, rank) {
+                           if (parsed[rank] == "") { chart.filter(null); }
+                           else {
+                               var filterValues = parsed[rank].split(",");
+                               for (var i = 0; i < filterValues.length; i++ ) { chart.filter(filterValues[i]); }
+                           }
+                       }
+                       if (parsed) {
+                           filter(indicator_chart, 1);
+                           filter(gender_chart, 2);
+                           filter(funded_chart, 3);
+                           filter(appeal_chart, 4);
+                           filter(partner_chart, 5);
+                           filter(allocation_chart, 6);
+                           filter(allocation_chart, 7);
+                           filter(poptype_chart, 8);
+                           filter(region_chart, 9);
+                           filter(obj_chart, 10);
+                       }
+                   }
+
+                d3.csv("data.csv", function(error, dataset) {
+
+                var dateFormat = d3.time.format("%d/%m/%Y");
+                var numberFormat = d3.format(",f");
+
+                dataset.forEach(function (d) {
+                   d.dd = dateFormat.parse(d.StartDate);
+                   d.month = d3.time.month(d.dd); // pre-calculate month for better performance
+                   d.close = +d.close; // coerce to number
+                   d.open = +d.open;
+                });
+
+                if (error) {  //If error is not null, something went wrong.
+                   console.log(error);  //Log the error.
+                } else {      //If no error, the file loaded correctly. Yay!
+         //console.log(dataset);   //Log the data.
+
+                var cf = crossfilter(dataset);
+
+                cf.indicator = cf.dimension(function(d) { return d.Indicator; });
+                var indicator = cf.indicator.group();
+                var indicatorByTotal = cf.indicator.group().reduceSum(function (d) { return d.Value;} );
+                   indicator_chart.width(400).height(250)
+                       .dimension(cf.indicator)
+                       .group(indicatorByTotal)
+                       .elasticX(true)
+                       .on("filtered", getFiltersValues)
+                       .data(function(group) { return group.top(10); })
+                       .colors(['#766aab'])
+                       .colorDomain([0,0])
+                       .colorAccessor(function(d, i){return 1;})
+                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+                cf.gender = cf.dimension(function(d) { return d.Gender; });
+                var gender = cf.gender.group();
+                var genderByTotal = cf.gender.group().reduceSum(function (d) { return d.Value;} );
+                   gender_chart.width(100).height(100)
+                       .dimension(cf.gender)
+                       .group(genderByTotal)
+                       .innerRadius(10)
+                       .colors(['#8da0cb', /* boys */
+                               '#fc8d62', /* girls */
+                               '#e78ac3', /* men */
+                               '#66c2a5', /* women */
+                               ])
+                       .colorDomain([0,4])
+                       .renderLabel(true)
+                       .colorAccessor(function(d, i){return i%4;})
+                       .on("filtered", getFiltersValues);
+
+                cf.poptype = cf.dimension(function(d) { return d.poptype; });
+                var poptype = cf.poptype.group();
+                var poptypeByTotal = cf.poptype.group().reduceSum(function (d) { return d.Value;} );
+                   poptype_chart.width(100).height(100)
+                       .dimension(cf.poptype)
+                       .group(poptypeByTotal)
+                       .innerRadius(10)
+                       .colors(['#8da0cb', /* boys */
+                               '#fc8d62', /* girls */
+                               '#e78ac3', /* men */
+                               ])
+                       .colorDomain([0,4])
+                       .renderLabel(true)
+                       .colorAccessor(function(d, i){return i%4;})
+                       .on("filtered", getFiltersValues);
+
+                cf.funded = cf.dimension(function(d) { return d.Fundedby; });
+                var funded = cf.funded.group();
+                var fundedByTotal = cf.funded.group().reduceSum(function (d) { return d.Value;} );
+                   funded_chart.width(400).height(175)
+                       .dimension(cf.funded)
+                       .group(fundedByTotal)
+                       .elasticX(true)
+                       .on("filtered", getFiltersValues)
+                       .data(function(group) { return group.top(100); })
+                       .colors(['#766aab'])
+                       .colorDomain([0,0])
+                       .colorAccessor(function(d, i){return 1;})
+                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+
+                cf.location = cf.dimension(function(d) { return d.Governorate; });
+                var location = cf.location.group();
+                var locationByTotal = cf.location.group().reduceSum(function (d) { return d.Value;} );
+                   location_chart.width(400).height(175)
+                       .dimension(cf.location)
+                       .group(locationByTotal)
+                       .elasticX(true)
+                       .on("filtered", getFiltersValues)
+                       .data(function(group) { return group.top(6); })
+                       .colors(['#766aab'])
+                       .colorDomain([0,0])
+                       .colorAccessor(function(d, i){return 1;})
+                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+                cf.obj = cf.dimension(function(d) { return d.activity; });
+                var obj = cf.obj.group();
+                var objByTotal = cf.obj.group().reduceCount();
+                   obj_chart.width(400).height(140)
+                       .dimension(cf.obj)
+                       .group(objByTotal)
+                       .elasticX(false)
+                       .on("filtered", getFiltersValues)
+                       .data(function(group) { return group.top(4); })
+                       .colors(['#766aab'])
+                       .colorDomain([0,0])
+                       .colorAccessor(function(d, i){return 1;})
+                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+                cf.appeal = cf.dimension(function(d) { return d.appeal; });
+                var appeal = cf.appeal.group();
+                var appealByTotal = cf.appeal.group().reduceSum(function (d) { return d.Value;} );
+                   appeal_chart.width(400).height(130)
+                       .dimension(cf.appeal)
+                       .group(appealByTotal)
+                       .elasticX(true)
+                       .on("filtered", getFiltersValues)
+                       .data(function(group) { return group.top(100); })
+                       .colors(['#766aab'])
+                       .colorDomain([0,0])
+                       .colorAccessor(function(d, i){return 1;})
+                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+                cf.allocation = cf.dimension(function(d) { return d.allocation; });
+                var allocation = cf.allocation.group();
+                var allocationByTotal = cf.allocation.group().reduceSum(function (d) { return d.Value;} );
+                   allocation_chart.width(400).height(90)
+                       .dimension(cf.allocation)
+                       .group(allocationByTotal)
+                       .elasticX(true)
+                       .on("filtered", getFiltersValues)
+                       .data(function(group) { return group.top(100); })
+                       .colors(['#766aab'])
+                       .colorDomain([0,0])
+                       .colorAccessor(function(d, i){return 1;})
+                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+                cf.partner = cf.dimension(function(d) { return d.Partner; });
+                var partner = cf.partner.group();
+                var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.Value;} );
+                   partner_chart.width(400).height(570)
+                       .dimension(cf.partner)
+                       .group(partnerByTotal)
+                       .elasticX(true)
+                       .on("filtered", getFiltersValues)
+                       .data(function(group) { return group.top(200); })
+                       .colors(['#766aab'])
+                       .colorDomain([0,0])
+                       .colorAccessor(function(d, i){return 1;})
+                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+                cf.month = cf.dimension(function (d) {return d.dd;});
+                var month = cf.month.group();
+                var monthByTotal = cf.month.group().reduceSum(function (d) { return d.Value;} );
+                var boys=cf.month.group().reduceSum(function(d) {if (d.Gender=="Boys") {return d.Value;}else{return 0;}});
+                var girls=cf.month.group().reduceSum(function(d) {if (d.Gender=="Girls") {return d.Value;}else{return 0;}});
+                var men=cf.month.group().reduceSum(function(d) {if (d.Gender=="Men") {return d.Value;}else{return 0;}});
+                var women=cf.month.group().reduceSum(function(d) {if (d.Gender=="Women") {return d.Value;}else{return 0;}});
+
+                   month_chart.width(900).height(230)
+                       .transitionDuration(1000)
+                       .margins({top: 30, right: 50, bottom: 25, left: 60})
+                       .dimension(cf.month)
+                       .mouseZoomable(true)
+                       .rangeChart(monthrange_chart)
+                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
+                       .xUnits(d3.time.months)
+        //.elasticY(true)
+                       .renderHorizontalGridLines(true)
+                       .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
+                       .brushOn(false)
+                        .group(boys, 'Boys')
+                        .stack(girls, 'Girls')
+                        .stack(men, 'Men')
+                        .stack(women, 'Women')
+                       .renderArea(false);
+
+
+                   monthrange_chart.width(900)
+                       .height(40)
+                       .margins({top: 0, right: 50, bottom: 20, left: 60})
+                       .dimension(cf.month)
+                       .group(monthByTotal)
+                       .colors(['#766aab'])
+                       .gap(1)
+                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 12, 31)]))
+                       .xUnits(d3.time.months)
+                       .yAxis().ticks(0);
+
+
+                // Now create the buble chart for all region
+                cf.region = cf.dimension(function(d) { return d.Governorate; });
+                var region = cf.region.group();
+                var regionByTotal = cf.region.group().reduceSum(function (d) { return d.Value;} );
+                      region_chart.width(400).height(400)
+                        .transitionDuration(500)
+                        .dimension(cf.region)
+                        .group(regionByTotal)
+                        .colors(['#215968'])
+                        .colorDomain([0, 0])
+                        .colorAccessor(function(d, i){return 1;})
+                        .title(function(d) { return "region: " + d.key + "\nTotal:" + d.value;})
+
+                  //      .radiusValueAccessor(function (p) { return p.value;  })
+                   //     .maxBubbleRelativeSize(0.03)
+
+                        .r(d3.scale.linear().domain([0, 200000]))
+                        .point("IRBID", 98, 58)
+                        .point("MAFRAQ", 193, 70)
+                        .point("ZARQA", 160, 108)
+                        .point("AMMAN", 130, 120)
+                        .point("MAAN", 120, 230)
+                        .point("AQABAH", 70, 260)
+                        .point("TAFILAH", 90, 180)
+                        .point("KARAK", 100, 155)
+                        .point("MADABA", 95, 130)
+                        .point("BALQA", 94, 96)
+                        .point("JARASH", 104, 82)
+                        .point("AJLOUN", 74, 96)
+                        .point("ZaatariCamp", 270, 150)
+                        .point("AzraqCamp", 270, 180)
+                        .point("EJ Camp", 270, 210)
+                        .point("Countrywide", 255, 260)
+                        .on("filtered", getFiltersValues)
+                      //  .debug(true)
+                       ;
+
+                var all = cf.groupAll();
+                  dc.dataCount("#count-info")
+                       .dimension(cf)
+                       .group(all);
+
+
+                cf.region = cf.dimension(function(d) { return d.region; });
+                var region = cf.region.group();
+
+
+
+
+               dc.renderAll();
+
+               /* Customised infobox */
+               d3.selectAll("g.row").call(rowTip);
+               d3.selectAll("g.row").on('mouseover', rowTip.show).on('mouseout', rowTip.hide);
+
+               d3.selectAll(".pie-slice").call(pieTip);
+               d3.selectAll(".pie-slice").on('mouseover', pieTip.show).on('mouseout', pieTip.hide);
+
+
+               // tooltips
+                var rowTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" +  d.key + "</span> : "  + numberFormat(d.value) + " Assistance Instance"; });
+                var pieTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" +  d.data.key + "</span> : "  + numberFormat(d.value) + " Assistance Instance"; });
+                var barTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" + d.data.key + "</span> : " + numberFormat(d.value) + " Assistance Instance";});
+                var bubbleTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" + d.key + "</span> : " + numberFormat(d.value) + " Assistance Instance";});
+                //var geoTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" + cazacode2caza[d.key] + "</span> : " + numberFormat(d.value) + " Individuals";});
+
+
+                   $('#dashboard').show();
+                }
+                });
+            </script>
+
+
+        <!-- Indicator view Javascript 
+        <script>
+
+            //National level dashboard styles (possible combinations)
+            //Prefix: N
+            //Disaggregation
+            //A: (Population, Gender, Age)
+            //B: (Population, Gender)
+            //C: (Population, Age) // But there may not be anything like this because when we have age we usually should have gender as well
+            //D: (Population)
+            //E: (None) //For other type of indicators than the population
+
+            //Geo-level (The idea is to have only the governorate level map)
+            //1: (No Map) //If the indicator is at the country level
+            //2: (Map) //If the indicator is reported at the governorate level and below
+            //------------------------------------
+
+            //Governorate level dashboard styles (possible combinations)
+            //Prefix: N
+            //Disaggregation
+            //A: (Population, Gender, Age)
+            //B: (Population, Gender)
+            //C: (Population, Age) // But there may not be anything like this because when we have age we usually should have gender as well
+            //D: (Population)
+            //E: (None) //For other type of indicators than the population
+
+            //Geo-level (The idea is to have only the governorate level map)
+            //0: (No field level dashboard) //If the indicator is reported at the country level
+            //1: (No Map) //If the indicator is reported at the governorate level
+            //2: (Map) //If the indicator is reported at the caza level (Caza level map only)
+            //3: (Map) //If the indicator is reported at the cadastral or site level (Caza level map and Cadastral level map)
+            //------------------------------------
+
+
+            var ind2national = {
+                '# HH receiving multi-sector/ purpose cash transfers':'NA2',
+                '# HH receiving newcomer cash':'NA2',
+                '# HH receiving seasonal cash grants':'NA2',
+                '# HH receiving voucher for fuel':'NA2',
+                '# of blankets distributed':'NA2',
+                '# of children who received winter clothes (in kind)':'NA2',
+                '# of children who received winter vouchers':'NA2',
+                '# of HH assisted with in kind CRI':'NA2',
+                '# of stoves distributed':'NA2',
+                'Total USD amount distributed (Fuel vouchers)':'NE2',
+                'Total USD amount distributed (Multi - purpose cash )':'NE2',
+                'Total USD amount distributed (Seasonal Cash Grants)':'NE2',
+                'Total USD amount distributed in vouchers/cash (Newcomers)':'NE2'
+                }
+
+            var ind2field = {
+                '# HH receiving multi-sector/ purpose cash transfers':'FA2',
+                '# HH receiving newcomer cash':'FA3',
+                '# HH receiving seasonal cash grants':'FA3',
+                '# HH receiving voucher for fuel':'FA3',
+                '# of blankets distributed':'FA3',
+                '# of children who received winter clothes (in kind)':'FA3',
+                '# of children who received winter vouchers':'FA3',
+                '# of HH assisted with in kind CRI':'FA3',
+                '# of stoves distributed':'FA3',
+                'Total USD amount distributed (Fuel vouchers)':'FE3',
+                'Total USD amount distributed (Multi - purpose cash )':'FE2',
+                'Total USD amount distributed (Seasonal Cash Grants)':'FE3',
+                'Total USD amount distributed in vouchers/cash (Newcomers)':'FE3'
+            }
+
+            var ind2unit = {
+                '# HH receiving multi-sector/ purpose cash transfers':'Household',
+                '# HH receiving newcomer cash':'Household',
+                '# HH receiving seasonal cash grants':'Household',
+                '# HH receiving voucher for fuel':'Household',
+                '# of blankets distributed':'Blankets',
+                '# of children who received winter clothes (in kind)':'Children',
+                '# of children who received winter vouchers':'Children',
+                '# of HH assisted with in kind CRI':'Household',
+                '# of stoves distributed':'Stoves',
+                'Total USD amount distributed (Fuel vouchers)':'USD',
+                'Total USD amount distributed (Multi - purpose cash )':'USD',
+                'Total USD amount distributed (Seasonal Cash Grants)':'USD',
+                'Total USD amount distributed in vouchers/cash (Newcomers)':'USD'
+            }
+
+            var ind2target= {
+                '# HH receiving multi-sector/ purpose cash transfers':'93595',
+                '# HH receiving newcomer cash':'5993',
+                '# HH receiving seasonal cash grants':'88486',
+                '# HH receiving voucher for fuel':'17420',
+                '# of blankets distributed':'232645',
+                '# of children who received winter clothes (in kind)':'0',
+                '# of children who received winter vouchers':'0',
+                '# of HH assisted with in kind CRI':'0',
+                '# of stoves distributed':'10800',
+                'Total USD amount distributed (Fuel vouchers)':'397220',
+                'Total USD amount distributed (Multi - purpose cash )':'143199432',
+                'Total USD amount distributed (Seasonal Cash Grants)':'23914825',
+                'Total USD amount distributed in vouchers/cash (Newcomers)':'78300'
+            }
+
+
+        //Declare global variables
+        var dashboardlevel; //"N" for National level, "F" for Field level
+        var dashboardthemecolour = '#766aab';
+
+        var myVar_indicatordropdown;
+        var myVar_areadropdown;
+        var myVar_fundedbydropdown;
+        var myVar_lcrpdropdown;
+        var myVar_monthdropdown;
+        var dashboardstyle;
+
+        var div_partner_chart;
+        var div_governorate_chart;
+        var div_district_chart;
+        var div_popcohort_chart;
+        var div_gender_chart;
+        var div_age_chart;
+        var div_fundedby_chart;
+        var div_lcrp_chart;
+        var div_sectoroffunding_chart;
+        var div_month_chart;
+        var div_target_chart;
+        var div_progresstotal;
+        var div_targetnum;
+        var myfiltercount = 0
+
+        var myColors =
+                {
+                'AffLeb': '#0571A5',
+                'DisSyr': '#0E92D2',
+                'LebRet': '#0099FF',
+                'OthPop': '#58B6E4',
+                'PRL': '#85CBED',
+                'PRS': '#E2E0FF',
+                'Female': '#99CCFF',
+                'Male': '#33A3DC',
+                'Age 0-4': '#538DD5',
+                'Age 0-17': '#538DD5',
+                'Age 5-11': '#21A3DC',
+                'Age 5-17': '#21A3DC',
+                'Age 12-17': '#8DB4E2',
+                'Age 18-25': '#B8CCE4',
+                'Age 26-59': '#DCE6F1',
+                'Age 18-59': '#DCE6F1',
+                'Age 60+': '#F2F2F2',
+                'Age < 18': '#538DD5',
+                'Age > 18': '#21A3DC',
+                'Yes': '#33A3DC',
+                'No': '#99CCFF',
+                'Basic Assistance': '#58595B',
+                'Child Protection': '#0077C0',
+                'Education': '#D44E5B',
+                'Food Security': '#00B26B',
+                'Health': '#9ECF7C',
+                'Livelihoods': '#00A9B7',
+                'Protection': '#33A3DC',
+                'SGBV': '#0077C0',
+                'Shelter': '#FEBD3B',
+                'Social Stability': '#F47521',
+                'WASH': '#766AAB',
+                'undefined': '#ffffff',
+                'empty': '#ffffff',
+                'Achievement': '#33A3DC',
+                'Remaining': '#e0e0e0'
+                };
+
+
+        //other charts
+        var partner_chart;// = dc.rowChart(div_partner_chart);
+        var governorate_chart;// = dc.rowChart(div_governorate_chart);
+        var district_chart;// = dc.rowChart(div_district_chart);
+        var popcohort_chart;// = dc.rowChart(div_popcohort_chart);
+        var gender_chart;// = dc.pieChart(div_gender_chart);
+        var age_chart;// = dc.pieChart(div_age_chart);
+        var fundedby_chart;// = dc.rowChart(div_fundedby_chart);
+        var lcrp_chart;// = dc.pieChart(div_lcrp_chart);
+        var sectoroffunding_chart;// = dc.pieChart(div_sectoroffunding_chart);
+        var month_chart;// = dc.lineChart(div_month_chart);
+        var target_chart;
+        var data_table;
+        var dataset;
+        var mytotal;
+        var filters;
+
+        DoEverything();
+        //console.log(dataset);
+
+        function DoEverything()
+        {
+            SetDashboardSetting();
+            ShowRelevantDashboard("dashboard_NA2");
+            ShowRelevantDashboard("dashboard_NB2");
+            ShowRelevantDashboard("dashboard_ND1");
+            ShowRelevantDashboard("dashboard_ND2");
+            ShowRelevantDashboard("dashboard_NE1");
+            ShowRelevantDashboard("dashboard_NE2")
+
+            //Load Governorate map background
+            //GeoJSON data for background map
+            var width = 350;
+            var height = 475;
+            //d3.select("#governorate_NA2 svg").remove();
+            //d3.select("#governorate_ND2 svg").remove();
+            d3.select(div_governorate_chart + " svg").remove();
+            //if (myfiltercount>0) {governorate_chart.resetSvg();};
+            //if (myfiltercount>0) {document.getElementById(div_governorate_chart + " svg").innerHTML  = "";}
+            var svg = d3.select(div_governorate_chart)
+                        .append("svg")
+                        .attr("width", width)
+                        .attr("height", height)
+                        .style("stroke-width", "0")
+                        .style("stroke", "grey");
+            d3.json("../../data/lebanon-gov-2015.geojson", function(json) {
+                var center = d3.geo.centroid(json)
+                var scale  = 150;
+                var offset = [width/2, height/2];
+                var projection = d3.geo.mercator().scale(scale).center(center).translate(offset);
+                var path = d3.geo.path().projection(projection);
+                var bounds  = path.bounds(json);
+                var hscale  = scale*(width) / (bounds[1][0] - bounds[0][0]);
+                var vscale  = scale*(height - 75)/ (bounds[1][1] - bounds[0][1]);
+                var scale   = (hscale < vscale) ? hscale : vscale;
+                var offset  = [width - (bounds[0][0] + bounds[1][0])/2, height - (bounds[0][1] + bounds[1][1])/2];
+                path.projection(d3.geo.mercator().center([37.21,33.81]).scale(13000))
+                svg.append("rect").attr('width', width).attr('height', height).style('stroke', 'black').style('fill', 'none');
+                svg.selectAll("path").data(json.features).enter().append("path").attr("d", path).style("fill-opacity", 0.5).style("fill", "none").style("stroke-width", "1").style("stroke", "black")
+            });
+
+            partner_chart = dc.rowChart(div_partner_chart);
+            governorate_chart = dc.bubbleOverlay(div_governorate_chart).svg(d3.select(div_governorate_chart+" svg"));
+            district_chart = dc.rowChart(div_district_chart);
+            popcohort_chart = dc.pieChart(div_popcohort_chart);
+            gender_chart = dc.pieChart(div_gender_chart);
+            age_chart = dc.pieChart(div_age_chart);
+            fundedby_chart = dc.rowChart(div_fundedby_chart);
+            lcrp_chart = dc.pieChart(div_lcrp_chart);
+            sectoroffunding_chart = dc.pieChart(div_sectoroffunding_chart);
+            month_chart = dc.lineChart(div_month_chart);
+            target_chart = dc.pieChart(div_target_chart);
+            // an example filters object
+            filters = {
+                'Master_Indicator': myVar_indicatordropdown,
+                'Area': myVar_areadropdown,
+                'Funded_by': myVar_fundedbydropdown,
+                'LCRP_Result': myVar_lcrpdropdown,
+                'Monthname': myVar_monthdropdown
+            };
+            d3.csv("dataindic.csv", function(error, dataset) {
+                dataset = dataset.filter(function(row) {
+                    // run through all the filters, returning a boolean
+                    return ['Master_Indicator','Area','Funded_by','LCRP_Result','Monthname'].reduce(function(pass, column) {
+                        return pass && (
+                            // pass if no filter is set
+                            !filters[column] ||
+                                // pass if the row's value is equal to the filter
+                                // (i.e. the filter is set to a string)
+                                row[column] === filters[column] ||
+                                // pass if the row's value is in an array of filter values
+                                filters[column].indexOf(row[column]) >= 0
+                            );
+                    }, true);
+                })
+                var dateFormat = d3.time.format("%d/%m/%Y");
+                    var numberFormat = d3.format(",f");
+
+                    dataset.forEach(function (d) {
+                       d.dd = dateFormat.parse(d.StartDate);
+                       d.month = d3.time.month(d.dd); // pre-calculate month for better performance
+                       d.close = +d.close; // coerce to number
+                       d.open = +d.open;
+                    });
+
+                    if (error) {  //If error is not null, something went wrong.
+                       console.log(error);  //Log the error.
+                    }
+                //console.log(dataset.length, dataset);
+            cf = crossfilter(dataset);
+
+            CalculateTotal();
+            var all = cf.groupAll();
+              dc.dataCount("#count-info")
+                   .dimension(cf)
+                   .group(all);
+            //console.log(dataset);
+
+            cf.partner = cf.dimension(function(d) { return d.Partner; });
+            var partner = cf.partner.group();
+            var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.Calculate_Value;} );
+               partner_chart.width(400).height(350)
+                   .dimension(cf.partner)
+                   .group(partnerByTotal)
+                   .elasticX(true)
+                   .on("filtered", getFiltersValues)
+                   .data(function(group) { return group.top(1000); })
+                   .colors(['#33A3DC'])
+                   .colorDomain([0,0])
+                   .renderLabel(true)
+                   .label(function(d) {
+                                return d.key + ': ' + d.value;
+                            })
+                   .colorAccessor(function(d, i){return 1;})
+                   //.xAxis().ticks(4).tickFormat(d3.format("s"));
+                   .xAxis().ticks(0); //X axis is not needed since we are already showing the value
+
+            cf.fundedby = cf.dimension(function(d) { return d.Funded_by; });
+            var fundedby = cf.fundedby.group();
+            var fundedbyByTotal = cf.fundedby.group().reduceSum(function (d) { return d.Calculate_Value;} );
+               fundedby_chart.width(400).height(120)
+                   .dimension(cf.fundedby)
+                   .group(fundedbyByTotal)
+                   .elasticX(true)
+                   .on("filtered", getFiltersValues)
+                   .data(function(group) { return group.top(1000); })
+                   .colors(['#33A3DC'])
+                   .colorDomain([0,0])
+                   .renderLabel(true)
+                   .label(function(d) {
+                                return d.key + ': ' + d.value;
+                            })
+                   .colorAccessor(function(d, i){return 1;})
+                   //.xAxis().ticks(4).tickFormat(d3.format("s"));
+                   .xAxis().ticks(0); //X axis is not needed since we are already showing the value
+
+            cf.popcohort = cf.dimension(function(d) { return d.Pop_Tag; });
+            var popcohort = cf.popcohort.group();
+            var popcohortByTotal = cf.popcohort.group().reduceSum(function (d) { return d.ValueofPop;} );
+               popcohort_chart.width(175).height(175)
+                   .dimension(cf.popcohort)
+                   //.group(popcohortByTotal)
+                   .group(remove_empty_bins(popcohortByTotal))
+                   //.data(function(group) {
+                   //    return group.all().filter(function(kv) { return kv.value > 0; });
+                   //})
+                   .innerRadius(60)
+                   .legend(dc.legend().x(60).y(60).itemHeight(10).gap(5))//Be careful, the legend does not work for for version of dc.js!! version 2.1.0-dev was used here.
+                   //.innerRadius(1)
+                   .renderLabel(true)
+                   .label(function(d) {
+                                //return d.key + ': ' + d.value;
+                                if(d.key=='empty'){ return '';} else { return d.value;}
+                            })
+                   //.colorAccessor(function(d, i){return i%6;})
+                   .onClick = function() {};
+                   //.on("filtered", getFiltersValues)
+                popcohort_chart.getColor = function(d, i){
+                            return myColors[d.key];;
+                        };
+
+            //Prepare a donut chart for Progress against target based on target and achievement
+            var myachievement = 0;
+            var myremaining = 0;
+            var mytarget = ind2target[myVar_indicatordropdown];
+            document.getElementById(div_targetnum).innerHTML  = "Total Target: "+ mytarget + " " + ind2unit[myVar_indicatordropdown];
+            if (mytotal > mytarget)
+            {   myachievement = 100; //100%
+                myremaining = 0;    //0%
+            }
+            else
+            {
+                myachievement = Math.round(mytotal*100/mytarget); //calculate %
+                myremaining = 100 - myachievement; //calculate %
+            }
+
+            var target_data = [
+                {name: "Achievement", value: myachievement},
+                {name: "Remaining", value: myremaining}
+            ];
+            target_cf = crossfilter(target_data);
+            target_cf.target = target_cf.dimension(function(d) { return d.name; });
+            var target = target_cf.target.group();
+            var targetByTotal = target_cf.target.group().reduceSum(function (d) { return d.value;} );
+               target_chart.width(175).height(175)
+                   .dimension(target_cf.target)
+                   //.group(targetByTotal)
+                   .group(remove_empty_bins(targetByTotal))
+                   .innerRadius(60)
+                   .legend(dc.legend().x(50).y(60).itemHeight(10).gap(5))//Be careful, the legend does not work for for version of dc.js!! version 2.1.0-dev was used here.
+                   //.colors(['#33A3DC', /* Achievement */
+                   //      '#e0e0e0', /* Remaining */
+                   //      ])
+                   .colorDomain([0,2])
+                   .renderLabel(true)
+                   .label(function(d) {
+                                //return d.key + ': ' + d.value;
+                                if(d.key=='empty'){ return '';} else { return d.value + '%';}
+                            })
+                   .title(function(d) { return d.key + ': ' + d.value + '%';})
+                   .colorAccessor(function(d, i){return i%4;})
+                   .onClick = function() {};
+                target_chart.getColor = function(d, i){
+                        return myColors[d.key];
+                        };
+
+
+            cf.gender = cf.dimension(function(d) { return d.Gender_Tag; });
+            var gender = cf.gender.group();
+            var genderByTotal = cf.gender.group().reduceSum(function (d) { return d.ValueofGender;} );
+                gender_chart.width(175).height(175)
+                   .dimension(cf.gender)
+                   //.group(popcohortByTotal)
+                   .group(remove_empty_bins(genderByTotal))
+
+                   //.data(function(group) {
+                   //    return group.all().filter(function(kv) { return kv.value > 0; });
+                   //})
+                   .innerRadius(60)
+                   .legend(dc.legend().x(60).y(60).itemHeight(10).gap(5))//Be careful, the legend does not work for for version of dc.js!! version 2.1.0-dev was used here.
+                   //.innerRadius(1)
+                   .renderLabel(true)
+                   .label(function(d) {
+                                //return d.key + ': ' + d.value;
+                                if(d.key=='empty'){ return '';} else { return d.value;}
+                            })
+                   //.colorAccessor(function(d, i){return i%6;})
+                   .onClick = function() {};
+                   //.on("filtered", getFiltersValues)
+                gender_chart.getColor = function(d, i){
+                        return myColors[d.key];
+                        };
+
+            cf.age = cf.dimension(function(d) { return d.Age_Tag; });
+            var age = cf.age.group();
+            var ageByTotal = cf.age.group().reduceSum(function (d) { return d.ValueofAge;} );
+               age_chart.width(175).height(175)
+                   .dimension(cf.age)
+                   //.group(popcohortByTotal)
+                   .group(remove_empty_bins(ageByTotal))
+
+                   //.data(function(group) {
+                   //    return group.all().filter(function(kv) { return kv.value > 0; });
+                   //})
+                   .innerRadius(60)
+                   .legend(dc.legend().x(60).y(60).itemHeight(10).gap(5))//Be careful, the legend does not work for for version of dc.js!! version 2.1.0-dev was used here.
+                   //.innerRadius(1)
+                   .renderLabel(true)
+                   .label(function(d) {
+                                //return d.key + ': ' + d.value;
+                                if(d.key=='empty'){ return '';} else { return d.value;}
+                            })
+                   //.colorAccessor(function(d, i){return i%6;})
+                   .onClick = function() {};
+                   //.on("filtered", getFiltersValues)
+                age_chart.getColor = function(d, i){
+                        return myColors[d.key];
+                        };
+
+            cf.lcrp = cf.dimension(function(d) { return d.LCRP_Result; });
+            var lcrp = cf.lcrp.group();
+            var lcrpByTotal = cf.lcrp.group().reduceSum(function (d) { return d.Calculate_Value;} );
+               lcrp_chart.width(175).height(175)
+                   .dimension(cf.lcrp)
+                   //.group(popcohortByTotal)
+                   .group(remove_empty_bins(lcrpByTotal))
+
+                   //.data(function(group) {
+                   //    return group.all().filter(function(kv) { return kv.value > 0; });
+                   //})
+                   .innerRadius(60)
+                   .legend(dc.legend().x(60).y(60).itemHeight(10).gap(5))//Be careful, the legend does not work for for version of dc.js!! version 2.1.0-dev was used here.
+                   //.innerRadius(1)
+                   .renderLabel(true)
+                   .label(function(d) {
+                                //return d.key + ': ' + d.value;
+                                if(d.key=='empty'){ return '';} else { return d.value;}
+                            })
+                   //.colorAccessor(function(d, i){return i%6;})
+                   .onClick = function() {};
+                   //.on("filtered", getFiltersValues)
+                lcrp_chart.getColor = function(d, i){
+                        return myColors[d.key];
+                        };
+
+            cf.sectoroffunding = cf.dimension(function(d) { return d.Sector_of_funding; });
+            var sectoroffunding = cf.sectoroffunding.group();
+            var sectoroffundingByTotal = cf.sectoroffunding.group().reduceSum(function (d) { return d.Calculate_Value;} );
+               sectoroffunding_chart.width(175).height(175)
+                   .dimension(cf.sectoroffunding)
+                   .group(remove_empty_bins(sectoroffundingByTotal))
+                   .innerRadius(60)
+                   .legend(dc.legend().x(60).y(60).itemHeight(10).gap(5))//Be careful, the legend does not work for for version of dc.js!! version 2.1.0-dev was used here.
+                   .renderLabel(true)
+                   .label(function(d) {
+                                //return d.key + ': ' + d.value;
+                                if(d.key=='empty'){ return '';} else { return d.value;}
+                            })
+                   //.colorAccessor(function(d, i){return i%6;})
+                   .onClick = function() {};
+                   //.on("filtered", getFiltersValues)
+                sectoroffunding_chart.getColor = function(d, i){
+                        return myColors[d.key];
+                        };
+
+            cf.month = cf.dimension(function (d) {return d.month;});
+            var month = cf.month.group();
+            var monthByTotal = cf.month.group().reduceSum(function (d) { return d.Calculate_Value;} );
+
+               month_chart.width(800).height(120)
+                   .transitionDuration(1000)
+                   .margins({top: 30, right: 50, bottom: 25, left: 40})
+                   .dimension(cf.month)
+                   .group(monthByTotal)
+                   .mouseZoomable(false)
+                   .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 30)]))
+                   .xUnits(d3.time.months)
+                   .renderHorizontalGridLines(false)
+                   .brushOn(false)
+                   .valueAccessor(function (d) { return d.value; })
+                   .colors(['#33A3DC'])
+                   .yAxis().ticks(4).tickFormat(d3.format("s"));
+
+            cf.governorate = cf.dimension(function(d) { return d.Governorate; });
+            var governorate = cf.governorate.group();
+            var governorateByTotal = cf.governorate.group().reduceSum(function (d) { return d.Calculate_Value;} );
+                  governorate_chart.width(350).height(475)
+                    .transitionDuration(500)
+                    .dimension(cf.governorate)
+                    .group(governorateByTotal)
+                    .colors(['#33A3DC'])
+                    .colorDomain([0, 0])
+                    .colorAccessor(function(d, i){return 1;})
+                    .title(function(d) { return "Governorate: " + d.key + "\nTotal:" + d.value;}) ;
+                    //.debug(true)
+                    governorate_chart.r(d3.scale.linear().domain([0, mytotal*2]));
+                    //Get total value
+                    //console.log (governorate_chart);
+                    //console.log (governorateByTotal.all());
+                    //adding points as per data
+                    var myarray = governorateByTotal.all();
+                    myarray.forEach(function (d) {
+                        governorate_chart.point(d.key, Admin1_X[d.key],Admin1_Y[d.key]);
+                    });
+
+            cf.district = cf.dimension(function(d) { return d.District; });
+            var district = cf.district.group();
+            var districtByTotal = cf.district.group().reduceSum(function (d) { return d.Calculate_Value;} );
+               district_chart.width(400).height(250)
+                   .dimension(cf.district)
+                   .group(districtByTotal)
+                   .elasticX(true)
+                   .on("filtered", getFiltersValues)
+                   .data(function(group) { return group.top(100); })
+                   .colors(['#33A3DC'])
+                   .colorDomain([0,0])
+                   .renderLabel(true)
+                   .label(function(d) {
+                                return d.key + ': ' + d.value;
+                            })
+                   .colorAccessor(function(d, i){return 1;})
+                   .xAxis().ticks(4).tickFormat(d3.format("s"));
+                dc.renderAll();
+            });
+        }
+
+        function ShowRelevantDashboard(dashboardname)
+        {
+            var div_dashboard = "#"+ dashboardname;
+            if(dashboardname == "dashboard_"+dashboardstyle)
+            {
+                $(div_dashboard).show();
+                //console.log("showed "+dashboardname);
+            }
+            else
+            {
+                $(div_dashboard).hide();
+                //console.log("hidden "+dashboardname);
+            }
+        }
+
+        function SetDashboardSetting()
+        {
+            dashboardlevel = "N"; //"N" for National level, "F" for Field level
+
+            myVar_indicatordropdown = document.getElementById('indicatordropdown').value;
+            switch(document.getElementById('areadropdown').value){case 'All': myVar_areadropdown = ''; break; default: myVar_areadropdown = document.getElementById('areadropdown').value; };
+            switch(document.getElementById('fundedbydropdown').value){case 'All': myVar_fundedbydropdown =  ''; break; default: myVar_fundedbydropdown = document.getElementById('fundedbydropdown').value; };
+            switch(document.getElementById('lcrpdropdown').value){case 'All': myVar_lcrpdropdown =  ''; break; default: myVar_lcrpdropdown = document.getElementById('lcrpdropdown').value; };
+            switch(document.getElementById('monthdropdown').value){case 'All': myVar_monthdropdown =  ''; break; default: myVar_monthdropdown = document.getElementById('monthdropdown').value; };
+
+            if (dashboardlevel=="N")
+            {
+                dashboardstyle = ind2national[myVar_indicatordropdown];
+            }
+            else
+            {
+                dashboardstyle = ind2field[myVar_indicatordropdown];
+            }
+
+            div_partner_chart = "#partner_"+dashboardstyle;
+            div_governorate_chart = "#governorate_"+dashboardstyle;
+            div_district_chart = "#district_"+dashboardstyle;
+
+            div_popcohort_chart = "#popcohort_"+dashboardstyle;
+            div_gender_chart = "#gender_"+dashboardstyle;
+            div_age_chart = "#age_"+dashboardstyle;
+            div_fundedby_chart = "#fundedby_"+dashboardstyle;
+            div_lcrp_chart = "#lcrp_"+dashboardstyle;
+            div_sectoroffunding_chart = "#sectoroffunding_"+dashboardstyle;
+
+            div_month_chart = "#month_"+dashboardstyle;
+            //div_monthrange_chart = "#monthrange_"+dashboardstyle;
+
+            div_progresstotal = "progresstotal_"+dashboardstyle;
+            div_targetnum = "targetnum_"+dashboardstyle;
+            div_target_chart = "#target_"+dashboardstyle;
+            //div_unit = "unit_"+dashboardstyle;
+        }
+
+        function remove_empty_bins(source_group) {
+            return {
+                all:function () {
+                    return source_group.all().filter(function(d) {
+                        return d.value != 0;
+                    });
+                }
+            };
+        }
+
+        function getColor(key) {
+                    switch(key) {
+                        case 'DisSyr': return '#ff0000'; break;
+                        case 'AffLeb': return '#00ff00'; break;
+                        case 'PRS': return '#0000ff'; break;
+                        case 'PRL': return '#ff3399'; break;
+                        case 'LebRet': return '#0099FF'; break;
+                        case 'Othpop': return '#666699'; break;
+                        //case 'Target': return '#ff0000'; break;
+                        //case 'Achievement': return '#33A3DC'; break;
+                        default: return '#ffffff';
+                        };
+                }
+
+        function getFiltersValues() {
+                   var filters = [
+                                   { name: 'partner', value: partner_chart.filters()},
+                                   { name: 'fundedby', value: fundedby_chart.filters()},
+                                   { name: 'lcrp', value: lcrp_chart.filters()},
+                                   { name: 'sectoroffunding', value: sectoroffunding_chart.filters()},
+                                   { name: 'governorate', value: governorate_chart.filters()}
+                                ];
+                   var recursiveEncoded = $.param( filters );
+                   location.hash = recursiveEncoded;
+               }
+
+        function initFilters() {
+        // Get hash values
+                   //var parseHash = /^#dummy_indicator=([A-Za-z0-9,_\-\/\s]*)&dummy_area=([A-Za-z0-9,_\-\/\s]*)&fundedby=([A-Za-z0-9,_\-\/\s]*)&lcrp=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&governorate=([A-Za-z0-9,_\-\/\s]*)&type=([A-Za-z0-9,_\-\/\s]*)&popcohort=([A-Za-z0-9,_\-\/\s]*)&gender=([A-Za-z0-9,_\-\/\s]*)&age=([A-Za-z0-9,_\-\/\s]*)$/;
+                   var parseHash = /^partner=([A-Za-z0-9,_\-\/\s]*)&fundedby=([A-Za-z0-9,_\-\/\s]*)&lcrp=([A-Za-z0-9,_\-\/\s]*)&sectoroffunding=([A-Za-z0-9,_\-\/\s]*)&governorate=([A-Za-z0-9,_\-\/\s]*)$/;
+                   var parsed = parseHash.exec(decodeURIComponent(location.hash));
+                   function filter(chart, rank) {
+                       if (parsed[rank] == "") { chart.filter(null); }
+                       else {
+                           var filterValues = parsed[rank].split(",");
+                           for (var i = 0; i < filterValues.length; i++ ) { chart.filter(filterValues[i]); }
+                       }
+                   }
+                   if (parsed) {
+                       //filter(dummy_indicator_chart, 1);
+                       //filter(dummy_area_chart, 2);
+                       //filter(dummy_month_chart, 3);
+                       filter(partner_chart_chart, 1);
+                       filter(fundedby_chart, 2);
+                       filter(lcrp_chart, 3);
+                       filter(sectoroffunding_chart, 4);
+                       filter(governorate_chart, 5);
+                       //filter(district_chart, 8);
+                       //filter(popcohort_chart, 7);
+                       //filter(gender_chart, 8);
+                       //filter(age_chart, 9);
+                   }
+               }
+            //my added functions for dropdown
+                document.getElementById("indicatordropdown").onchange = function() {
+                    myfiltercount++;
+                    DoEverything();
+                    return false
+                };
+                document.getElementById("areadropdown").onchange = function() {
+                    myfiltercount++;
+                    DoEverything();
+                    return false
+                };
+                document.getElementById("fundedbydropdown").onchange = function() {
+                    myfiltercount++;
+                    DoEverything();
+                    return false
+                };
+                document.getElementById("lcrpdropdown").onchange = function() {
+                    myfiltercount++;
+                    DoEverything();
+                    return false
+                };
+                document.getElementById("monthdropdown").onchange = function() {
+                    myfiltercount++;
+                    DoEverything();
+                    return false
+                };
+                function CalculateTotal()
+                {
+                    mytotal = cf.groupAll().reduceSum(function (d) { return d.Calculate_Value;} ).value();
+                    document.getElementById(div_progresstotal).innerHTML  = mytotal + ": " + ind2unit[myVar_indicatordropdown];
+                }
+
+                function ClearCharts()
+                {
+                    $(div_partner_chart).empty();
+                    $(div_popcohort_chart).empty();
+                    $(div_fundedby_chart).empty();
+                    $(div_gender_chart).empty();
+                    $(div_age_chart).empty();
+                    $(div_lcrp_chart).empty();
+                    $(div_sectoroffunding_chart).empty();
+                    $(div_governorate_chart).empty();
+                    $(div_district_chart).empty();
+                    $(div_month_chart).empty();
+                    $(div_target_chart).empty();
+                }
+
+                function ResetAll()
+                {
+                    document.getElementById("indicatordropdown").value = "# individuals counselled on HLP matters";
+                    document.getElementById('areadropdown').value = "All";
+                    document.getElementById("fundedbydropdown").value = "All";
+                    document.getElementById("lcrpdropdown").value = "All";
+                    document.getElementById("monthdropdown").value = "All";
+                    DoEverything();
+                }
+
+                function ExportData()
+                {
+                    window.alert("This feature is under development.");
+                }
+        </script>
+-->
+
+        <script src="../../js/bootstrap.js"></script>
+        <script>
+            // Script to initiate filtering on page at the right place
+                $(window).bind("load", function() {
+                if (GetUrlValue('Camp')=="ZaatariCamp")
+                {
+                dc.filterAll(); location_chart.filter("ZaatariCamp");  dc.renderAll();
+                }
+                var d = new Date();
+                var n = d.getMonth();
+                dc.filterAll();
+                monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]);
+                dc.redrawAll();
+                });
+
+        </script>
+        <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
+        <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
+        <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
+        </div>
+</body>
+
+
+</html>
