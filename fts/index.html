@@ -59,7 +59,7 @@
 
             <h2>
             <a class="btn btn-default">Total Requested (USD) <a  class="btn btn-primary">$ <span id="totalrequired" class="number-display"></span></a></a>
-            <a class="btn btn-default">Overall Received (Percentage) <a  class="btn btn btn-success"><span id="totalPreceived" class="number-display"> </span> %</a></a>			
+            <a class="btn btn-default">Percentage Received <a  class="btn btn btn-success"><span id="totalPreceived" class="number-display"> </span> %</a></a>			
             <a class="btn btn-default">Funds Received (USD) <a  class="btn btn-info">$ <span id="totalreceived" class="number-display"></span></a></a>
             <a class="btn btn-default">Not yet funded (USD) <a  class="btn btn-warning">$ <span id="totalgap" class="number-display"></span></a></a>
            <!--
@@ -145,7 +145,7 @@
         var partner_chart = dc.rowChart("#partner");
         var partnergap_chart = dc.rowChart("#partnergap");
         var gapReceived_chart = dc.barChart("#gapReceived");
-
+		var tot = 8757315;
 
         d3.csv("data/ftsnew.csv", function(csv_data){
             var numberFormat = d3.format(".3s");
@@ -159,7 +159,7 @@
                     { name: 'sector', value: sector_chart.filters()},
                     { name: 'quarter', value: quarter_chart.filters()},
                     { name: 'partner', value: partner_chart.filters()},
-                    { name: 'partner', value: partnergap_chart.filters()}
+                    { name: 'partnergap', value: partnergap_chart.filters()}
                     ];
 
                 var recursiveEncoded = $.param( filters );
@@ -240,8 +240,7 @@
 
 				
 				  chart.selectAll('rect').on("click", function(d) {
-				  
-				  
+			  
 					if (d.key == "1- First Quarter")
 					{
 					quarter_chart.filterAll();
@@ -345,6 +344,10 @@
                 .colorAccessor(function(d, i){return 1;})
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
 
+			
+
+				
+
 
             cf.partner = cf.dimension(function(d) { return d.Partner; });
             var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.Receive; });
@@ -418,7 +421,7 @@
             var byRequired = cf.dimension(function(d) { return d.Required; });
             var byRequiredGroup = byRequired.groupAll().reduceSum(function (d) { return d.Required; });
             dc.numberDisplay("#totalrequired")
-                   .valueAccessor(function(d){return +d})
+                   .valueAccessor(function(d){ tot = +d ; return +d})
                     .group(byRequiredGroup);
 
             var byReceived = cf.dimension(function(d) { return d.Receive; });
@@ -426,9 +429,10 @@
             dc.numberDisplay("#totalreceived")
                    .valueAccessor(function(d){return +d})
                     .group(byReceivedGroup);
+
 			
             dc.numberDisplay("#totalPreceived")
-                   .valueAccessor(function(d){return +d / 8757315})
+                   .valueAccessor(function(d){return +d / (tot/100) })
                     .group(byReceivedGroup);
 
 			
