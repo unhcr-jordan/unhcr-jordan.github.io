@@ -283,14 +283,6 @@
                     <p>This is the sector overview</p>
                  </div>
             </div>
-            <div class="row" id="timelineid"style="background-color: #58595b; color: #ffffff">
-                <div class="col-md-12">
-                    <p><h2>Monthly Highlight</h2></p>
-                </div>
-            </div>
-            <div class="row" style="background-color: #D8D8D8;">
-                <iframe src="../../timeline/cash/timeline.html" width="100%" height="800" frameborder="0" scrolling="no" marginheight="10" marginwidth="10"></iframe>
-            </div>
 
             <div class="row" style="background-color: #58595b; color: #00000">
                 <div class="col-md-12">
@@ -494,7 +486,7 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                cf.obj = cf.dimension(function(d) { return d.activity; });
+                cf.obj = cf.dimension(function(d) { return ( d.activity + " " + d.Value); });
                 var obj = cf.obj.group();
                 var objByTotal = cf.obj.group().reduceCount();
                    obj_chart.width(400).height(140)
