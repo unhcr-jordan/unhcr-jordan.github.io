@@ -226,6 +226,7 @@
                             <script type="text/javascript">
                                     var d = new Date();
                                     var n = d.getMonth();
+									n = 12; // Patch for 2015 12 Months									
                                         for(count = 0; count < n; count++){
                                         document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2015,' + count + ', 1), new Date(2015, ' + count + ', 31)]); dc.redrawAll();">');
                                         document.write(monthNames[count] + "</a> &nbsp;");
