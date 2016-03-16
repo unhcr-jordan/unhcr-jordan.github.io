@@ -50,7 +50,7 @@
                         '#ffc000', /* Shelter */
                         '#7030a0', /* WASH */
 
-                        Revised Color code for dashboard 2015
+                        Revised Color code for dashboard 2016
                         '#d44e5b', /* Education */
                         '#00b26b', /* Food Security */
                         '#58595b', /* basic needs */
@@ -68,7 +68,7 @@
                 </div>
                 <div class="col-md-7">
                    <!-- <center> </center> -->
-                        <h3><strong>Basic Needs Working Group | 2015 Syrian Refugee Response in Jordan
+                        <h3><strong>Basic Needs Working Group | 2016 Syrian Refugee Response in Jordan
                          | <a href="../../index.html"  target="_blank"><i class="icon-im-coord" style="color:white; font-size:20px;" ></i></a></strong></h3>
                         The data presented here is collected through the <a href="https://www.syrianrefugeeresponse.org/" target="_blank">Syrian Refugee Response</a> platform and then cleared by Sector focal points.
                         You can donwload the <a href="data.csv" target="_blank">data here</a>. More info on Jordan <a href="http://data.unhcr.org/jordan" target="_blank">here</a>.<br />
@@ -215,7 +215,7 @@
                                     var d = new Date();
                                     var n = d.getMonth();
                                         for(count = 0; count < n; count++){
-                                        document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2015,' + count + ', 1), new Date(2015, ' + count + ', 31)]); dc.redrawAll();">');
+                                        document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2016,' + count + ', 1), new Date(2016, ' + count + ', 31)]); dc.redrawAll();">');
                                         document.write(monthNames[count] + "</a> &nbsp;");
                                         }
                             </script>
@@ -551,7 +551,7 @@
                        .dimension(cf.month)
                        .mouseZoomable(true)
                        .rangeChart(monthrange_chart)
-                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2016, 0, 1), new Date(2016, 11, 31)]))
                        .xUnits(d3.time.months)
 						//.elasticY(true)
                        .renderHorizontalGridLines(true)
@@ -572,7 +572,7 @@
                        .group(monthByTotal)
                        .colors(['#58595b'])
                        .gap(1)
-                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2016, 0, 1), new Date(2016, 11, 31)]))
                        .xUnits(d3.time.months)
                        .yAxis().ticks(0);
 
@@ -663,7 +663,7 @@
                 var d = new Date();
                 var n = d.getMonth();
                 dc.filterAll();
-                 monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]);
+                 monthrange_chart.filter([new Date(2016, n-1, 1), new Date(2016, n-1, 31)]);
                 dc.redrawAll();
                 });
 

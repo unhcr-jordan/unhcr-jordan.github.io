@@ -486,7 +486,7 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                cf.obj = cf.dimension(function(d) { return ( d.activity + " " + d.Value); });
+                cf.obj = cf.dimension(function(d) { return d.activity; });
                 var obj = cf.obj.group();
                 var objByTotal = cf.obj.group().reduceCount();
                    obj_chart.width(400).height(140)
