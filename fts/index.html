@@ -438,7 +438,7 @@
 			
 
             var byGap = cf.dimension(function(d) { return d.Gap; });
-            var byGapGroup = byGap.groupAll().reduceSum(function (d) { return d.Required - d.NewReceived; });
+            var byGapGroup = byGap.groupAll().reduceSum(function (d) { return d.Gap; });
             dc.numberDisplay("#totalgap")
                    .valueAccessor(function(d){return +d})
                     .group(byGapGroup);
