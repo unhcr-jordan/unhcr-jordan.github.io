@@ -364,7 +364,7 @@
                 .xAxis().ticks(4).tickFormat(d3.format("s"));
 
             cf.partnergap = cf.dimension(function(d) { return d.Partner; });
-            var partnergapByTotal = cf.partnergap.group().reduceSum(function (d) { return (d.Required - d.NewReceived); });
+            var partnergapByTotal = cf.partnergap.group().reduceSum(function (d) { return (d.Gap); });
             var partnergap = cf.partnergap.group();
             partnergap_chart.width(250).height(500)
                 .dimension(cf.partnergap)
