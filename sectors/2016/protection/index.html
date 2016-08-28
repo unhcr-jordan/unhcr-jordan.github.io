@@ -227,7 +227,8 @@
                                     var n = d.getMonth();
 									n = 12; // Patch for 2016 12 Months									
                                         for(count = 0; count < n; count++){
-                                        document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2016,' + count + ', 1), new Date(2016, ' + count + ', 31)]); dc.redrawAll();">');
+											var o = count + 1;
+                                        document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2016,' + count + ', 1), new Date(2016, ' + o + ', 31)]); dc.redrawAll();">');
                                         document.write(monthNames[count] + "</a> &nbsp;");
                                         }
                             </script>
